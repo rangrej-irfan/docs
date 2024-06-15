@@ -1,0 +1,12 @@
+**/site
+**/.cache
+**/.idea
+**/*iml
+**/.DS_Store
+**/*.bk
+**/*.bak
+**/t
+**/input
+**/output
+**/*dont_commit*
+**/venv
