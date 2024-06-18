@@ -27,7 +27,7 @@ hide:
 
     Privacera provides multiple connectors to connect to various data sources. Learn more about them here.
 
-    [:octicons-arrow-right-24: Connectors]()
+    [:octicons-arrow-right-24: Connectors](connectors/index.md)
 
 
 -    __Release Notes__
