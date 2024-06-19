@@ -227,6 +227,13 @@ nav:
           - Setup: get-started/base-installation/self-managed/installation.md
           - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
           - FAQ: get-started/base-installation/self-managed/faq.md
+      - User Management:
+          - get-started/user-management/index.md
+          - UserSync:
+            - get-started/user-management/usersync/index.md
+          - SSO:
+            - get-started/user-management/sso/index.md
+
   - Connectors:
       - connectors/index.md
       - AWS EMR:
