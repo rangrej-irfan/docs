@@ -6,6 +6,7 @@
 **/*.bk
 **/*.bak
 **/t
+**/t.sh
 **/input
 **/output
 **/*dont_commit*

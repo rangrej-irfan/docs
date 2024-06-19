@@ -17,7 +17,7 @@
     * `CONNECTOR_LAKEFORMATION_SINK_HIVE_SERVICE_APP_ID` \- Set the policy repository name where you want the connector to push policies for the hive.
 
 
-**AWS Account ID**
+### **AWS Account ID**
 === "Self Managed and Data Plane"
 
     | Variable Name                        |

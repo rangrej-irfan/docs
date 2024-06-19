@@ -201,7 +201,28 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Get Started: installation.md
+  - Get Started:
+      - get-started/index.md
+      - Base Installation:
+        - get-started/base-installation/index.md
+        - PrivaceraCloud:
+          - get-started/base-installation/privaceracloud/index.md
+          - Prerequisites: get-started/base-installation/privaceracloud/prerequisites.md
+          - Setup: get-started/base-installation/privaceracloud/installation.md
+          - Troubleshooting: get-started/base-installation/privaceracloud/troubleshooting.md
+          - FAQ: get-started/base-installation/privaceracloud/faq.md
+        - Data Plane:
+            - get-started/base-installation/data-plane/index.md
+            - Prerequisites: get-started/base-installation/data-plane/prerequisites.md
+            - Setup: get-started/base-installation/data-plane/installation.md
+            - Troubleshooting: get-started/base-installation/data-plane/troubleshooting.md
+            - FAQ: get-started/base-installation/data-plane/faq.md
+        - Self Managed:
+          - get-started/base-installation/self-managed/index.md
+          - Prerequisites: get-started/base-installation/self-managed/prerequisites.md
+          - Setup: get-started/base-installation/self-managed/installation.md
+          - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
+          - FAQ: get-started/base-installation/self-managed/faq.md
   - Connectors:
       - connectors/index.md
       - AWS EMR:
@@ -217,6 +238,14 @@ nav:
             - Basic Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/basic-configuration.md
             - Advanced Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/advanced-configuration.md
             - Troubleshooting: connectors/aws-lake-formation/aws-lake-formation-push-mode/troubleshooting.md
+            - FAQ: connectors/aws-lake-formation/aws-lake-formation-push-mode/faq.md
           - Pull Mode: connectors/aws-lake-formation/aws-lake-formation-pull-mode/index.md
-      - AWS Redshift DB: aws-redshiftdb.md
+      - AWS Redshift DB:
+          - connectors/aws-redshift-db/index.md
+          - Prerequisites: connectors/aws-redshift-db/prerequisites.md
+          - Setup: connectors/aws-redshift-db/setup.md
+          - Basic Configuration: connectors/aws-redshift-db/basic-configuration.md
+          - Advanced Configuration: connectors/aws-redshift-db/advanced-configuration.md
+          - Troubleshooting: connectors/aws-redshift-db/troubleshooting.md
+          - FAQ: connectors/aws-redshift-db/faq.md
 

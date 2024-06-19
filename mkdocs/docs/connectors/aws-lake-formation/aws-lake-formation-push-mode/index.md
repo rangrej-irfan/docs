@@ -20,6 +20,13 @@ to [Push mode](../index.md#push-mode).
 
 {{ read_csv('snippets/supported_access_features.csv') }}
 
+### User Identity Mapping
+
+Lake Formation supported services like AWS Athena and AWS Redshift Spectrum use AWS IAM and SAML users for access 
+control. The Roles in Privacera are mapped to the IAM roles in AWS. Any permissions granted to the roles in Privacera 
+are pushed to Lake Formation for corresponding IAM roles. For SAML users and groups, the permissions for Users and
+Groups in Privacera are pushed to Lake Formation with the SAML ARN prefix (TODO: Give examples here)
+
 ### Limitations for Access Management Features
 
 1. Lake Formation doesn't support external UDF, so column masking and encryption from Privacera are not available.
