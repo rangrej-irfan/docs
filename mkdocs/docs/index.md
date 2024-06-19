@@ -12,14 +12,13 @@ hide:
 <div class="grid cards" markdown>
 
 
--    __Installation/Setup__
+-    __Get Started__
 
     ---
 
-    Privacera provides multiple deployment options to suit your needs. Learn more about them here.
+    Learn how to get started with Privacera
 
-
-    [:octicons-arrow-right-24: Installation/Setup]()
+    [:octicons-arrow-right-24: Get Started](get-started/index.md)
 
 -   __Connectors__
 
@@ -40,5 +39,17 @@ hide:
 
 
 </div>
+
+---
+
+This document is for PrivaceraCloud and Self Managed version 9.3 onwards. For the previous versions 
+please refer to the respective documentation.
+
+| Version | Documentation                                           |
+|---------|---------------------------------------------------------|
+| 8.7     | https://privplatform.wpenginepowered.com/8.7/index.html |
+| 8.1     | https://privplatform.wpenginepowered.com/8.1/index.html |
+| 7.8     | https://privplatform.wpenginepowered.com/7.8/index.html |
+| 7.5     | https://privplatform.wpenginepowered.com/7.5/index.html |
 
 

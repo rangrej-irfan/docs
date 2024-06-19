@@ -248,4 +248,11 @@ nav:
           - Advanced Configuration: connectors/aws-redshift-db/advanced-configuration.md
           - Troubleshooting: connectors/aws-redshift-db/troubleshooting.md
           - FAQ: connectors/aws-redshift-db/faq.md
-
+  - User Guide:
+      - user-guide/index.md
+      - GDS:
+        - user-guide/gds/index.md
+  - API Reference:
+      - api-reference/index.md
+  - Release Notes:
+      - release-notes/index.md
