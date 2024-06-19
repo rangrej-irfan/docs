@@ -203,8 +203,12 @@ nav:
   - Home: index.md
   - Get Started:
       - get-started/index.md
+      - Deployment Options:
+        - get-started/deployment-options/index.md
       - Base Installation:
         - get-started/base-installation/index.md
+        - Deployment Options:
+          - get-started/base-installation/deployment-options/index.md
         - PrivaceraCloud:
           - get-started/base-installation/privaceracloud/index.md
           - Prerequisites: get-started/base-installation/privaceracloud/prerequisites.md

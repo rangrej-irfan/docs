@@ -1,0 +1,34 @@
+---
+title: Getting started with Privacera
+---
+
+Privacera is a robust data governance and security platform designed to address the complex needs of modern data
+environments. Built on a foundation of scalable, enterprise-grade technology, Privacera offers seamless integration with
+a wide array of data sources, enabling centralized policy management, comprehensive data discovery, and robust
+encryption capabilities. Its suite of connectors—including Access, Discovery, and Encryption Connectors—empowers
+organizations to enforce data privacy, security, and compliance policies consistently across their entire data
+ecosystem. By automating governance processes and providing real-time monitoring and auditing, Privacera helps
+enterprises maintain stringent data protection standards while optimizing operational efficiency.
+
+### How to Use This Document
+
+This document serves as a comprehensive guide for effectively utilizing Privacera's data governance and security
+platform. It includes the following sections:
+
+- **Setup, Installation, and Configuration:** Step-by-step instructions to help you set up, install, and configure
+  Privacera.
+- **Connector Integration:** Guidance on adding and configuring various connectors, including Access, Discovery, and
+  Encryption Connectors.
+- **User Guide:** Detailed information on using Privacera’s features and functionalities to manage data governance and
+  security.
+- **API Reference:** Comprehensive documentation on the available APIs for integrating and extending Privacera’s
+  capabilities.
+- **Release Notes:** Information on the latest updates, features, and bug fixes in each release of Privacera.
+
+<div class="grid cards" markdown>
+-   :material-page-next: __Go To__
+
+    [Installation](get-started/installation.md)
+
+    [User Guide](../user-guide/index.md)
+</div>
