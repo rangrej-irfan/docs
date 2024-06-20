@@ -1,5 +1,6 @@
 ---
 title: Getting started with Privacera
+icon: material/run-fast
 ---
 
 Privacera is a robust data governance and security platform designed to address the complex needs of modern data
@@ -28,7 +29,7 @@ platform. It includes the following sections:
 <div class="grid cards" markdown>
 -   :material-page-next: __Go To__
 
-    [Installation](get-started/installation.md)
+    [Deployment Options](deployment-options/index.md)
 
     [User Guide](../user-guide/index.md)
 </div>

@@ -31,5 +31,5 @@ To sign up for PrivaceraCloud, ensure you have the following prerequisites in pl
 
 <div class="grid cards" markdown>
 -   :material-page-previous: [PrivaceraCloud](index.md)
--   :material-page-next: [Setup](installation.md)
+-   :material-page-next: [Setup](setup.md)
 </div>

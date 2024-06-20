@@ -1,4 +1,7 @@
-# Connectors
+---
+title: Connectors for Privacera
+icon: material/vector-combine
+---
 
 ### Summary
 

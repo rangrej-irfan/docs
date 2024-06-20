@@ -207,26 +207,21 @@ nav:
         - get-started/deployment-options/index.md
       - Base Installation:
         - get-started/base-installation/index.md
-        - Deployment Options:
-          - get-started/base-installation/deployment-options/index.md
         - PrivaceraCloud:
           - get-started/base-installation/privaceracloud/index.md
           - Prerequisites: get-started/base-installation/privaceracloud/prerequisites.md
-          - Setup: get-started/base-installation/privaceracloud/installation.md
+          - Setup: get-started/base-installation/privaceracloud/setup.md
           - Troubleshooting: get-started/base-installation/privaceracloud/troubleshooting.md
-          - FAQ: get-started/base-installation/privaceracloud/faq.md
         - Data Plane:
             - get-started/base-installation/data-plane/index.md
             - Prerequisites: get-started/base-installation/data-plane/prerequisites.md
-            - Setup: get-started/base-installation/data-plane/installation.md
+            - Setup: get-started/base-installation/data-plane/setup.md
             - Troubleshooting: get-started/base-installation/data-plane/troubleshooting.md
-            - FAQ: get-started/base-installation/data-plane/faq.md
         - Self Managed:
           - get-started/base-installation/self-managed/index.md
           - Prerequisites: get-started/base-installation/self-managed/prerequisites.md
-          - Setup: get-started/base-installation/self-managed/installation.md
+          - Setup: get-started/base-installation/self-managed/setup.md
           - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
-          - FAQ: get-started/base-installation/self-managed/faq.md
       - User Management:
           - get-started/user-management/index.md
           - UserSync:
@@ -249,7 +244,6 @@ nav:
             - Basic Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/basic-configuration.md
             - Advanced Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/advanced-configuration.md
             - Troubleshooting: connectors/aws-lake-formation/aws-lake-formation-push-mode/troubleshooting.md
-            - FAQ: connectors/aws-lake-formation/aws-lake-formation-push-mode/faq.md
           - Pull Mode: connectors/aws-lake-formation/aws-lake-formation-pull-mode/index.md
       - AWS Redshift DB:
           - connectors/aws-redshift-db/index.md
@@ -258,7 +252,6 @@ nav:
           - Basic Configuration: connectors/aws-redshift-db/basic-configuration.md
           - Advanced Configuration: connectors/aws-redshift-db/advanced-configuration.md
           - Troubleshooting: connectors/aws-redshift-db/troubleshooting.md
-          - FAQ: connectors/aws-redshift-db/faq.md
   - User Guide:
       - user-guide/index.md
       - GDS:
@@ -267,3 +260,5 @@ nav:
       - api-reference/index.md
   - Release Notes:
       - release-notes/index.md
+  - FAQ:
+      - faq/index.md

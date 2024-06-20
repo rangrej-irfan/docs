@@ -9,9 +9,9 @@ Self-Managed.
 
 ### 1. PrivaceraCloud
 
-PrivaceraCloud is the Software-as-a-Service (SaaS) deployment option, providing a fully managed solution hosted by
-Privacera. This option simplifies deployment and management by offloading infrastructure and operational
-responsibilities to Privacera.
+### PrivaceraCloud Description
+
+--8<-- "docs/get-started/deployment-options/snippets/privacera-cloud-description.md"
 
 **Key Features:**
 
@@ -62,3 +62,7 @@ To help you choose the correct deployment option for your organization, the tabl
 | **Data Residency** | Data can remain in customer's VPC with connectors and Discovery module | All data and components reside in customer's VPC |
 
 By considering these differences, you can select the deployment option that best aligns with your organization's operational preferences, control requirements, and resource capabilities.
+
+<div class="grid cards" markdown>
+-   :material-page-previous: Next: [Base Installation](../base-installation/index.md)
+</div>
