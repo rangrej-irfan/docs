@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: priv-dev-mkdocs-service
+  namespace: privacera-services
+spec:
+  selector:
+    app: priv-dev-mkdocs
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort

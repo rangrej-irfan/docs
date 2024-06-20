@@ -25,5 +25,5 @@ build-job:       # This job runs in the build stage, which runs first.
     - pwd
     - ls -altr
     - ./gitlab-ci-cd-job.sh $CI_COMMIT_BRANCH
-    - echo "Compile complete. Check https://priv-dev-mkdocs.privacera.me/stage/$CI_COMMIT_BRANCH"
+    - echo "Compile complete. Check https://priv-dev-mkdocs.privacera.me/stage/$CI_COMMIT_BRANCH/index.html"
 

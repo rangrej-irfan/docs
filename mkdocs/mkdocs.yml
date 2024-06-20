@@ -241,7 +241,6 @@ nav:
             - connectors/aws-lake-formation/aws-lake-formation-push-mode/index.md
             - Prerequisites: connectors/aws-lake-formation/aws-lake-formation-push-mode/prerequisites.md
             - Setup: connectors/aws-lake-formation/aws-lake-formation-push-mode/setup.md
-            - Basic Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/basic-configuration.md
             - Advanced Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/advanced-configuration.md
             - Troubleshooting: connectors/aws-lake-formation/aws-lake-formation-push-mode/troubleshooting.md
           - Pull Mode: connectors/aws-lake-formation/aws-lake-formation-pull-mode/index.md
