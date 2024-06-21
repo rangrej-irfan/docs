@@ -251,6 +251,13 @@ nav:
           - Basic Configuration: connectors/aws-redshift-db/basic-configuration.md
           - Advanced Configuration: connectors/aws-redshift-db/advanced-configuration.md
           - Troubleshooting: connectors/aws-redshift-db/troubleshooting.md
+      - Vertica:
+          - connectors/vertica/index.md
+          - Prerequisites: connectors/vertica/prerequisites.md
+          - Setup: connectors/vertica/setup.md
+          - Basic Configuration: connectors/vertica/basic-configuration.md
+          - Advanced Configuration: connectors/vertica/advanced-configuration.md
+          - Troubleshooting: connectors/vertica/troubleshooting.md
   - User Guide:
       - user-guide/index.md
       - GDS:
