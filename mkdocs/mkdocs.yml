@@ -166,7 +166,7 @@ markdown_extensions:
   - pymdownx.blocks.details
   - pymdownx.blocks.definition
   - pymdownx.caret
-  #  - pymdownx.details
+  - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:materialx.emoji.to_svg
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -209,25 +209,31 @@ nav:
         - get-started/base-installation/index.md
         - PrivaceraCloud:
           - get-started/base-installation/privaceracloud/index.md
-          - Prerequisites: get-started/base-installation/privaceracloud/prerequisites.md
+          - Prerequisites: get-started/base-installation/privaceracloud/index.md
           - Setup: get-started/base-installation/privaceracloud/setup.md
           - Troubleshooting: get-started/base-installation/privaceracloud/troubleshooting.md
         - Data Plane:
             - get-started/base-installation/data-plane/index.md
-            - Prerequisites: get-started/base-installation/data-plane/prerequisites.md
+            - Prerequisites: get-started/base-installation/data-plane/index.md
             - Setup: get-started/base-installation/data-plane/setup.md
             - Troubleshooting: get-started/base-installation/data-plane/troubleshooting.md
         - Self Managed:
-          - get-started/base-installation/self-managed/index.md
-          - Prerequisites: get-started/base-installation/self-managed/prerequisites.md
-          - Setup: get-started/base-installation/self-managed/setup.md
-          - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
+            - get-started/base-installation/self-managed/index.md
+            - Prerequisites:
+                - get-started/base-installation/self-managed/prerequisites/index.md
+                - AWS Cloud Resources: get-started/base-installation/self-managed/prerequisites/aws-cloud-resources.md
+                - Azure Cloud Resources: get-started/base-installation/self-managed/prerequisites/azure-cloud-resources.md
+                - Google Cloud Resources: get-started/base-installation/self-managed/prerequisites/google-cloud-resources.md
+            - Installing Privacera Manager: get-started/base-installation/self-managed/installing-privacera-manager.md
+            - Configure Privacera Manager: get-started/base-installation/self-managed/configure-privacera-manager.md
+            - Using Privacera Manager: get-started/base-installation/self-managed/using-privacera-manager.md
+            - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
       - User Management:
-          - get-started/user-management/index.md
-          - UserSync:
-            - get-started/user-management/usersync/index.md
-          - SSO:
-            - get-started/user-management/sso/index.md
+            - get-started/user-management/index.md
+            - UserSync:
+                - get-started/user-management/usersync/index.md
+            - SSO:
+                - get-started/user-management/sso/index.md
 
   - Connectors:
       - connectors/index.md
