@@ -2,7 +2,7 @@
 title: Troubleshooting PrivaceraCloud Base Installation
 ---
 
-In addition to the information provided in this page, you can also refer to the [FAQs](../../..//faq/index.md#privaceracloud) for more information.
+In addition to the information provided in this page, you can also refer to the [FAQs](../../../resources/faq/index.md#privaceracloud) for more information.
 
 /// details | What should I do if I do not get an email after I sign up for my PrivaceraCloud account?
     type: tip

@@ -266,11 +266,15 @@ nav:
       - user-guide/index.md
       - GDS:
         - user-guide/gds/index.md
-  - API Reference:
-      - api-reference/index.md
-      - PEG API - Self Managed: api-reference/peg-rest-api-on-privacera-self-managed.md
-      - PEG API - PrivaceraCloud: api-reference/peg-rest-api-on-privaceracloud.md
-  - Release Notes:
-      - release-notes/index.md
-  - FAQ:
-      - faq/index.md
+        - Concepts: user-guide/gds/gds-concepts.md
+  - Resources:
+      - resources/index.md
+      - FAQ: resources/faq/index.md
+      - API Reference:
+        - resources/api-reference/index.md
+        - PEG API - Self Managed: resources/api-reference/peg-rest-api-on-privacera-self-managed.md
+        - PEG API - PrivaceraCloud: resources/api-reference/peg-rest-api-on-privaceracloud.md
+      - Support:
+        - resources/support/support_how_to.md
+        - Support Policies: resources/support/support_policies.md
+      - Release Notes: resources/release-notes/index.md

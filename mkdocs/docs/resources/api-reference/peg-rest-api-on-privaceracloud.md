@@ -41,8 +41,8 @@ curl -il \
 
 | Line | Description |
 | --- | --- |
-| `<cloud_peg_api_endpoint>` | Your API endpoint as described in [PEG REST API on PrivaceraCloud](peg-rest-api-on-privaceracloud.html "PEG REST API on PrivaceraCloud"). |
-| `<api_key>` | Your API key, as described in [API Key on PrivaceraCloud](api-key-on-privaceracloud.html "API Key on PrivaceraCloud"). |
+| `<cloud_peg_api_endpoint>` | Your API endpoint as described in PEG REST API on PrivaceraCloud |
+| `<api_key>` | Your API key, as described in API Key on PrivaceraCloud |
 | `schemelist` | List of `<encryption_schemes>`. |
 | `datalist` | List of data elements, one for each scheme in the `schemelist` parameter. |
 | `<data>` | A data element to be encrypted with `/protect` or decrypted with `/unprotect`. |

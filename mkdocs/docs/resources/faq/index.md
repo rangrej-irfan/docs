@@ -1,15 +1,15 @@
 ---
 title: Frequently Asked Questions
-icon: material/frequently-asked-questions
-hide:
-  - navigation
+#icon: material/frequently-asked-questions
+#hide:
+#  - navigation
 ---
 
 ## General
 /// details | What is the difference between PrivaceraCloud and Privacera Self-Managed?
 PrivaceraCloud is a fully managed service that is hosted and managed by Privacera. Privacera Self-Managed is a software
 that you can install on your own infrastructure. You can read more about the deployment options
-[here](../get-started/deployment-options/index.md).
+[here](../../get-started/deployment-options/index.md).
 ///
 
 ---
@@ -35,6 +35,6 @@ To change the owner of the PrivaceraCloud account, contact Privacera support for
 ### AWS Lake Formation
 /// details | Can I switch from Pull Mode to Push Mode in AWS Lake Formation connector?
 Yes, you can switch from Pull Mode to Push Mode in the AWS Lake Formation connector. You can refer to the
-[documentation](../connectors/aws-lake-formation/index.md#transitioning-from-pull-mode-to-push-mode) for more information.
+[documentation](../../connectors/aws-lake-formation/index.md#transitioning-from-pull-mode-to-push-mode) for more information.
 ///
 

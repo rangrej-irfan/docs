@@ -254,7 +254,7 @@ curl --data-raw '{
 
 ### /protect with Both Encryption and Masking
 
-The element in the input `datalist` array is encrypted with the [encryption scheme](encryption-schemes.html "Encryption schemes") `SYSTEM_EMAIL` and at the same time the data in the input `maskDataList` is masked with the [masking scheme](/document/preview/354287#UUID-afc57374-425e-4c23-2ae7-32c3bc9fd243) `MASKING_SCHEME`.
+The element in the input `datalist` array is encrypted with the encryption scheme `SYSTEM_EMAIL` and at the same time the data in the input `maskDataList` is masked with the masking scheme `MASKING_SCHEME`.
 
 ```sh
 curl --data-raw '{
@@ -285,7 +285,7 @@ curl --data-raw '{
 
 ### /unprotect without Presentation Scheme
 
-The two elements in the input `datalist` array are decrypted with the [encryption schemes](encryption-schemes.html "Encryption schemes") `PERSON_NAME` and `EMAIL`.
+The two elements in the input `datalist` array are decrypted with the encryption schemes `PERSON_NAME` and `EMAIL`.
 
 ```sh
 curl --data-raw '{
@@ -310,7 +310,7 @@ curl --data-raw '{
 
 ### /unprotect with Presentation Scheme
 
-The input in the `datalist` array is decrypted with the [encryption scheme](encryption-schemes.html "Encryption schemes") `EMAIL2` and then obfuscated with the [presentation scheme](presentation-schemes.html "Presentation schemes") `EMAIL2_P`.
+The input in the `datalist` array is decrypted with the encryption scheme `EMAIL2` and then obfuscated with the presentation scheme `EMAIL2_P`.
 
 ```sh
 curl --data-raw '{
