@@ -9,7 +9,7 @@ installation artifacts such as helm charts, terraform and cloud formation templa
 to install the Privacera components. Privacera Manager consists of a tar ball of various
 template files and a docker image. Privacera Manager is common across all the cloud providers.
 
-If you are running in an air-gapped environment, you will download the tar ball of docker images
+If you are running in an air-gap environment, you will download the tar ball of docker images
 and host them in your docker registry.
 
 <div class="grid cards" markdown>

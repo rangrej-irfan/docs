@@ -225,7 +225,9 @@ nav:
                 - Azure Cloud Resources: get-started/base-installation/self-managed/prerequisites/azure-cloud-resources.md
                 - Google Cloud Resources: get-started/base-installation/self-managed/prerequisites/google-cloud-resources.md
             - Installing Privacera Manager: get-started/base-installation/self-managed/installing-privacera-manager.md
-            - Configure Privacera Manager: get-started/base-installation/self-managed/configure-privacera-manager.md
+            - Air-gap Installation: get-started/base-installation/self-managed/air-gap-installation.md
+            - Basic Configuration: get-started/base-installation/self-managed/basic-configuration.md
+            - Advanced Configuration: get-started/base-installation/self-managed/advanced-configuration.md
             - Using Privacera Manager: get-started/base-installation/self-managed/using-privacera-manager.md
             - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
       - User Management:

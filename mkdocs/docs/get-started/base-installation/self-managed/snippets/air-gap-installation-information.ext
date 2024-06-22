@@ -1,0 +1,15 @@
+```bash
+# AIRGAP_PRIV_MGR_BASE_URL - Your object store URL where the Privacera Manager tarball is stored
+# https://<domain>/<filepath>
+
+# AIRGAP_PRIV_MGR_PACKAGE will have this format - Your object store URL where the Privacera Manager
+# tarball is stored -
+# https://<domain>/<filepath>/<file.tar.gz>
+
+# AIRGAP_PRIV_MGR_IMAGE will have this format -
+# <AIRGAP_HUB_HOST>/privacera-manager:<PRIV_MGR_IMAGE_TAG>
+
+# AIRGAP_HUB_HOSTNAME - Privacera Docker hub registry hostname
+# AIRGAP_HUB_USER - Privacera Docker hub registry username
+# AIRGAP_HUB_PASSWORD - Privacera Docker hub registry password
+```
