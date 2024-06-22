@@ -253,11 +253,32 @@ nav:
           - Troubleshooting: connectors/aws-redshift-db/troubleshooting.md
       - Vertica:
           - connectors/vertica/index.md
-          - Prerequisites: connectors/vertica/prerequisites.md
-          - Setup: connectors/vertica/setup.md
-          - Basic Configuration: connectors/vertica/basic-configuration.md
-          - Advanced Configuration: connectors/vertica/advanced-configuration.md
-          - Troubleshooting: connectors/vertica/troubleshooting.md
+          - Access Management:
+            - connectors/vertica/access/index.md
+            - Prerequisites: connectors/access/vertica/prerequisites.md
+            - Setup: connectors/vertica/access/setup.md
+            - Advanced Configuration: connectors/vertica/access/advanced-configuration.md
+            - Troubleshooting: connectors/vertica/access/troubleshooting.md
+          - Discovery:
+              - connectors/vertica/discovery/index.md
+              - Prerequisites: connectors/discovery/vertica/prerequisites.md
+              - Setup: connectors/vertica/discovery/setup.md
+              - Advanced Configuration: connectors/vertica/discovery/advanced-configuration.md
+              - Troubleshooting: connectors/vertica/discovery/troubleshooting.md
+          - Encryption:
+              - connectors/vertica/encryption/index.md
+              - Prerequisites: connectors/encryption/vertica/prerequisites.md
+              - Setup: connectors/vertica/encryption/setup.md
+              - Advanced Configuration: connectors/vertica/encryption/advanced-configuration.md
+              - Troubleshooting: connectors/vertica/encryption/troubleshooting.md
+
+#      - Vertica Old:
+#          - connectors/vertica/index.md
+#          - Prerequisites: connectors/vertica/prerequisites.md
+#          - Setup: connectors/vertica/setup.md
+#          - Basic Configuration: connectors/vertica/basic-configuration.md
+#          - Advanced Configuration: connectors/vertica/advanced-configuration.md
+#          - Troubleshooting: connectors/vertica/troubleshooting.md
   - User Guide:
       - user-guide/index.md
       - GDS:
