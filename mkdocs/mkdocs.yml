@@ -231,31 +231,22 @@ nav:
 
   - Connectors:
       - connectors/index.md
-      - AWS EMR:
-        - connectors/aws-emr/index.md
-        - FGAC: connectors/aws-emr/emr-fgac.md
-        - OLAC - Apache Spark: connectors/aws-emr/emr-olac-spark.md
       - AWS Lake Formation:
           - connectors/aws-lake-formation/index.md
           - Push Mode:
-            - connectors/aws-lake-formation/aws-lake-formation-push-mode/index.md
-            - Prerequisites: connectors/aws-lake-formation/aws-lake-formation-push-mode/prerequisites.md
-            - Setup: connectors/aws-lake-formation/aws-lake-formation-push-mode/setup.md
-            - Advanced Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/advanced-configuration.md
-            - Troubleshooting: connectors/aws-lake-formation/aws-lake-formation-push-mode/troubleshooting.md
-          - Pull Mode: connectors/aws-lake-formation/aws-lake-formation-pull-mode/index.md
-      - AWS Redshift DB:
-          - connectors/aws-redshift-db/index.md
-          - Prerequisites: connectors/aws-redshift-db/prerequisites.md
-          - Setup: connectors/aws-redshift-db/setup.md
-          - Basic Configuration: connectors/aws-redshift-db/basic-configuration.md
-          - Advanced Configuration: connectors/aws-redshift-db/advanced-configuration.md
-          - Troubleshooting: connectors/aws-redshift-db/troubleshooting.md
+            - connectors/aws-lake-formation/aws-lake-formation-push-mode/access/index.md
+            - Access Management:
+              - connectors/aws-lake-formation/aws-lake-formation-push-mode/access/index.md
+              - Prerequisites: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/prerequisites.md
+              - Setup: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/setup.md
+              - Advanced Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/advanced-configuration.md
+              - Troubleshooting: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/troubleshooting.md
+          - Pull Mode: connectors/aws-lake-formation/aws-lake-formation-pull-mode/access/index.md
       - Vertica:
           - connectors/vertica/index.md
           - Access Management:
             - connectors/vertica/access/index.md
-            - Prerequisites: connectors/access/vertica/prerequisites.md
+            - Prerequisites: connectors/vertica/access/prerequisites.md
             - Setup: connectors/vertica/access/setup.md
             - Advanced Configuration: connectors/vertica/access/advanced-configuration.md
             - Troubleshooting: connectors/vertica/access/troubleshooting.md
@@ -271,20 +262,14 @@ nav:
               - Setup: connectors/vertica/encryption/setup.md
               - Advanced Configuration: connectors/vertica/encryption/advanced-configuration.md
               - Troubleshooting: connectors/vertica/encryption/troubleshooting.md
-
-#      - Vertica Old:
-#          - connectors/vertica/index.md
-#          - Prerequisites: connectors/vertica/prerequisites.md
-#          - Setup: connectors/vertica/setup.md
-#          - Basic Configuration: connectors/vertica/basic-configuration.md
-#          - Advanced Configuration: connectors/vertica/advanced-configuration.md
-#          - Troubleshooting: connectors/vertica/troubleshooting.md
   - User Guide:
       - user-guide/index.md
       - GDS:
         - user-guide/gds/index.md
   - API Reference:
       - api-reference/index.md
+      - PEG API - Self Managed: api-reference/peg-rest-api-on-privacera-self-managed.md
+      - PEG API - PrivaceraCloud: api-reference/peg-rest-api-on-privaceracloud.md
   - Release Notes:
       - release-notes/index.md
   - FAQ:

@@ -1,10 +1,8 @@
 ---
-title: Advanced Configuration for LakeFormation Connector in Push Mode
+title: Advanced Configuration for LakeFormation Connector in Push Mode - Access Management
 ---
 
-
-
-# Advanced Configuration for LakeFormation Connector in Push Mode
+# Advanced Configuration for LakeFormation Connector in Push Mode - Access Management
 
 ## Connectivity Configuration
 

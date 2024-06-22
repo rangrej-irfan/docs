@@ -45,14 +45,21 @@ The following are the limitations with Vertica connector.
 
 ## Discovery Features
 
-Discover features are not supported in Lake Formation connectors
+[TODO: Add Discovery Features for Vertica]
 
 
 ## Data Encryption Features
 
-Data encryption features are not supported in Lake Formation connectors
+[TODO: Add Data Encryption Features for Vertica]
 
 <div class="grid cards" markdown>
--   :material-page-previous: Prev topic: [About Lake Formation](../index.md)
--   :material-page-next: Next topic: [Prerequisites](prerequisites.md)
+-   :material-page-next: [Access Management](access/index.md)
+</div>
+
+<div class="grid cards" markdown>
+-   :material-page-next: [Discovery](discovery/index.md)
+</div>
+
+<div class="grid cards" markdown>
+-   :material-page-next: [Encryption](encryption/index.md)
 </div>

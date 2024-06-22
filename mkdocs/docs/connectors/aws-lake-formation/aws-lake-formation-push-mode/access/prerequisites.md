@@ -1,8 +1,8 @@
 ---
-Title: Prerequisites for Lake Formation Push Mode
+Title: Prerequisites for Lake Formation Push Mode - Access Management
 ---
 
-# Prerequisites for Lake Formation Push Mode
+# Prerequisites for Lake Formation Push Mode - Access Management
 
 AWS Lake Formation connector with Privacera using the Push mode requires the following prerequisites:
 
