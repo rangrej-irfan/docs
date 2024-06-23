@@ -17,7 +17,7 @@ The following prerequisites are required for self-managed deployment:
 1. **Privacera Manager** - Your Privacera Sales representative will give you 
     - Credentials for Privacera docker registry
     - Download URL of Privacera Manager software
-1. **Air-gapped Installation (optional)** - If you have an air-gapped environment, you will need to host the docker
+1. **Air-gap Installation (optional)** - If you have an air-gap environment, you will need to host the docker
    images in your own docker registry. Privacera provides the tar balls of all the docker images.
 
 For the installation, there are two parallel tracks - Creating Cloud Resources and Installing Privacera using 
@@ -32,4 +32,5 @@ Some cloud resources need to be created or updated after Privacera installation 
     -   [Azure Cloud Resources](azure-cloud-resources.md)
     -   [Google Cloud Resources](google-cloud-resources.md)
     -   [Installing Privacera Manager](../installing-privacera-manager.md)
+    -   [Air-gap Installation](../air-gap-installation.md)
 </div>
