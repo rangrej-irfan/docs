@@ -1,5 +1,5 @@
 site_name: Privacera Documentation - Phoenix !!!
-site_url: https://priv-dev-mkdocs.privacera.me/
+#site_url: https://priv-dev-mkdocs.privacera.me/
 #Without the below setting, the links are generated as / and when you search for something it will be without index.md
 #and S3 bucket will not be able to find it
 use_directory_urls: false
@@ -82,6 +82,8 @@ plugins:
         - faq/administration/*
         - attic/*
         - "**/snippets/"
+  - meta:
+      enabled: true
   - minify:
       minify_html: true
   # https://timvink.github.io/mkdocs-table-reader-plugin/
@@ -118,7 +120,6 @@ extra:
   annotate:
     json: [.s2]
   generator: false
-  disqus: privacera
 #  analytics:
 #    provider: google
 #    property: !ENV GOOGLE_ANALYTICS_KEY
@@ -145,6 +146,11 @@ extra:
 #    actions:
 #      - accept
 #      - reject
+  giscus:
+    repo: privacera/priv-docs-comments
+    repo_id: R_kgDOMM9SVA
+    category: Documentation Comments
+    category_id: DIC_kwDOMM9SVM4CgUf7
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -157,6 +163,7 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - meta
   - tables
   - toc:
       permalink: true
