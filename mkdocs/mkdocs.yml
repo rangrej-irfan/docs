@@ -258,7 +258,7 @@ nav:
             - Troubleshooting: connectors/vertica/access/troubleshooting.md
           - Discovery:
               - connectors/vertica/discovery/index.md
-              - Prerequisites: connectors/discovery/vertica/prerequisites.md
+              - Prerequisites: connectors/vertica/discovery/prerequisites.md
               - Setup: connectors/vertica/discovery/setup.md
               - Advanced Configuration: connectors/vertica/discovery/advanced-configuration.md
               - Troubleshooting: connectors/vertica/discovery/troubleshooting.md
