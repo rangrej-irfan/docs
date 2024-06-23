@@ -14,12 +14,12 @@ mkdir -p custom-vars/connectors/vertica/instance1`
 
 4. Copy the sample connector configuration file to your custom directory:
 ```shell
-cp config/sample-vars/vars.connector.vertica.yml config/custom-vars/connectors/vertica/instance1/
+cp sample-vars/vars.connector.vertica.yml custom-vars/connectors/vertica/instance1/
 ```
 
 5. Open the `.YAML` file for editing to customize it according to your configurations:
 ```shell
-vi config/custom-vars/connectors/vertica/instance1/vars.connector.vertica.yml
+vi custom-vars/connectors/vertica/instance1/vars.connector.vertica.yml
 ```
 
 6. Modify the following properties:
