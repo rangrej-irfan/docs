@@ -1,4 +1,5 @@
 site_name: Privacera Documentation - Phoenix !!!
+site_url: https://priv-dev-mkdocs.privacera.me/
 #Without the below setting, the links are generated as / and when you search for something it will be without index.md
 #and S3 bucket will not be able to find it
 use_directory_urls: false
@@ -117,6 +118,7 @@ extra:
   annotate:
     json: [.s2]
   generator: false
+  disqus: privacera
 #  analytics:
 #    provider: google
 #    property: !ENV GOOGLE_ANALYTICS_KEY
