@@ -4,7 +4,7 @@ title: AWS Lake Formation Connector Using Push Mode
 
 # AWS Lake Formation Connector Using Push Mode
 
-Only access management are supported in AWS Lake Formation connector using Push mode. The [next](access/index.md) few 
+Only access management are supported in AWS Lake Formation connector using Push mode. The next few 
 sections describe how to set up the AWS Lake Formation connector in push mode.
 
 <div class="grid cards" markdown>

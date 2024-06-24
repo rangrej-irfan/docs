@@ -245,13 +245,12 @@ nav:
                 - get-started/user-management/usersync/index.md
             - SSO:
                 - get-started/user-management/sso/index.md
-
   - Connectors:
       - connectors/index.md
       - AWS Lake Formation:
           - connectors/aws-lake-formation/index.md
           - Push Mode:
-            - connectors/aws-lake-formation/aws-lake-formation-push-mode/access/index.md
+            - connectors/aws-lake-formation/aws-lake-formation-push-mode/index.md
             - Access Management:
               - connectors/aws-lake-formation/aws-lake-formation-push-mode/access/index.md
               - Prerequisites: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/prerequisites.md
@@ -259,6 +258,62 @@ nav:
               - Advanced Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/advanced-configuration.md
               - Troubleshooting: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/troubleshooting.md
           - Pull Mode: connectors/aws-lake-formation/aws-lake-formation-pull-mode/access/index.md
+      - Databricks Clusters - FGAC:
+          - connectors/databricks-clusters-fgac/index.md
+          - Access Management:
+            - connectors/databricks-clusters-fgac/access/index.md
+            - Prerequisites: connectors/databricks-clusters-fgac/access/prerequisites.md
+            - Setup: connectors/databricks-clusters-fgac/access/setup.md
+            - Advanced Configuration: connectors/databricks-clusters-fgac/access/advanced-configuration.md
+            - Troubleshooting: connectors/databricks-clusters-fgac/access/troubleshooting.md
+          - Discovery:
+              - connectors/databricks-clusters-fgac/discovery/index.md
+              - Prerequisites: connectors/databricks-clusters-fgac/discovery/prerequisites.md
+              - Setup: connectors/databricks-clusters-fgac/discovery/setup.md
+              - Advanced Configuration: connectors/databricks-clusters-fgac/discovery/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-clusters-fgac/discovery/troubleshooting.md
+          - Encryption:
+              - connectors/databricks-clusters-fgac/encryption/index.md
+              - Prerequisites: connectors/databricks-clusters-fgac/databricks-clusters-fgac/prerequisites.md
+              - Setup: connectors/databricks-clusters-fgac/encryption/setup.md
+              - Advanced Configuration: connectors/databricks-clusters-fgac/encryption/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-clusters-fgac/encryption/troubleshooting.md
+      - Databricks Clusters - OLAC:
+          - connectors/databricks-clusters-olac/index.md
+          - Access Management:
+            - connectors/databricks-clusters-olac/access/index.md
+            - Prerequisites: connectors/databricks-clusters-olac/access/prerequisites.md
+            - Setup: connectors/databricks-clusters-olac/access/setup.md
+            - Advanced Configuration: connectors/databricks-clusters-olac/access/advanced-configuration.md
+            - Troubleshooting: connectors/databricks-clusters-olac/access/troubleshooting.md
+      - Databricks SQL:
+          - connectors/databricks-sql/index.md
+          - Access Management:
+            - connectors/databricks-sql/access/index.md
+            - Prerequisites: connectors/databricks-sql/access/prerequisites.md
+            - Setup: connectors/databricks-sql/access/setup.md
+            - Advanced Configuration: connectors/databricks-sql/access/advanced-configuration.md
+            - Troubleshooting: connectors/databricks-sql/access/troubleshooting.md
+          - Discovery:
+              - connectors/vertica/discovery/index.md
+              - Prerequisites: connectors/databricks-clusters-olac/discovery/prerequisites.md
+              - Setup: connectors/databricks-clusters-olac/discovery/setup.md
+              - Advanced Configuration: connectors/databricks-clusters-olac/discovery/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-clusters-olac/discovery/troubleshooting.md
+      - Databricks Unity Catalog:
+          - connectors/databricks-unity-catalog/index.md
+          - Access Management:
+            - connectors/databricks-unity-catalog/access/index.md
+            - Prerequisites: connectors/databricks-unity-catalog/access/prerequisites.md
+            - Setup: connectors/databricks-unity-catalog/access/setup.md
+            - Advanced Configuration: connectors/databricks-unity-catalog/access/advanced-configuration.md
+            - Troubleshooting: connectors/databricks-unity-catalog/access/troubleshooting.md
+          - Discovery:
+              - connectors/databricks-unity-catalog/discovery/index.md
+              - Prerequisites: connectors/databricks-unity-catalog/discovery/prerequisites.md
+              - Setup: connectors/databricks-unity-catalog/discovery/setup.md
+              - Advanced Configuration: connectors/databricks-unity-catalog/discovery/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-unity-catalog/discovery/troubleshooting.md
       - Vertica:
           - connectors/vertica/index.md
           - Access Management:

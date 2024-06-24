@@ -29,18 +29,18 @@ for the capabilities of accessing AWS services like AWS Athena and AWS Redshift 
 
 ### Supported Access Management Features
 
-| Feature                                      | Supported | Native | Using SecureView |
-|----------------------------------------------|-----------|--------|------------------|
-| :green_circle: Database Access Control       | Yes       | Yes    | N/A |
-| :green_circle: Table Access Control          | Yes       | Yes    | N/A |
-| :green_circle: View Access Control           | Yes       | Yes    | N/A |
-| :green_circle: Column Access Control         | Yes       | Yes    | N/A |
-| :green_circle: Row Access Control            | Yes       | Yes    | N/A |
-| :no_entry_sign: Cell Access Control           | No        | No     | N/A |
-| :no_entry_sign: Column Data Masking          | No        | No     | N/A |
-| :no_entry_sign: Column Data Encryption       | No        | No     | N/A |
-| :green_circle: Centralized Access Audit      | Yes       | N/A    | N/A |
-| :no_entry_sign: Granular Access Audit Record | No        | N/A    | N/A |
+| Feature                                        | Supported | Native | Using SecureView |
+|------------------------------------------------|-----------|--------|------------------|
+| :green_circle: Database Access Control         | Yes       | Yes    | N/A |
+| :green_circle: Table Access Control            | Yes       | Yes    | N/A |
+| :green_circle: View Access Control             | Yes       | Yes    | N/A |
+| :green_circle: Column Access Control           | Yes       | Yes    | N/A |
+| :green_circle: Row Access Control              | Yes       | Yes    | N/A |
+| :no_entry_sign: Cell Access Control            | No        | No     | N/A |
+| :no_entry_sign: Dynamic Column Data Masking    | No        | No     | N/A |
+| :no_entry_sign: Dynamic Column Data Encryption | No        | No     | N/A |
+| :green_circle: Centralized Access Audit        | Yes       | N/A    | N/A |
+| :no_entry_sign: Granular Access Audit Record   | No        | N/A    | N/A |
 
 ### Limitations for Access Management Features
 
