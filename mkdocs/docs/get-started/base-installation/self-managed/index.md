@@ -12,6 +12,20 @@ template files and a docker image. Privacera Manager is common across all the cl
 If you are running in an air-gap environment, you will download the tar ball of docker images
 and host them in your docker registry.
 
+The installation process is divided into the following steps:
+
+1. Prerequisites which includes creating and configuring cloud resources
+2. Installing Privacera Manager software
+3. Doing the basic configuration of vars YAML files of Privacera Manager
+4. Using Privacera Manager to generate helm charts, apply the helm charts and post-installation steps
+
+The above steps gives you a basic installation of Privacera software. After this, you will do the 
+following,
+
+1. Install Connectors for your data-sources
+2. Do Advanced configuration as required
+3. Using Privacera Manager to generate helm charts, apply the helm charts and post-installation steps
+
 <div class="grid cards" markdown>
 -   :material-page-previous: Prev [Base Installation](../index.md)
 -   :material-page-next: Next [Prerequisites](prerequisites/index.md)

@@ -87,5 +87,6 @@ for the privacera-manager tar ball and your docker registry location for the Pri
 --8<-- "docs/get-started/base-installation/self-managed/snippets/air-gap-installation-information.ext"
 
 <div class="grid cards" markdown>
+-  :material-page-previous: Previous [Prerequisites](prerequisites/index.md)
 -  :material-page-next: Next [Installing Privacera Manager](installing-privacera-manager.md)
 </div>
