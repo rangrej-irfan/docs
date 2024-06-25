@@ -21,7 +21,6 @@ This document provides an overview of access management features supported by Pr
 | :green_circle: View Access Control [^1]      | Yes       | Yes    | Yes              |
 | :green_circle: Column Access Control         | Yes       | No     | Yes              |
 | :green_circle: Row Access Control            | Yes       | Yes    | Yes              |
-| :no_entry_sign: Cell Access Control          | No        | No     | N/A              |
 | :no_entry_sign: Column Data Masking          | No        | No     | N/A              |
 | :no_entry_sign: Column Data Encryption       | No        | No     | N/A              |
 | :green_circle: Centralized Access Audit      | Yes       | N/A    | N/A              |
