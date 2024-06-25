@@ -210,7 +210,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Get Started:
+  - Installation:
       - get-started/index.md
       - Deployment Options:
         - get-started/deployment-options/index.md
