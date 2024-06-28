@@ -2,7 +2,8 @@
 title: Apache Ranger API Reference Version X
 hide:
   - navigation
-  - toc
+
+not_translatable: true
 ---
 
 # Apache Ranger API Reference Version X
