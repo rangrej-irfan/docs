@@ -1,7 +1,8 @@
 # Documentation for Privacera
 
 This folder and subfolders contain the documentation for Privacera. The documentation is written in Markdown
-and is built using [MkDocs](https://www.mkdocs.org/).
+and is built using [Materials for MkDocs](https://squidfunk.github.io/mkdocs-material/).
+
 
 ## How to run the documentation locally
 

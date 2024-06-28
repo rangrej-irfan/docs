@@ -14,11 +14,12 @@ all-purpose compute clusters with Privacera.
 
 ## Connector Details
 
-| Topic                                  | Detail                                                                                                                       |
-|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Integration methodology                | Apache Ranger Plugin                                                                                                         |
-| Access Tools                           | Databricks Console, JDBC                                                                                                     |
-| Supported User Identities for Policies | <ul><li>AD/SCIM User</li><li>AD/SCIM Groups</li><li>Privacera Roles</li>                                                     |
+
+| Topic                                  | Detail                                                                                                              |
+|----------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| Integration methodology                | Apache Ranger Plugin                                                                                                |
+| Access Tools                           | Databricks Console, JDBC                                                                                            |
+| Supported User Identities for Policies | <ul><li>AD/SCIM User</li><li>AD/SCIM Groups</li><li>Privacera Roles</li>                                            |
 | Data Source User Identities            | <ul><li>SAML</li><li>Databricks Login using Email Address</li><li>Databricks Token</li><li>Databricks Service Principal</li> |
 
 

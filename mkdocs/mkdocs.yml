@@ -342,6 +342,12 @@ nav:
   - Resources:
       - resources/index.md
       - FAQ: resources/faq/index.md
+      - Design and Concepts:
+        - resources/design/index.md
+        - Access Management:
+            - resources/design/access-management/index.md
+            - Integrations:
+                - resources/design/access-management/integrations/index.md
       - API Reference:
         - resources/api-reference/index.md
         - PEG API - Self Managed: resources/api-reference/peg-rest-api-on-privacera-self-managed.md
