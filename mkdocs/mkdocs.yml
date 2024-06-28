@@ -87,6 +87,8 @@ plugins:
   - minify:
       minify_html: true
   # https://timvink.github.io/mkdocs-table-reader-plugin/
+  - neoteroi.mkdocsoad:
+      use_pymdownx: true
   - table-reader:
       csv_options:
         delimiter: ","
@@ -154,6 +156,7 @@ extra:
 
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/neoteroi-mkdocs.css
 
 # Extensions
 markdown_extensions:
@@ -352,6 +355,7 @@ nav:
         - resources/api-reference/index.md
         - PEG API - Self Managed: resources/api-reference/peg-rest-api-on-privacera-self-managed.md
         - PEG API - PrivaceraCloud: resources/api-reference/peg-rest-api-on-privaceracloud.md
+        - Apache Ranger API: resources/api-reference/ranger-api.md
       - Support:
         - resources/support/support_how_to.md
         - Support Policies: resources/support/support_policies.md
