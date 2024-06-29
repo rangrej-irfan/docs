@@ -110,6 +110,7 @@ plugins:
   - swagger-ui-tag:
       filter: false
       tryItOutEnabled: false
+      supportedSubmitMethods: []
 
 exclude_docs: |
   attic/*
