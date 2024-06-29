@@ -97,5 +97,4 @@ exclude: true
 ```
 
 ## Additional information
-Swagger for Material for MkDocs: [Swagger](https://www.neoteroi.dev/mkdocs-plugins/web/oad/)
-https://github.com/squidfunk/mkdocs-material/discussions/3909
+https://blueswen.github.io/mkdocs-swagger-ui-tag/

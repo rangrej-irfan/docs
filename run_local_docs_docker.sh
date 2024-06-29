@@ -12,7 +12,7 @@ elif [ "$1" == "" ]; then
 fi
 
 docs_folder="$(pwd)/mkdocs"
-#MKDOCS_IMAGE=587946681758.dkr.ecr.us-east-1.amazonaws.com/paig/privacera-mkdocs-materials-custom:main-0.1.0-SNAPSHOT-latest
-MKDOCS_IMAGE=privacera-mkdocs-materials-custom
+MKDOCS_IMAGE=587946681758.dkr.ecr.us-east-1.amazonaws.com/paig/privacera-mkdocs-materials-custom:main-0.1.0-SNAPSHOT-latest
+#MKDOCS_IMAGE=privacera-mkdocs-materials-custom
 
 docker run --rm -v "${docs_folder}:/docs" $DOCKER_ENV $PORT_MAPPING $MKDOCS_IMAGE $params $*

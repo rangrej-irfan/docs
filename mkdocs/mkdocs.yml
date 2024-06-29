@@ -87,8 +87,6 @@ plugins:
   - minify:
       minify_html: true
   # https://timvink.github.io/mkdocs-table-reader-plugin/
-  - neoteroi.mkdocsoad:
-      use_pymdownx: true
   - table-reader:
       csv_options:
         delimiter: ","
@@ -108,6 +106,10 @@ plugins:
 #      enabled_if_env: ENABLE_PDF_EXPORT
 #not_in_nav: |
 #  faq/administration/*
+# https://blueswen.github.io/mkdocs-swagger-ui-tag/
+  - swagger-ui-tag:
+      filter: false
+      tryItOutEnabled: false
 
 exclude_docs: |
   attic/*
@@ -156,7 +158,6 @@ extra:
 
 extra_css:
   - assets/stylesheets/extra.css
-  - assets/stylesheets/neoteroi-mkdocs.css
 
 # Extensions
 markdown_extensions:
