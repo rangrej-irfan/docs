@@ -40,6 +40,29 @@ There are few caveats to this setup:
 
 ## User Guide for documentation
 
+## Images for the Documentation
+
+### Slides with images for the Documentation
+
+This slide in Google Drive has the diagrams. https://docs.google.com/presentation/d/1QyvyoT71Ab93qyEEc7kA1eYfi_X7gEiCv25OdOfROEA/edit#slide=id.g274ebcbb9f9_0_365
+
+1. Create or update the slide in the Google Drive.
+2. Play the slide in the presentation mode.
+3. Create a screen shot
+4. You can use the Preview app in Mac to crop the image. You can make it 50%
+5. Save the image in the images folder `docs/images`
+6. In the "Speaker Notes" section of the slide, you can add the name of the file
+
+Note: The architecture slides has images which can be reused. You should link the slide from there to the documentation 
+slides. https://docs.google.com/presentation/d/1YFNSr78t9q4oSHcsplIm7zNUfZja1q36ZChr7nUErXU/edit#slide=id.gfbe574d2d1_1_4
+
+### 
+### To identify images which are not used, you can run the following script
+```shell
+cd mkdocs
+python3 check_for_unused_images.py 
+```
+The above command will list the images which are not used in the documentation. You can remove them using `git rm $file`
 
 ### Title for each documentation page
 At the top of each documentation page, you need to add the title of the page. The title should be in the following format:

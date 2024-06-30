@@ -15,12 +15,12 @@ all-purpose compute clusters with Privacera.
 ## Connector Details
 
 
-| Topic                                                                                                               | Detail                                                                                                              |
-|---------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| [Integration methodology](../../../resources/design/access-management/integrations/index.md#2-apache-ranger-plugin) | Apache Ranger Plugin                                                                                                |
-| Access Tools                                                                                                        | Databricks Console, JDBC                                                                                            |
-| Supported User Identities for Policies                                                                              | <ul><li>AD/SCIM User</li><li>AD/SCIM Groups</li><li>Privacera Roles</li>                                            |
-| Data Source User Identities                                                                                         | <ul><li>SAML</li><li>Databricks Login using Email Address</li><li>Databricks Token</li><li>Databricks Service Principal</li> |
+| Topic                                                                       | Detail                                                                                                                       |
+|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Integration methodology                                                     | [Apache Ranger Plugin](../../../resources/design/access-management/access_integrations.md#apache-ranger-plugin)                                                                                                       |
+| [Access Tools](../../../resources/design/access-management/access_tools.md) | Databricks Console, JDBC                                                                                                     |
+| Supported User Identities for Policies                                      | <ul><li>AD/SCIM User</li><li>AD/SCIM Groups</li><li>Privacera Roles</li>                                                     |
+| Data Source User Identities                                                 | <ul><li>SAML</li><li>Databricks Login using Email Address</li><li>Databricks Token</li><li>Databricks Service Principal</li> |
 
 
 ## Supported Access Management Features

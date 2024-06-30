@@ -351,8 +351,8 @@ nav:
         - resources/design/index.md
         - Access Management:
             - resources/design/access-management/index.md
-            - Integrations:
-                - resources/design/access-management/integrations/index.md
+            - Integrations: resources/design/access-management/access_integrations.md
+            - Access Tools: resources/design/access-management/access_tools.md
       - API Reference:
         - resources/api-reference/index.md
         - PEG API - Self Managed: resources/api-reference/peg-rest-api-on-privacera-self-managed.md
