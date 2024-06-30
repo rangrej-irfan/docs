@@ -351,7 +351,11 @@ nav:
         - resources/design/index.md
         - Access Management:
             - resources/design/access-management/index.md
-            - Integrations: resources/design/access-management/access_integrations.md
+            - Integrations:
+              - resources/design/access-management/integrations/index.md
+              - Apache Ranger Plugin: resources/design/access-management/integrations/apache_ranger_plugin.md
+              - Privacera PolicySync: resources/design/access-management/integrations/privacera_policysync.md
+              - Privacera DataServer: resources/design/access-management/integrations/privacera_dataserver.md
             - User Identities: resources/design/access-management/user_identities.md
             - Access Tools: resources/design/access-management/access_tools.md
             - About Secure Views: resources/design/access-management/about_secure_views.md
