@@ -39,14 +39,14 @@ sequenceDiagram
       participant PolicyManager
       participant CentralAuditService
     end
-    Note right of RangerPlugin: Periodically check for policy updates
+    Note right of RangerPlugin: Periodically check<br> for policy updates
     RangerPlugin->>PolicyManager: Retrieve updated policies
     PolicyManager-->>RangerPlugin: Updated policies retrieved
     User->>DataSourceCompute: Data access request
     DataSourceCompute->>RangerPlugin: Process access request
     RangerPlugin-->>RangerPlugin: Authorize request
     RangerPlugin-->> DataSourceCompute: Allow/Deny access
-    DataSourceCompute-->>User: Provide access to data (if authorized)
+    DataSourceCompute-->>User: Provide access to data<br> (if authorized)
     RangerPlugin-->>CentralAuditService: Send audit log
 
 ```

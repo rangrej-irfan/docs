@@ -1,13 +1,36 @@
-# AWS Lake Formation
+---
+title: Privacera Connector for AWS Lake Formation
+---
 
-AWS Lake Formation is a fully managed service that makes it easy to build,
-secure, and manage data lakes. AWS Lake Formation provides its own permissions
-model that augments the IAM permissions model. This centrally defined
-permissions model enables fine-grained access to data stored in data lakes
-through a simple grant or revoke mechanism, much like a relational database
-management system (RDBMS). AWS Lake Formation permissions are enforced using
-granular controls at the column, row, and cell-levels across AWS services,
+# Privacera Connector for AWS Lake Formation
+
+AWS Lake Formation is a fully managed service that simplifies building, securing, and managing data lakes. It provides a
+permissions model that augments the IAM permissions model, enabling fine-grained access to data stored in data lakes
+through a simple grant or revoke mechanism, similar to a relational database management system (RDBMS). AWS Lake
+Formation enforces permissions using granular controls at the column, row, and cell levels across AWS services,
 including Amazon Athena, Amazon EMR, and Amazon Redshift.
+
+Privacera's connector for AWS Lake Formation translates the policies defined in Privacera to AWS Lake Formation. 
+AWS Lake Formation then enforces these policies for supported services such as Amazon Redshift Spectrum, Amazon EMR, 
+and Amazon Athena. This ensures that the same policies are consistently enforced across all data sources that use 
+the same Glue Catalog, providing a unified and centralized approach to data governance.
+
+### Synchronization of Policies to Other Data Sources
+
+One of the key features of the Privacera Connector for AWS Lake Formation is the ability to synchronize access control policies defined in AWS Lake Formation with other data sources that use the same Glue Catalog. This ensures consistent enforcement of policies across all data sources, providing a unified and centralized approach to data governance.
+
+However, the access control features supported by AWS Lake Formation are not identical to those of other data sources. Therefore, only the policies that are supported by both AWS Lake Formation and the other data sources can be synchronized. For example, since AWS Lake Formation doesn't support dynamic column masking privileges, these policies cannot be enforced in other data sources that do support dynamic column masking. Thus, the policies in AWS Lake Formation in Privacera become the source of truth for those that can be enforced across AWS Lake Formation and other data sources.
+
+### Supported Products
+
+| Product                          | Supported |
+|----------------------------------|-----------|
+| :green_circle: Access Management | Yes       |
+| :red_circle: Discovery           | No        |
+| :red_circle: Encryption          | No        |
+
+1. Since AWS Lake Formation only manages access control policies, Privacera Discovery is not applicable for this connector.
+2. Since AWS Lake Formation doesn't support dynamic column masking, Privacera Encryption is not applicable for this connector.
 
 
 ## Connector configuration modes

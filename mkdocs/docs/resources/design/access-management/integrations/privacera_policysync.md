@@ -43,18 +43,18 @@ sequenceDiagram
     participant PrivaceraConnector
     participant DataSource
 
-    PrivaceraConnector->>PrivaceraPlatform: Pull corporate user identities (regular interval)
+    PrivaceraConnector->>PrivaceraPlatform: Pull corporate user identities<br> (regular interval)
     PrivaceraPlatform-->>PrivaceraConnector: Return users, groups, roles
-    PrivaceraConnector->>DataSource: Pull data source user identities (regular interval)
+    PrivaceraConnector->>DataSource: Pull data source user identities<br> (regular interval)
     DataSource-->>PrivaceraConnector: Return users, groups, roles
 
-    PrivaceraConnector->>PrivaceraPlatform: Pull policies in Privacera (regular interval)
+    PrivaceraConnector->>PrivaceraPlatform: Pull policies in Privacera<br> (regular interval)
     PrivaceraPlatform-->>PrivaceraConnector: Return policies
-    PrivaceraConnector->>DataSource: Pull policies in data source (regular interval)
+    PrivaceraConnector->>DataSource: Pull policies in data source<br> (regular interval)
     DataSource-->>PrivaceraConnector: Return policies
 
     PrivaceraConnector->>PrivaceraConnector: Reconcile policies
-    PrivaceraConnector->>DataSource: Apply delta grant/revoke to data source
+    PrivaceraConnector->>DataSource: Apply delta grant/revoke<br> to data source
     Note right of DataSource: Native System Enforcement
 ```
 
@@ -78,10 +78,10 @@ sequenceDiagram
     participant DataSource
 
     Admin->>PrivaceraPlatform: Update policies
-    PrivaceraConnector->>PrivaceraPlatform: Pull updated policies (regular interval)
-    PrivaceraPlatform-->>PrivaceraConnector: Return updated policies
-    PrivaceraConnector->>DataSource: Push updated policies
-    Note right of DataSource: Native System Enforcement
+    PrivaceraConnector->>PrivaceraPlatform: Pull updated policies<br> (regular interval)
+    PrivaceraPlatform-->>PrivaceraConnector: Return updated<br> policies
+    PrivaceraConnector->>DataSource: Push updated<br> policies
+    Note right of DataSource: Native System<br> Enforcement
 ```
 
 ### **3. Pulling Audits on Regular Interval**
@@ -102,10 +102,10 @@ sequenceDiagram
     participant PrivaceraConnector
     participant DataSource
 
-    PrivaceraConnector->>DataSource: Pull audit logs (regular interval)
+    PrivaceraConnector->>DataSource: Pull audit logs<br> (regular interval)
     DataSource-->>PrivaceraConnector: Return audit logs
-    PrivaceraConnector->>PrivaceraPlatform: Log access requests and actions
-    PrivaceraPlatform-->>Admin: Centralized monitoring and reporting
+    PrivaceraConnector->>PrivaceraPlatform: Log access requests<br> and actions
+    PrivaceraPlatform-->>Admin: Centralized monitoring<br> and reporting
 ```
 <div class="grid cards" markdown>
 -   :material-page-previous: Prev topic: [About Apache Ranger Plugin](apache_ranger_plugin.md)
