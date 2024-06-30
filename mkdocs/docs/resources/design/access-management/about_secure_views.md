@@ -14,6 +14,19 @@ measures.
     to these views. RLS and column-level masking policies are applied to these views, and when a user queries the Secure
     View, these policies are dynamically enforced.
 
+Here is an example of accessing a table through a Secure View:
+
+| Original Table | Secure View             |
+|-----------------|-------------------------|
+| account.customer | account_secure.customer |
+
+
+```sql
+    -- Secure View
+    SELECT * FROM account_secure.customer;
+
+```
+
 **Key Advantages**
 
 - **Dynamic Enforcement**: Secure Views allow for the enforcement of RLS and column-level masking dynamically without
@@ -28,6 +41,7 @@ measures.
 - **Naming Convention**: The naming convention for Secure Views is configurable. By default, Privacera creates a new
   database or schema with the same name as the original, appended with a `_secure` suffix, and creates Secure Views
   within this schema. The Secure Views have the same names as the original tables for easy identification.
+
 
 ```mermaid
 sequenceDiagram
@@ -44,7 +58,7 @@ sequenceDiagram
     Database-->>User: Return data with RLS and column-level masking applied
 ```
 
-**Limitations**
+:warning: **Limitations**
 
 1. **Only SELECT Queries Supported**: Secure Views support only SELECT queries.
 2. **Query Updates Required**: Users need to update their existing queries to use the new namespace (e.g., database or schema name) or table name.
