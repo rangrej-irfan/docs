@@ -255,7 +255,7 @@ nav:
       - AWS Lake Formation:
           - connectors/aws-lake-formation/index.md
           - Push Mode:
-            - connectors/aws-lake-formation/aws-lake-formation-push-mode/index.md
+            - connectors/aws-lake-formation/aws-lake-formation-push-mode/access/index.md
             - Access Management:
               - connectors/aws-lake-formation/aws-lake-formation-push-mode/access/index.md
               - Prerequisites: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/prerequisites.md
