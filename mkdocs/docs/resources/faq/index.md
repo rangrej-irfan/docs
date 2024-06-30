@@ -38,3 +38,12 @@ Yes, you can switch from Pull Mode to Push Mode in the AWS Lake Formation connec
 [documentation](../../connectors/aws-lake-formation/index.md#transitioning-from-pull-mode-to-push-mode) for more information.
 ///
 
+### Databricks
+/// details | Why are there different connectors for Databricks?
+Databricks has multiple products and each behaves differently. You can refer here to the different
+[Databricks Compute Types](https://docs.databricks.com/en/compute/index.html#types-of-compute){:target="_blank"}. Some of the 
+compute are governed by individual workspaces and same could be managed centrally using Unity Catalog. Also Classic 
+SQL warehouses supported limited access control. So for each of these scenarios, Privacera has a different connectors
+and their behavior is different also. Reference to individual [connector](../../connectors/index.md) documentation for more details.
+
+///
