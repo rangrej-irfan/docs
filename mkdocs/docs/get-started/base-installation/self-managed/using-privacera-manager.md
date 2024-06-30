@@ -13,13 +13,15 @@ basic configuration. Every time, you modify the vars YAML files, you will need t
 ```bash
 cd ~/privacera/privacera-manager
 
-# step 1 - setup which generates the helm charts. This step usually takes few minutes.
+# step 1 - setup which generates the helm charts. 
+# This step usually takes few minutes.
 ./privacera-manager.sh setup
 
 # step 2 - install or upgrade the Privacera Manager helm charts
 ./pm_with_helm.sh [install|upgrade]
 
-# step 3 - post-installation steps which generates Plugin tar ball, updates Route 53 DNS, etc.
+# step 3 - post-installation steps which generates Plugin tar ball, 
+#   updates Route 53 DNS, etc.
 ./privacera-manager.sh post-install
 ```
 

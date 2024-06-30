@@ -18,6 +18,7 @@ The installation process is divided into the following steps:
 2. Installing Privacera Manager software
 3. Doing the basic configuration of vars YAML files of Privacera Manager
 4. Using Privacera Manager to generate helm charts, apply the helm charts and post-installation steps
+5. Verify the installation
 
 The above steps gives you a basic installation of Privacera software. After this, you will do the 
 following,
@@ -25,6 +26,7 @@ following,
 1. Install Connectors for your data-sources
 2. Do Advanced configuration as required
 3. Using Privacera Manager to generate helm charts, apply the helm charts and post-installation steps
+4. Verify the installation
 
 <div class="grid cards" markdown>
 -   :material-page-previous: Prev [Base Installation](../index.md)
