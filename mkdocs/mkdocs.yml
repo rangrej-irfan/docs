@@ -223,7 +223,7 @@ nav:
         - get-started/base-installation/index.md
         - PrivaceraCloud:
           - get-started/base-installation/privaceracloud/index.md
-          - Prerequisites: get-started/base-installation/privaceracloud/index.md
+          - Prerequisites: get-started/base-installation/privaceracloud/prerequisites.md
           - Setup: get-started/base-installation/privaceracloud/setup.md
           - Troubleshooting: get-started/base-installation/privaceracloud/troubleshooting.md
         - Data Plane:
@@ -238,10 +238,11 @@ nav:
                 - AWS Cloud Resources: get-started/base-installation/self-managed/prerequisites/aws-cloud-resources.md
                 - Azure Cloud Resources: get-started/base-installation/self-managed/prerequisites/azure-cloud-resources.md
                 - Google Cloud Resources: get-started/base-installation/self-managed/prerequisites/google-cloud-resources.md
-            - Installing Privacera Manager: get-started/base-installation/self-managed/installing-privacera-manager.md
-            - Air-gap Installation: get-started/base-installation/self-managed/air-gap-installation.md
+            - Setup: get-started/base-installation/self-managed/setup/index.md
             - Basic Configuration: get-started/base-installation/self-managed/basic-configuration.md
-            - Advanced Configuration: get-started/base-installation/self-managed/advanced-configuration.md
+            - Advanced Configuration:
+              - get-started/base-installation/self-managed/advanced-configuration/index.md
+              - Air-gap Setup: get-started/base-installation/self-managed/advanced-configuration/air-gap-installation.md
             - Using Privacera Manager: get-started/base-installation/self-managed/using-privacera-manager.md
             - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
       - User Management:
@@ -347,6 +348,10 @@ nav:
   - Resources:
       - resources/index.md
       - FAQ: resources/faq/index.md
+      - Installation:
+        - resources/installation/index.md
+        - Third-party Software Versions: resources/installation/third-party-software.md
+        - Self-managed compute sizing: resources/installation/self-managed-compute-sizing.md
       - Design and Concepts:
         - resources/design/index.md
         - Access Management:

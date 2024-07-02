@@ -1,41 +1,49 @@
-# Installing Privacera Manager
+# Setup
 
 !!! note "Prerequisites"
-    You will be installing Privacera Manager after you have met the prerequisites. If you have not done so, 
+    You will be doing the setup only after you have met the prerequisites. If you have not done so, 
     please refer to the [Prerequisites](prerequisites/index.md) section and follow the steps for your 
     cloud provider.
 
-!!! note "Air-gap Installation"
-    If you are installing in an air-gap environment, you will need to download the docker images and host them in your 
-    docker registry, and host the Privacera Manager tar ball. 
-    Please refer to the [Air-gap Installation](air-gap-installation.md) section for more details.
-
 ## Overview 
+In the setup, you will be downloading and setting up the Privacera Manager software.
+
+Privacera provides a command-line utility called Privacera Manager which generates various
+installation artifacts such as helm charts, terraform and cloud formation templates
+to install the Privacera components. Privacera Manager consists of a tar ball of various
+template files, scripts and a docker image. 
+
+The same Privacera Manager software is used on all the cloud providers to install Privacera software.
+
 You will be installing Privacera Manager on the compute instance that you have created as part of the 
-Prerequisites and it is associated with your Kubernetes cluster. These steps are common for all cloud providers.
+Prerequisites. These steps are common for all cloud providers.
+
 
 ## Installation Information
-=== "Normal"
+
+Typically, you will be installing Privacera Manager on a compute host that has access to 
+the Internet to be able to download the Privacera Manager software and docker images. 
+
+If you are installing in an air gap (no Internet access) network, 
+[follow these steps](../advanced-configuration/air-gap-installation.md) first and then continue with 
+the installation.
+
+=== "Internet Access"
     You will need the following information to install Privacera Manager, obtain these from Privacera Sales Representative:
     
     --8<-- "docs/get-started/base-installation/self-managed/snippets/installation-information.ext"
 
-=== "Air-gap"
+=== "Air gap (no Internet access)"
 
-    You will need the following information to install Privacera Manager in an air-gap environment.
-    Obtain these from [Air-gap Installation](air-gap-installation.md#air-gap-installation-information):
+    You will need the following information to install Privacera Manager in an air gap (no Internet access) network.
+    Obtain these from [Air-gap Installation](../advanced-configuration/air-gap-installation.md#air-gap-installation-information):
     
     --8<-- "docs/get-started/base-installation/self-managed/snippets/air-gap-installation-information.ext"
-
-## Air-gap Installation
-An air-gap installation is done in an environment where the compute instances do not have access to the internet.
-If you are installing in an air-gap environment, [follow these steps](./air-gap-installation.md) first and then continue with 
-the installation.
 
 ## Download and Extract
 On the compute instance where you want to install Privacera Manager, perform the following steps:
 
-=== "Normal"
+=== "Internet Access"
     ```bash
     # log into Privacera docker hub and enter the Privacera hub password
     docker login <PRIVACERA_HUB_HOSTNAME> -u <PRIVACERA_HUB_USER> # (1)
@@ -68,7 +76,7 @@ On the compute instance where you want to install Privacera Manager, perform the
        `~/privacera/privacera-manager` folder
     6. Create a script called pm-env.sh that has the download URL and Privacera Manager docker image name in it.
 
-=== "Air-gap"
+=== "Air gap (no Internet access)"
     ```bash
     # log into your docker hub and enter the hub password
     docker login <AIRGAP_HUB_HOSTNAME> -u <AIRGAP_HUB_USER> # (1)
@@ -118,7 +126,7 @@ It should be a short user-friendly name that follows these rules:
 Run the following commands, where you can name your deployment environment as you like along with 
 the Privacera Manager image tag and download URL base-path.
 
-=== "Normal"
+=== "Internet Access"
     ```bash
     cd ~/privacera/privacera-manager
     cp config/sample.vars.privacera.yml config/vars.privacera.yml 
@@ -143,7 +151,7 @@ the Privacera Manager image tag and download URL base-path.
     PRIVACERA_BASE_DOWNLOAD_URL: "<PRIV_MGR_BASE_URL>"
     ```
 
-=== "Air-gap"
+=== "Air gap (no Internet access)"
     ```bash
     cd ~/privacera/privacera-manager
     cp config/sample.vars.privacera.yml config/vars.privacera.yml 
@@ -198,6 +206,6 @@ ls -l ~/privacera/privacera-manager/logs
 ```
 
 <div class="grid cards" markdown>
--  :material-page-previous: Prev [Prerequisites](index.md)
--  :material-page-next: Next [Basic Configuration](basic-configuration.md)
+-  :material-page-previous: Prev [Prerequisites](../prerequisites/index.md)
+-  :material-page-next: Next [Basic Configuration](../basic-configuration.md)
 </div>

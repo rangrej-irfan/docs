@@ -2,7 +2,7 @@
 
 !!! note "Prerequisites"
     Before you begin, ensure that you have the installed Privacera Manager by following the steps in 
-    the [Installing Privacera Manager](installing-privacera-manager.md) section.
+    the [Setup](setup.md) section.
 
 ## Overview
 
@@ -16,10 +16,43 @@ documentation. The files under `config/custom-vars` are not overwritten during u
 After you have configured Privacera Manager, you can run the `privacera-manager.sh` script as 
 given in the [Using Privacera Manager](using-privacera-manager.md) section.
 
-## Configuration Steps
+## Self-Managed and PrivaceraCloud Data-plane
 
 The following are the mandatory configuration steps that you need to perform before you can start using 
-Privacera Manager.
+Privacera Manager. These steps are common for all cloud providers.
+
+These steps are common for Self-Managed and PrivaceraCloud Data-plane installations.
+
+| #  | Configuration Step                                                      | Description                                                                                                                                                                                                                                                                                  |
+|----|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1. | [Enable Vault in Privacera Manager](#enable-vault-in-privacera-manager) | Enable Vault in Privacera Manager to store credentials                                                                                        |
+| 2. | [Enable Keystores](#enable-use-of-keystores-for-secrets)                | Enable use of keystores at runtime for storing credentials                                                                                  |
+| 3. | [Configure Cloud Provider](#configure-your-cloud-provider)              | Configure your cloud provider whether it is AWS, Azure or Google Cloud                                                                         |
+| 4. | [Configure Kubernetes](#configure-kubernetes)                           | Configure Kubernetes and Helm                                                                                                                  |
+| 5. | [Configure AWS EFS](#configure-aws-efs-optional)                        | Configure AWS EFS (optional - only if you are in AWS and planning to use AWS EFS as Kubernetes volumes)                                        |
+| 6. | [Configure External RDBMS](#configure-external-rdbms)                   | Configure External RDBMS to be used for Privacera policy store                                                                                |
+| 7. | [Configure TLS](#configure-tls)                                         | Configure TLS                                                                                                                                  |
+| 8. | [Configure AWS ALB Controller](#configure-aws-alb-controller-optional)  | Configure AWS ALB Controller (optional - only if you are in AWS and using AWS ALB Controller)                                                  |
+| 9. | [Configure Load Balancer](#configure-load-balancer-optional)            | Configure Load Balancer (optional - only if you are in AWS and do not plan to use AWS ALB Controller, and if you are in Azure or Google Cloud) |
+
+## Self-Managed Discovery 
+
+## Self-Managed Encryption
+
+## Self-Managed Dataserver
+
+## Self-Managed Usersync
+
+## PrivaceraCloud Data-plane
+
+| #  | Configuration Step                                                      | Description                                                                                                                                                                                                                                                                                  |
+|----|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+
+## PrivaceraCloud Data-plane + Privacera Discovery
+
+
+## Appendix - Self-Managed and PrivaceraCloud Data-plane
 
 ### Enable Vault in Privacera Manager
 ??? note "Enable Vault"
@@ -240,10 +273,14 @@ Privacera Manager.
     If you are not using AWS ALB Controller then the kubernetes services will be created of type LoadBalancer.
     This will create Load Balancers in your cloud provider. 
 
-    TBD: How do we assign TLS certificates to these Load Balancers?
+    TBD: How do we assign TLS certificates to these Load Balancers? 
+    You need to copy the cert and key into the config/ssl/custom_certificates folder and
+    the load-balancers are of type classic loadbalancers or NLB with port level pass through
+    and certificates are part of the individual services. To be confirmed
+
 
 
 <div class="grid cards" markdown>
--  :material-page-previous: Prev [Installing Privacera Manager](installing-privacera-manager.md)
+-  :material-page-previous: Prev [Setup](setup.md)
 -  :material-page-next: Next [Using Privacera Manager](using-privacera-manager.md)
 </div>

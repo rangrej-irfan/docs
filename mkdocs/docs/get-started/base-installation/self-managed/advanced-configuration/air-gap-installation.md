@@ -1,20 +1,25 @@
 # Air-gap installation
 
+!!! note
+    This section is applicable only if you are installing Privacera Manager in an air gap (no Internet access) network.
+    This is not a typical setup.
+    You also need to do the Self Managed Prerequisites before you can proceed with this section. Refer to the [Prerequisites](../prerequisites/index.md) section.
+
 ## Overview
 
-An air-gap environment is a secure network environment that is isolated from the internet. If you plan 
-to install Privacera software in an air-gap environment, then you have to download the Privacera docker 
-images and host them in your docker registry. You also have to host the Privacera Manager tarball in an object store accessible to the 
-air-gap compute host. A script, `pm-airgap-installation.sh`, is provided to facilitate 
+An air gap network is a secure network environment that is isolated from the Internet. If you plan 
+to install Privacera software in an air gap (no Internet access) network, then you have to download the Privacera docker 
+images and host them in your docker registry. You also have to host the Privacera Manager tarball in an object store 
+accessible to the compute host in air gap network. A script, `pm-airgap-installation.sh`, is provided to facilitate 
 this process.
 
 
 ### Prerequisites
 
-1. You need a Linux host that has access to internet where you will run the pm-air-gap-installation.sh script.
+1. You need a Linux host that has access to the Internet where you will run the pm-air-gap-installation.sh script.
 2. Your local docker registry where you will host the Privacera docker images. We need the URL of the registry 
    and the credentials to push the images to the registry.
-3. Access to the air-gap compute host from where you plan to run Privacera Manager. This host should have 
+3. Access to the compute host in air gap (no Internet access) network from where you plan to run Privacera Manager. This host should have 
    access to the local docker registry where the Privacera docker images are hosted.
 
 ## Installation Information
@@ -87,6 +92,5 @@ for the privacera-manager tar ball and your docker registry location for the Pri
 --8<-- "docs/get-started/base-installation/self-managed/snippets/air-gap-installation-information.ext"
 
 <div class="grid cards" markdown>
--  :material-page-previous: Previous [Prerequisites](prerequisites/index.md)
--  :material-page-next: Next [Installing Privacera Manager](installing-privacera-manager.md)
+-  :material-page-next: Next [Self-managed Setup](../setup/index.md)
 </div>
