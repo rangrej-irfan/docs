@@ -1,11 +1,5 @@
 # Configure Privacera Manager
 
-!!! note "Prerequisites"
-    Before you begin, ensure that you have the installed Privacera Manager by following the steps in 
-    the [Setup](index.md) section.
-
-## Overview
-
 Privacera Manager takes a set of configuration variables that are defined in YAML files. Out of 
 the box, several sample variable YAML files are provided that you can use to configure Privacera Manager.
 These are in the `config/sample-vars` folder. The process of configuring Privacera Manager involves
@@ -275,5 +269,8 @@ Depending upon your deployment type and choice of Privacera modules , you can pr
 
 
 <div class="grid cards" markdown>
--  :material-page-previous: Prev [Setup](index.md)
+-  :material-page-previous: Prev [Privacera Manager Setup](privacera-manager-setup.md)
+-  :material-page-next: - Next 
+    - [Connectors](../../../../connectors/index.md)
+    - [User Management](../../../user-management/index.md)
 </div>

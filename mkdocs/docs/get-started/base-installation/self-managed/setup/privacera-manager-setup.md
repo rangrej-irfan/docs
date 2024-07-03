@@ -208,5 +208,5 @@ ls -l ~/privacera/privacera-manager/logs
 
 <div class="grid cards" markdown>
 -  :material-page-previous: Prev [Prerequisites](prerequisites/index.md)
--  :material-page-next: Next [Basic Configuration](basic-configuration.md)
+-  :material-page-next: Next [Privacera Manager Configuration](basic-configuration.md)
 </div>

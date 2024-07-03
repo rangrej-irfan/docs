@@ -3,12 +3,12 @@
 ## Overview
 Following AWS cloud resources need to be created before installing the Privacera Manager software:
 
-| Prerequisite | Description                                                                                                                                                                                                                                               |
-| --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [AWS EC2 instance](#aws-ec2-instance) | EC2 instance to run the Privacera Manager software.<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.                           |
-| [AWS EKS cluster](#aws-eks-cluster) | EKS cluster to run the Privacera software.<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.                                    |
-| [AWS RDS AuroraDB](#aws-rds-auroradb) | RDS AuroraDB instance for the Privacera database.<br>:green_circle: Self-managed: Required<br>:no_entry_sign: PrivaceraCloud Data-plane: Not Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.                        |
-| [AWS ACM certificate](#aws-acm-certificate) | ACM certificate for the domain name used for the Privacera service endpoints.<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required. |
+| Prerequisite | Description                                                                                                                                                                                                                                                                         |
+| --- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [AWS EC2 instance](#aws-ec2-instance) | EC2 instance to run the Privacera Manager software. Refer [here](#aws-ec2-instance) for more details<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.    |
+| [AWS EKS cluster](#aws-eks-cluster) | EKS cluster to run the Privacera software. Refer [here](#aws-eks-cluster) for more details<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.              |
+| [AWS RDS AuroraDB](#aws-rds-auroradb) | RDS AuroraDB instance for the Privacera database. Refer [here](#aws-rds-auroradb) for more details<br>:green_circle: Self-managed: Required<br>:no_entry_sign: PrivaceraCloud Data-plane: Not Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required. |
+| [AWS ACM certificate](#aws-acm-certificate) | ACM certificate for the domain name used for the Privacera service endpoints. Refer [here](#aws-acm-certificate) for more details<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.                          |
 
 
 ## Appendix
