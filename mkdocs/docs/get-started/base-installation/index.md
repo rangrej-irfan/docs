@@ -5,12 +5,13 @@ Privacera software installation consists of two steps - the base installation an
 Depending on the deployment option you choose, the base installation steps will vary. The goal of base installation 
 is to give you access to the management user-interface and set up the policy store and audit store.
 
-In case of PrivaceraCloud, the base installation consists of creating an account on PrivaceraCloud.
+In case of PrivaceraCloud, the base installation consists of creating an account in PrivaceraCloud.
 
 In case of Self-managed deployment, the base installation consists of using Privacera Manager software to install 
 the Privacera software in your cloud provider VPC.
 
-In case of PrivaceraCloud Data-plane, the base installation consists of using Privacera Manager to configure the
+In case of PrivaceraCloud Data-plane, the base installation consists of creating an account in PrivaceraCloud
+and then using Privacera Manager to install the Privacera software in your cloud provider VPC and establish the
 connectivity to PrivaceraCloud. In addition to this, if you plan on using Privacera Discovery module, then it is 
 installed as part of the base installation.
 

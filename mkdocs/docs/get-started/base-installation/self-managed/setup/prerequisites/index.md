@@ -1,5 +1,6 @@
 # Prerequisites
-The following prerequisites are required for self-managed deployment:
+The following prerequisites are required for a Self-managed deployment or a PrivaceraCloud
+Data-plane deployment:
 
 1. **Cloud Provider** - Privacera supports the following cloud providers: AWS, Azure and Google Cloud
 1. **Kubernetes Cluster** - Privacera supports the following managed Kubernetes distributions: AWS EKS, Azure AKS, 
@@ -14,9 +15,9 @@ The following prerequisites are required for self-managed deployment:
     - Network Setup - VPC, subnets, security groups, VPC peering or transit gateways. As Privacera will be 
       connecting to your data-sources you will need to think about the network connectivity.
     - Load balancer, DNS entries, TLS certificates - for securing the service endpoints
-1. **Privacera Manager** - Your Privacera Sales representative will give you 
-    - Credentials for Privacera docker registry
-    - Download URL of Privacera Manager software
+1. **Privacera Manager** - This is the installation software used to configure and install Privacera software. Your Privacera Sales representative will give you the following, 
+       - Credentials for Privacera docker registry
+       - Download URL of Privacera Manager software
 1. **Air gap network (optional)** - If you are in an air gap (no Internet access) network, you will need to host the docker
    images in your own docker registry. Refer to [Air-gap Installation](../air-gap-installation.md)
 
@@ -30,6 +31,6 @@ different privileges. Most cloud resources need to be created before Privacera i
     -   [AWS Cloud Resources](aws-cloud-resources.md)
     -   [Azure Cloud Resources](azure-cloud-resources.md)
     -   [Google Cloud Resources](google-cloud-resources.md)
-    -   [Setup](../setup/index.md)
-    -   [Air gap network](../advanced-configuration/air-gap-installation.md)
+    -   [Air gap network](../../advanced-configuration/air-gap-installation.md)
+    -   [Privacera Manager Setup](../privacera-manager-setup.md)
 </div>

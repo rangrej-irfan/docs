@@ -14,21 +14,24 @@ Refer to [Deployment Options](../../deployment-options/index.md) for more detail
 
 The Basic Configuration is same for both Self Managed and PrivaceraCloud Data-plane.
 
-| Track                                     | Description         | Mandatory |
-|-------------------------------------------|---------------------|-----------|
-| Self-Managed<br>PrivaceraCloud Data-plane | Basic configuration | Yes       |
+| Track                                                               | Description                   | Mandatory |
+|---------------------------------------------------------------------|-------------------------------|-----------|
+| - Self-Managed Deployment<br>- PrivaceraCloud Data-plane Deployment | Setup and Basic Configuration | Yes       |
 
 
 ### Self-Managed Installation Track
 
 If you are installing Self Managed, after doing the Basic Configuration  you will move on to these items.
 
-| Track | Description | Mandatory |
-| --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| Self-Managed  | Self-Managed Privacera Discovery configuration | No        |
-| Self-Managed  | Self-Managed Privacera Encryption configuration | No        |
-| Self-Managed  | Self-Managed Dataserver configuration | No        |
-| Self-Managed  | Self-Managed Usersync configuration | Yes       |
+| Track | Description                                    | Mandatory |
+| --- |------------------------------------------------|-----------|
+| Self-Managed Deployment  | Self-Managed Privacera Access configuration    | No *      |
+| Self-Managed Deployment  | Self-Managed Privacera Discovery configuration | No *      |
+| Self-Managed Deployment  | Self-Managed Privacera Encryption configuration | No        |
+| Self-Managed Deployment  | Self-Managed Dataserver configuration          | No        |
+| Self-Managed Deployment  | Self-Managed Usersync configuration            | Yes       |
+
+* You need to install either Privacera Access and/or Privacera Discovery.
 
 ### PrivaceraCloud Data-plane Installation Track
 
@@ -36,10 +39,10 @@ If you are installing PrivaceraCloud Data-plane, after doing the Basic Configura
 
 | Track | Description | Mandatory |
 | --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| PrivaceraCloud Data-plane  | PrivaceraCloud Data-plane Privacera Discovery configuration | No        |
-| PrivaceraCloud Data-plane  | PrivaceraCloud Data-plane Privacera Encryption configuration | No        |
-| PrivaceraCloud Data-plane  | PrivaceraCloud Data-plane Dataserver configuration | No        |
-| PrivaceraCloud Data-plane  | PrivaceraCloud Data-plane Usersync configuration | Yes       |
+| PrivaceraCloud Data-plane Deployment  | PrivaceraCloud Data-plane Privacera Discovery configuration | No        |
+| PrivaceraCloud Data-plane Deployment  | PrivaceraCloud Data-plane Privacera Encryption configuration | No        |
+| PrivaceraCloud Data-plane Deployment  | PrivaceraCloud Data-plane Dataserver configuration | No        |
+| PrivaceraCloud Data-plane Deployment  | PrivaceraCloud Data-plane Usersync configuration | Yes       |
 
 ## Base Installation Process 
 
@@ -65,5 +68,5 @@ and host them in your docker registry.
 
 <div class="grid cards" markdown>
 -   :material-page-previous: Prev [Base Installation](../index.md)
--   :material-page-next: Next [Prerequisites](prerequisites/index.md)
+-   :material-page-next: Next [Setup](setup/index.md)
 </div>

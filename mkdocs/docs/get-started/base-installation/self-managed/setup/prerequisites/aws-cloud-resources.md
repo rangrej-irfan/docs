@@ -3,12 +3,12 @@
 ## Overview
 Following AWS cloud resources need to be created before installing the Privacera Manager software:
 
-| Prerequisite | Description                                                                                                                                                                                                                                                                              |
-| --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [AWS EC2 instance](#aws-ec2-instance) | EC2 instance to run the Privacera Manager software.<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane without Privacera Discovery: Required<br>:green_circle: PrivaceraCloud Data-plane with Privacera Discovery: Required.                           |
-| [AWS EKS cluster](#aws-eks-cluster) | EKS cluster to run the Privacera software.<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane without Privacera Discovery: Required<br>:green_circle: PrivaceraCloud Data-plane with Privacera Discovery: Required.                                    |
-| [AWS RDS AuroraDB](#aws-rds-auroradb) | RDS AuroraDB instance for the Privacera database.<br>:green_circle: Self-managed: Required<br>:no_entry_sign: PrivaceraCloud Data-plane without Privacera Discovery: Not Required<br>:green_circle: PrivaceraCloud Data-plane with Privacera Discovery: Required.                           |
-| [AWS ACM certificate](#aws-acm-certificate) | ACM certificate for the domain name used for the Privacera service endpoints.<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane without Privacera Discovery: Required<br>:green_circle: PrivaceraCloud Data-plane with Privacera Discovery: Required. |
+| Prerequisite | Description                                                                                                                                                                                                                                               |
+| --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [AWS EC2 instance](#aws-ec2-instance) | EC2 instance to run the Privacera Manager software.<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.                           |
+| [AWS EKS cluster](#aws-eks-cluster) | EKS cluster to run the Privacera software.<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.                                    |
+| [AWS RDS AuroraDB](#aws-rds-auroradb) | RDS AuroraDB instance for the Privacera database.<br>:green_circle: Self-managed: Required<br>:no_entry_sign: PrivaceraCloud Data-plane: Not Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.                        |
+| [AWS ACM certificate](#aws-acm-certificate) | ACM certificate for the domain name used for the Privacera service endpoints.<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required. |
 
 
 ## Appendix
@@ -161,6 +161,6 @@ Following AWS cloud resources need to be created before installing the Privacera
 
 <div class="grid cards" markdown>
 -  :material-page-previous: Prev [Prerequisites](index.md)
--  :material-page-next: Next [Setup](../setup.md)
+-  :material-page-next: Next [Privacera Manager Setup](../privacera-manager-setup.md)
 </div>
 

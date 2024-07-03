@@ -35,22 +35,6 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
 | 8. | [Configure AWS ALB Controller](#configure-aws-alb-controller-optional)  | Configure AWS ALB Controller (optional - only if you are in AWS and using AWS ALB Controller)                                                  |
 | 9. | [Configure Load Balancer](#configure-load-balancer-optional)            | Configure Load Balancer (optional - only if you are in AWS and do not plan to use AWS ALB Controller, and if you are in Azure or Google Cloud) |
 
-## Self-Managed Discovery 
-
-## Self-Managed Encryption
-
-## Self-Managed Dataserver
-
-## Self-Managed Usersync
-
-## PrivaceraCloud Data-plane
-
-| #  | Configuration Step                                                      | Description                                                                                                                                                                                                                                                                                  |
-|----|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-## PrivaceraCloud Data-plane + Privacera Discovery
-
 
 ## Appendix - Self-Managed and PrivaceraCloud Data-plane
 
@@ -278,9 +262,25 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
     the load-balancers are of type classic loadbalancers or NLB with port level pass through
     and certificates are part of the individual services. To be confirmed
 
+## Next steps
+
+Depending upon your deployment type and choice of Privacera modules , you can proceed to the next steps -
+
+| #   | Deployment type           | Module       | Next step                                                                                |
+|-----|---------------------------|--------------|------------------------------------------------------------------------------------------|
+| 1.  | Self-Managed              | Access       | [Self Managed Access](../self-managed-access.md)                                         |
+| 2.  | Self-Managed              | Discovery    | [Self Managed Discovery](../self-managed-discovery/index.md)                             |
+| 3.  | Self-Managed              | Encryption   | [Self Managed Encryption](../self-managed-encryption/index.md)                           |
+| 4.  | Self-Managed              | Dataserver   | [Self Managed Dataserver](../self-managed-dataserver/index.md)                           |
+| 5.  | Self-Managed              | Usersync     | [Self Managed Usersync](../self-managed-usersync/index.md)                               |
+| 6.  | PrivaceraCloud Data-plane | Access       | [PrivaceraCloud Data-plane Access](../privaceracloud-data-plane-access.md)               |
+| 7.  | PrivaceraCloud Data-plane | Discovery    | [PrivaceraCloud Data-plane Discovery](../privaceracloud-data-plane-discovery/index.md)   |
+| 8.  | PrivaceraCloud Data-plane | Encryption   | [PrivaceraCloud Data-plane Encryption](../privaceracloud-data-plane-encryption/index.md) |
+| 9.  | PrivaceraCloud Data-plane | Dataserver   | [PrivaceraCloud Data-plane Dataserver](../privaceracloud-data-plane-dataserver/index.md) |
+| 10. | PrivaceraCloud Data-plane | Usersync     | [PrivaceraCloud Data-plane Usersync](../privaceracloud-data-plane-usersync/index.md)     |
+
 
 
 <div class="grid cards" markdown>
 -  :material-page-previous: Prev [Setup](setup.md)
--  :material-page-next: Next [Using Privacera Manager](using-privacera-manager.md)
 </div>
