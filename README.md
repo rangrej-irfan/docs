@@ -1,93 +1,123 @@
-# privacera-mkdocs
+# Documentation for Privacera
+
+This folder and subfolders contain the documentation for Privacera. The documentation is written in Markdown
+and is built using [Materials for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
 
+## How to run the documentation locally
 
-## Getting started
+We have customized the materials-mkdocs with additional plugins and features. To run the documentation locally, make
+sure to pull the image from our ECR.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+> Note: For now we are using the same image used by the PAIG product. The steps to get the credentials are the same.
+> Please connect with the PAIG team to get the credentials or follow this
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+1. Go to the [ECR Token Generation Jobs](https://gitlab.com/privacera/paig/ci/-/jobs)
+2. Pick the latest job for **get_ecr_token** and click on the link.
+3. Search for the string `$ echo "echo \"$password\" | docker login --username AWS --password-stdin 587946681758.dkr.ecr.us-east-1.amazonaws.com"`
+4. Copy the line after that which start something like this `echo "eyJwY... | docker login --username AWS --password-stdin 587946681758.dkr.ecr.us-east-1.amazonaws.com`
+5. Run the command in your terminal. This will login you to the ECR.
+6. Then run this to pull the image `ocker pull 587946681758.dkr.ecr.us-east-1.amazonaws.com/paig/privacera-mkdocs-materials-custom:main-0.1.0-SNAPSHOT-latest`
 
-## Add your files
+> Note: The token is valid for limited time. If it expires, you will need to repeat the steps.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+> Note: If the mkdocs docker image has been updated, then you need to pull the latest image from the ECR. Follow the same step
+as above to get the credentials and do the docker pull
 
+You will need to run the following command to run the docker and it will start the documentation on port 8002.
+
+```bash
+./run_local_docs_docker.sh
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/privacera/dev/privacera-mkdocs.git
-git branch -M main
-git push -uf origin main
+Then go to [http://localhost:8005](http://localhost:8005) to see the documentation.
+
+There are few caveats to this setup:
+1. The documentation will auto refresh when you make changes to the markdown files. However, you will need to stop the and start the docker container to see the changes.
+   - When mkdocs.yml is updated 
+   - When any files in the snippets folders are updated
+   - When titles or meta data is updated in the markdown files
+
+
+## User Guide for documentation
+
+## Images for the Documentation
+
+### Slides with images for the Documentation
+
+This slide in Google Drive has the diagrams. https://docs.google.com/presentation/d/1QyvyoT71Ab93qyEEc7kA1eYfi_X7gEiCv25OdOfROEA/edit#slide=id.g274ebcbb9f9_0_365
+
+1. Create or update the slide in the Google Drive.
+2. Play the slide in the presentation mode.
+3. Create a screen shot
+4. You can use the Preview app in Mac to crop the image. You can make it 50%
+5. Save the image in the images folder `docs/images`
+6. In the "Speaker Notes" section of the slide, you can add the name of the file
+
+Note: The architecture slides has images which can be reused. You should link the slide from there to the documentation 
+slides. https://docs.google.com/presentation/d/1YFNSr78t9q4oSHcsplIm7zNUfZja1q36ZChr7nUErXU/edit#slide=id.gfbe574d2d1_1_4
+
+### 
+### To identify images which are not used, you can run the following script
+```shell
+cd mkdocs
+python3 check_for_unused_images.py 
+```
+The above command will list the images which are not used in the documentation. You can remove them using `git rm $file`
+
+### Title for each documentation page
+At the top of each documentation page, you need to add the title of the page. The title should be in the following format:
+```markdown
+---
+title: Put your title here. E.g. Base Installation for PrivaceraCloud
+---
 ```
 
-## Integrate with your tools
+Here are some optional parameters that you can add to the top of the documentation page:
+```markdown
+icon: material/home
+hide:
+- navigation
+- toc
+```
 
-- [ ] [Set up project integrations](https://gitlab.com/privacera/dev/privacera-mkdocs/-/settings/integrations)
+### How do I use collapsible sections?
+```markdown
+/// details | Log Message `Here goes the title`
+    type: warning 
 
-## Collaborate with your team
+The valid types are ['note', 'attention', 'caution', 'danger', 'error', 'tip', 'hint', 'warning']
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+!!! warning
+    The **type** should be exactly below the **details** tag. The **type** should be one of the valid types mentioned above.
 
-## Test and Deploy
+///
+```
 
-Use the built-in continuous integration in GitLab.
+### Footnotes
+Refer to this document for how to use footnotes: [Footnotes](https://squidfunk.github.io/mkdocs-material/reference/footnotes/)
+!!! note
+    The footnotes are shown at the bottom of the page.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### 
 
-***
+### Supported and Not Supported icons
+```markdown
+:green_circle: - For Yes
+:yellow_circle: - For Partial
+:no_entry_sign: - For No
+:material-circle-outline: - For Not Applicable
+```
 
-# Editing this README
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### How to exclude a page from search
+```markdown
+<!--
+---
+search:
+exclude: true
+---
+-->
+```
 
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+## Additional information
+https://blueswen.github.io/mkdocs-swagger-ui-tag/

@@ -1,0 +1,414 @@
+site_name: Privacera Documentation - Phoenix !!!
+#site_url: https://priv-dev-mkdocs.privacera.me/
+#Without the below setting, the links are generated as / and when you search for something it will be without index.md
+#and S3 bucket will not be able to find it
+use_directory_urls: false
+
+# Copyright
+copyright: Copyright &copy; 2016 - 2024 Privacera, Inc
+
+theme:
+  name: 'material'
+  site_description: Privacera Documentation
+  dev_addr: '0.0.0.0:8005'
+  custom_dir: custom/overrides
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.prune
+    #    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        #        name: Switch to light mode
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/favicon.ico
+  icon:
+    logo: logo
+  #    annotation: privacera/privacera_p
+  logo: assets/images/privacera-logo.png
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  # https://github.com/chrieke/mkdocs-exclude-search
+  - exclude-search:
+      exclude:
+        - faq/administration/*
+        - attic/*
+        - "**/snippets/"
+  - meta:
+      enabled: true
+  - minify:
+      minify_html: true
+  # https://timvink.github.io/mkdocs-table-reader-plugin/
+  - table-reader:
+      csv_options:
+        delimiter: ","
+        doublequote: true
+        escapechar: "\\"
+        lineterminator: "\n"
+        quotechar: "\""
+        quoting: "QUOTE_MINIMAL"
+        skipinitialspace: true
+        strict: false
+  - optimize:
+      #enabled: !ENV [CI, false]
+      enabled: true
+  #  - pdf-export:
+  #      verbose: true
+  #      media_type: print
+  #      enabled_if_env: ENABLE_PDF_EXPORT
+  #not_in_nav: |
+  #  faq/administration/*
+  # https://blueswen.github.io/mkdocs-swagger-ui-tag/
+  - swagger-ui-tag:
+      filter: false
+      tryItOutEnabled: false
+      supportedSubmitMethods: [ ]
+
+exclude_docs: |
+  attic/*
+  faq/administration/*
+
+# Hooks
+hooks:
+  - custom/overrides/hooks/shortcodes.py
+
+# Customization
+extra:
+  annotate:
+    json: [ .s2 ]
+  generator: false
+  #  analytics:
+  #    provider: google
+  #    property: !ENV GOOGLE_ANALYTICS_KEY
+  #  social:
+  #    - icon: fontawesome/brands/github
+  #      link: https://github.com/squidfunk
+  #    - icon: fontawesome/brands/gitter
+  #      link: https://gitter.im/squidfunk/mkdocs-material
+  #    - icon: fontawesome/brands/docker
+  #      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+  #    - icon: fontawesome/brands/python
+  #      link: https://pypi.org/project/mkdocs-material/
+  #    - icon: fontawesome/brands/mastodon
+  #      link: https://fosstodon.org/@squidfunk
+  #    - icon: fontawesome/brands/twitter
+  #      link: https://twitter.com/squidfunk
+  #  consent:
+  #    title: Cookie consent
+  #    description: >-
+  #      We use cookies to recognize your repeated visits and preferences, as well
+  #      as to measure the effectiveness of our documentation and whether users
+  #      find what they're searching for. With your consent, you're helping us to
+  #      make our documentation better.
+  #    actions:
+  #      - accept
+  #      - reject
+  giscus:
+    repo: privacera/priv-docs-comments
+    repo_id: R_kgDOMM9SVA
+    category: Documentation Comments
+    category_id: DIC_kwDOMM9SVM4CgUf7
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 10
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.blocks.details
+  - pymdownx.blocks.definition
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      options:
+        custom_icons:
+          - custom/overrides/.icons
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      auto_title: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.tilde
+
+
+# Page tree
+nav:
+  - Home: index.md
+  - Installation:
+      - get-started/index.md
+      - Deployment Options:
+          - get-started/deployment-options/index.md
+      - Base Installation:
+          - get-started/base-installation/index.md
+          - PrivaceraCloud:
+              - get-started/base-installation/privaceracloud/index.md
+              - Prerequisites: get-started/base-installation/privaceracloud/prerequisites.md
+              - Setup: get-started/base-installation/privaceracloud/setup.md
+              - Troubleshooting: get-started/base-installation/privaceracloud/troubleshooting.md
+          - Data Plane: get-started/base-installation/data-plane/index.md
+          - Self Managed:
+              - get-started/base-installation/self-managed/index.md
+              - Prerequisites:
+                - get-started/base-installation/self-managed/setup/prerequisites/index.md
+                - AWS Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/aws-cloud-resources.md
+                - Azure Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/azure-cloud-resources.md
+                - Google Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/google-cloud-resources.md
+              - Privacera Manager Setup: get-started/base-installation/self-managed/setup/privacera-manager-setup.md
+              - Privacera Manager Configuration: get-started/base-installation/self-managed/setup/basic-configuration.md
+              - Troubleshooting: get-started/base-installation/self-managed/setup/troubleshooting.md
+#              - Setup:
+#                  - get-started/base-installation/self-managed/setup/index.md
+#                  - Privacera Manager Setup: get-started/base-installation/self-managed/setup/privacera-manager-setup.md
+#                  - Basic Configuration: get-started/base-installation/self-managed/setup/basic-configuration.md
+#                  - Troubleshooting: get-started/base-installation/self-managed/setup/troubleshooting.md
+#              - Self Managed Access: get-started/base-installation/self-managed/self-managed-access.md
+#              - Self Managed Discovery:
+#                  - get-started/base-installation/self-managed/self-managed-discovery/index.md
+#                  - Prerequisites: get-started/base-installation/self-managed/self-managed-discovery/prerequisites.md
+#                  - Configuration: get-started/base-installation/self-managed/self-managed-discovery/configuration.md
+#                  - Troubleshooting: get-started/base-installation/self-managed/self-managed-discovery/troubleshooting.md
+#              - Self Managed Encryption:
+#                  - get-started/base-installation/self-managed/self-managed-encryption/index.md
+#                  - Prerequisites: get-started/base-installation/self-managed/self-managed-encryption/prerequisites.md
+#                  - Configuration: get-started/base-installation/self-managed/self-managed-encryption/configuration.md
+#                  - Troubleshooting: get-started/base-installation/self-managed/self-managed-encryption/troubleshooting.md
+#              - PrivaceraCloud Data-plane:
+#                  - get-started/base-installation/self-managed/privaceracloud-data-plane/index.md
+#                  - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane/prerequisites.md
+#                  - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane/configuration.md
+#                  - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane/troubleshooting.md
+#              - PrivaceraCloud Data-plane Privacera Discovery:
+#                  - get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/index.md
+#                  - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/prerequisites.md
+#                  - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/configuration.md
+#                  - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/troubleshooting.md
+#              - PrivaceraCloud Data-plane Privacera Encryption:
+#                  - get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/index.md
+#                  - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/prerequisites.md
+#                  - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/configuration.md
+#                  - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/troubleshooting.md
+#              - Using Privacera Manager: get-started/base-installation/self-managed/using-privacera-manager.md
+#              - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
+      - User Management:
+          - get-started/user-management/index.md
+          - UserSync:
+              - get-started/user-management/usersync/index.md
+              - Self Managed Usersync:
+                  - get-started/user-management/usersync/self-managed-usersync/index.md
+                  - Prerequisites: get-started/user-management/usersync/self-managed-usersync/prerequisites.md
+                  - Configuration: get-started/user-management/usersync/self-managed-usersync/configuration.md
+                  - Troubleshooting: get-started/user-management/usersync/self-managed-usersync/troubleshooting.md
+              - PrivaceraCloud Data-plane Usersync:
+                  - get-started/user-management/usersync/privaceracloud-data-plane-usersync/index.md
+                  - Prerequisites: get-started/user-management/usersync/privaceracloud-data-plane-usersync/prerequisites.md
+                  - Configuration: get-started/user-management/usersync/privaceracloud-data-plane-usersync/configuration.md
+                  - Troubleshooting: get-started/user-management/usersync/privaceracloud-data-plane-usersync/troubleshooting.md
+          - SSO:
+              - get-started/user-management/sso/index.md
+      - Advanced Configuration:
+          - get-started/advanced-configuration/index.md
+          - Air-gap Setup: get-started/advanced-configuration/air-gap-installation.md
+  - Connectors:
+      - connectors/index.md
+      - AWS Lake Formation:
+          - connectors/aws-lake-formation/index.md
+          - Push Mode:
+              - connectors/aws-lake-formation/aws-lake-formation-push-mode/access/index.md
+              - Access Management:
+                  - connectors/aws-lake-formation/aws-lake-formation-push-mode/access/index.md
+                  - Prerequisites: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/prerequisites.md
+                  - Setup: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/setup.md
+                  - Advanced Configuration: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/advanced-configuration.md
+                  - Troubleshooting: connectors/aws-lake-formation/aws-lake-formation-push-mode/access/troubleshooting.md
+          - Pull Mode: connectors/aws-lake-formation/aws-lake-formation-pull-mode/access/index.md
+      - Databricks Clusters - FGAC:
+          - connectors/databricks-clusters-fgac/index.md
+          - Access Management:
+              - connectors/databricks-clusters-fgac/access/index.md
+              - Prerequisites: connectors/databricks-clusters-fgac/access/prerequisites.md
+              - Setup: connectors/databricks-clusters-fgac/access/setup.md
+              - Advanced Configuration: connectors/databricks-clusters-fgac/access/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-clusters-fgac/access/troubleshooting.md
+          - Discovery:
+              - connectors/databricks-clusters-fgac/discovery/index.md
+              - Prerequisites: connectors/databricks-clusters-fgac/discovery/prerequisites.md
+              - Setup: connectors/databricks-clusters-fgac/discovery/setup.md
+              - Advanced Configuration: connectors/databricks-clusters-fgac/discovery/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-clusters-fgac/discovery/troubleshooting.md
+          - Encryption:
+              - connectors/databricks-clusters-fgac/encryption/index.md
+              - Prerequisites: connectors/databricks-clusters-fgac/databricks-clusters-fgac/prerequisites.md
+              - Setup: connectors/databricks-clusters-fgac/encryption/setup.md
+              - Advanced Configuration: connectors/databricks-clusters-fgac/encryption/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-clusters-fgac/encryption/troubleshooting.md
+      - Databricks Clusters - OLAC:
+          - connectors/databricks-clusters-olac/index.md
+          - Access Management:
+              - connectors/databricks-clusters-olac/access/index.md
+              - Prerequisites: connectors/databricks-clusters-olac/access/prerequisites.md
+              - Setup: connectors/databricks-clusters-olac/access/setup.md
+              - Advanced Configuration: connectors/databricks-clusters-olac/access/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-clusters-olac/access/troubleshooting.md
+      - Databricks SQL:
+          - connectors/databricks-sql/index.md
+          - Access Management:
+              - connectors/databricks-sql/access/index.md
+              - Prerequisites: connectors/databricks-sql/access/prerequisites.md
+              - Setup: connectors/databricks-sql/access/setup.md
+              - Advanced Configuration: connectors/databricks-sql/access/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-sql/access/troubleshooting.md
+          - Discovery:
+              - connectors/vertica/discovery/index.md
+              - Prerequisites: connectors/databricks-clusters-olac/discovery/prerequisites.md
+              - Setup: connectors/databricks-clusters-olac/discovery/setup.md
+              - Advanced Configuration: connectors/databricks-clusters-olac/discovery/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-clusters-olac/discovery/troubleshooting.md
+      - Databricks Unity Catalog:
+          - connectors/databricks-unity-catalog/index.md
+          - Access Management:
+              - connectors/databricks-unity-catalog/access/index.md
+              - Prerequisites: connectors/databricks-unity-catalog/access/prerequisites.md
+              - Setup: connectors/databricks-unity-catalog/access/setup.md
+              - Advanced Configuration: connectors/databricks-unity-catalog/access/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-unity-catalog/access/troubleshooting.md
+          - Discovery:
+              - connectors/databricks-unity-catalog/discovery/index.md
+              - Prerequisites: connectors/databricks-unity-catalog/discovery/prerequisites.md
+              - Setup: connectors/databricks-unity-catalog/discovery/setup.md
+              - Advanced Configuration: connectors/databricks-unity-catalog/discovery/advanced-configuration.md
+              - Troubleshooting: connectors/databricks-unity-catalog/discovery/troubleshooting.md
+      - Vertica:
+          - connectors/vertica/index.md
+          - Access Management:
+              - connectors/vertica/access/index.md
+              - Prerequisites: connectors/vertica/access/prerequisites.md
+              - Setup: connectors/vertica/access/setup.md
+              - Advanced Configuration: connectors/vertica/access/advanced-configuration.md
+              - Troubleshooting: connectors/vertica/access/troubleshooting.md
+          - Discovery:
+              - connectors/vertica/discovery/index.md
+              - Prerequisites: connectors/vertica/discovery/prerequisites.md
+              - Setup: connectors/vertica/discovery/setup.md
+              - Advanced Configuration: connectors/vertica/discovery/advanced-configuration.md
+              - Troubleshooting: connectors/vertica/discovery/troubleshooting.md
+          - Encryption:
+              - connectors/vertica/encryption/index.md
+              - Prerequisites: connectors/encryption/vertica/prerequisites.md
+              - Setup: connectors/vertica/encryption/setup.md
+              - Advanced Configuration: connectors/vertica/encryption/advanced-configuration.md
+              - Troubleshooting: connectors/vertica/encryption/troubleshooting.md
+  - User Guide:
+      - user-guide/index.md
+      - GDS:
+          - user-guide/gds/index.md
+          - Concepts: user-guide/gds/gds-concepts.md
+  - Resources:
+      - resources/index.md
+      - FAQ: resources/faq/index.md
+      - Installation:
+          - resources/installation/index.md
+          - Third-party Software Versions: resources/installation/third-party-software.md
+          - Self-managed compute sizing: resources/installation/self-managed-compute-sizing.md
+      - Design and Concepts:
+          - resources/design/index.md
+          - Access Management:
+              - resources/design/access-management/index.md
+              - Integrations:
+                  - resources/design/access-management/integrations/index.md
+                  - Apache Ranger Plugin: resources/design/access-management/integrations/apache_ranger_plugin.md
+                  - Privacera PolicySync: resources/design/access-management/integrations/privacera_policysync.md
+                  - Privacera DataServer: resources/design/access-management/integrations/privacera_dataserver.md
+              - User Identities: resources/design/access-management/user_identities.md
+              - Access Tools: resources/design/access-management/access_tools.md
+              - About Secure Views: resources/design/access-management/about_secure_views.md
+              - About JWT Tokens: resources/design/access-management/about_jwt_tokens.md
+      - API Reference:
+          - resources/api-reference/index.md
+          - PEG API - Self Managed: resources/api-reference/peg-rest-api-on-privacera-self-managed.md
+          - PEG API - PrivaceraCloud: resources/api-reference/peg-rest-api-on-privaceracloud.md
+          - Apache Ranger API: resources/api-reference/ranger-api.md
+      - Support:
+          - resources/support/support_how_to.md
+          - Support Policies: resources/support/support_policies.md
+      - Release Notes: resources/release-notes/index.md

@@ -1,0 +1,14 @@
+**/site
+**/.cache
+**/.idea
+**/*iml
+**/.DS_Store
+**/*.bk
+**/*.bak
+**/t
+**/t.sh
+**/input
+**/output
+**/*dont_commit*
+**/venv
+**/__pycache__

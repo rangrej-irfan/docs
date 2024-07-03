@@ -1,0 +1,1 @@
+This folder has the common snippets used within the site

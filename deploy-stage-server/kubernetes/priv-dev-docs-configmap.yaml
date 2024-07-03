@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: priv-dev-mkdocs-config
+  namespace: privacera-services
+data:
+  nginx-config.conf: |
+    server {
+    
+      listen 80;
+      resolver 8.8.8.8;
+      
+      location / {
+        set $s3_path $request_uri;
+        if ($request_uri ~ /$) {
+          set $s3_path "${request_uri}index.html";
+        }
+        proxy_pass https://priv-dev-mkdocs.s3.amazonaws.com$s3_path;
+        proxy_set_header Host priv-dev-mkdocs.s3.amazonaws.com;
+        proxy_set_header Authorization '';
+        proxy_hide_header x-amz-id-2;
+        proxy_hide_header x-amz-request-id;
+      }
+      
+      error_log /var/log/nginx/error.log debug;
+    }

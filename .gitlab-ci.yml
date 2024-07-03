@@ -1,0 +1,29 @@
+default:
+  image: 587946681758.dkr.ecr.us-east-1.amazonaws.com/privacera_build_jdk17:main-1.0.0.1-SNAPSHOT-latest
+
+  tags:
+    - privacera-jdk
+
+#ulimit -Hn 524288  is giving error the below error, so we are commenting it out
+#/etc/init.d/docker: 62: ulimit: error setting limit (Invalid argument)
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - . /setup_builder_env.sh
+    - echo "cat /proc/sys/fs/file-max"
+    - cat /proc/sys/fs/file-max
+    - ulimit -Hn
+    - sed -i 's/set -e/set -x/' /etc/init.d/docker
+    - sed -i 's/^ulimit -Hn 524288/#&/' /etc/init.d/docker
+    - cat /etc/init.d/docker
+    - service docker start
+    - sleep 5
+    - docker info
+    - docker ps -a
+    - pwd
+    - ls -altr
+    - ./gitlab-ci-cd-job.sh $CI_COMMIT_BRANCH
+    - echo "Compile complete. Check https://priv-dev-mkdocs.privacera.me/stage/$CI_COMMIT_BRANCH/index.html"
+

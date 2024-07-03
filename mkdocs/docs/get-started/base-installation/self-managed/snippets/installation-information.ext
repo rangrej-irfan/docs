@@ -1,0 +1,14 @@
+```bash
+# PRIV_MGR_BASE_URL
+# https://<domain>/<filepath>
+
+# PRIV_MGR_PACKAGE will have this format -
+# https://<domain>/<filepath>/<file.tar.gz>
+
+# PRIV_MGR_IMAGE will have this format -
+# <PRIVACERA_HUB_HOST>/privacera-manager:<PRIV_MGR_IMAGE_TAG>
+
+# PRIVACERA_HUB_HOSTNAME - Privacera Docker hub registry hostname
+# PRIVACERA_HUB_USER - Privacera Docker hub registry username
+# PRIVACERA_HUB_PASSWORD - Privacera Docker hub registry password
+```
