@@ -14,9 +14,9 @@ Refer to [Deployment Options](../../deployment-options/index.md) for more detail
 
 The Basic Configuration is same for both Self Managed and PrivaceraCloud Data-plane.
 
-| Track                                                               | Description                   | Mandatory |
-|---------------------------------------------------------------------|-------------------------------|-----------|
-| - Self-Managed Deployment<br>- PrivaceraCloud Data-plane Deployment | Setup and Basic Configuration | Yes       |
+| Track                                                                 | Description                   | Mandatory |
+|-----------------------------------------------------------------------|-------------------------------|-----------|
+| 1. Self-Managed Deployment<br>2. PrivaceraCloud Data-plane Deployment | Setup and Basic Configuration | Yes       |
 
 
 ### Self-Managed Installation Track

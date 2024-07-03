@@ -23,6 +23,16 @@ PrivaceraCloud, Self-Managed and PrivaceraCloud Data-plane.
 - **Compliance and Security:** Benefit from Privacera's robust security practices and compliance certifications,
   ensuring your data governance needs are met with the highest standards.
 
+```mermaid
+sequenceDiagram
+    %%{init: {'sequence': {'sequenceNumbers': true}}}%%
+    participant User
+    User->>PrivaceraCloud: 1. Create PrivaceraCloud account
+    User->>PrivaceraCloud: 2. Configure Connectors
+    User->>PrivaceraCloud: 3. Setup UserSync
+
+```
+
 ### 2. Self-Managed
 
 The Self-Managed deployment option allows organizations to run the entire Privacera platform within their own Virtual
@@ -41,6 +51,18 @@ Privacera, offering maximum flexibility and customization.
 - **Customization:** Tailor the deployment to meet specific security, compliance, and operational requirements unique to
   your organization.
 
+```mermaid
+sequenceDiagram
+    %%{init: {'sequence': {'sequenceNumbers': true}}}%%
+    participant User
+    User->>CustomerVPC: 1. Basic installation on customer VPC
+    User->>CustomerVPC: 2. Setup Connectors on customer VPC
+    User->>CustomerVPC: 3. Setup UserSync
+    User->>CustomerVPC: 4. Make it production ready
+
+```
+    
+    
 ### 3. PrivaceraCloud Data-plane
 
 The Data-plane deployment option gives you best of both the deployment options listed above. You get to use the
@@ -54,6 +76,16 @@ your cloud provider VPC.
 - **Credentials for Data-Sources:** All the credentials for the data-sources are stored within your cloud provider VPC.
 - **Managed Service**: PrivaceraCloud provides the infrastructure, maintenance and update, high availability and
   reliability for managing your data governance and security policies as well as audit information.
+
+```mermaid
+sequenceDiagram
+  %%{init: {'sequence': {'sequenceNumbers': true}}}%%
+  participant User
+  User->>PrivaceraCloud: 1. Create PrivaceraCloud account
+  User->>CustomerVPC: 2. Basic installation on customer VPC
+  User->>CustomerVPC: 3. Setup Connectors on customer VPC
+  User->>CustomerVPC: 4. Make customer VPC setup production ready
+```
 
 ## Deployment Options Comparison
 
@@ -80,6 +112,9 @@ between PrivaceraCloud and Self-Managed deployments:
 
 By considering these differences, you can select the deployment option that best aligns with your organization's
 operational preferences, control requirements, and resource capabilities.
+
+!!! note "Privacera Discovery Deployment"
+    Privacera Discovery scales well when deployed as Data Plane on customer VPC. 
 
 <div class="grid cards" markdown>
 -   :material-page-previous: Next: [Base Installation](../base-installation/index.md)
