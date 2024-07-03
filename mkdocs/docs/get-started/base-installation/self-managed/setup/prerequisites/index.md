@@ -19,7 +19,7 @@ Data-plane deployment:
        - Credentials for Privacera docker registry
        - Download URL of Privacera Manager software
 1. **Air gap network (optional)** - If you are in an air gap (no Internet access) network, you will need to host the docker
-   images in your own docker registry. Refer to [Air-gap Installation](../air-gap-installation.md)
+   images in your own docker registry. Refer to [Air-gap Installation](../../../../advanced-configuration/air-gap-installation.md)
 
 For the installation, there are two parallel tracks - Creating Cloud Resources and Installing Privacera using 
 Privacera Manager. In most organizations, these two are done by different teams or same person with
@@ -31,6 +31,6 @@ different privileges. Most cloud resources need to be created before Privacera i
     -   [AWS Cloud Resources](aws-cloud-resources.md)
     -   [Azure Cloud Resources](azure-cloud-resources.md)
     -   [Google Cloud Resources](google-cloud-resources.md)
-    -   [Air gap network](../../advanced-configuration/air-gap-installation.md)
+    -   [Air gap network](../../../../advanced-configuration/air-gap-installation.md)
     -   [Privacera Manager Setup](../privacera-manager-setup.md)
 </div>

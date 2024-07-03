@@ -3,7 +3,7 @@
 !!! note
     This section is applicable only if you are installing Privacera Manager in an air gap (no Internet access) network.
     This is not a typical setup.
-    You also need to do the Self Managed Prerequisites before you can proceed with this section. Refer to the [Prerequisites](../prerequisites/index.md) section.
+    You also need to do the Self Managed Prerequisites before you can proceed with this section. Refer to the [Prerequisites](../base-installation/self-managed/setup/prerequisites/index.md) section.
 
 ## Overview
 
@@ -92,5 +92,5 @@ for the privacera-manager tar ball and your docker registry location for the Pri
 --8<-- "docs/get-started/base-installation/self-managed/snippets/air-gap-installation-information.ext"
 
 <div class="grid cards" markdown>
--  :material-page-next: Next [Self-managed Setup](../setup/index.md)
+-  :material-page-next: Next [Privacera Manager Setup](../base-installation/self-managed/setup/privacera-manager-setup.md)
 </div>

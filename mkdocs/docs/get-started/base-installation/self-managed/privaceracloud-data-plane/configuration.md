@@ -167,7 +167,7 @@ RANGER_SSL_ENABLE: "false"
 
     1. Go to **Settings** > **Applications**.
 
-        1. In the Applications section, select the application you wish to connect. If you don’t see the application you wish to connect, contact [Privacera Support](). For example, If you are planning to use Vertica application, then select Vertica.
+        1. In the Applications section, select the application you wish to connect. If you don’t see the application you wish to connect, contact [Privacera Support](../../../../resources/support/support_how_to.md). For example, If you are planning to use Vertica application, then select Vertica.
 
         2. Enter the application name and description in the **Name** and **Description** fields respectively.
 
@@ -214,7 +214,7 @@ RANGER_SSL_ENABLE: "false"
             !!! note
     
                 If you do not see the **Distributed Data Plane** option under **Account** ,
-                contact [Privacera Support](how-to-get-support.html "How to get support") to
+                contact [Privacera Support]((../../../../resources/support/support_how_to.md) to
                 enable **Distributed Data Plane**.
     
         3. Download the `vars.data-plane.config.yml` from PrivaceraCloud portal which is used in Privacera Manager configuration.

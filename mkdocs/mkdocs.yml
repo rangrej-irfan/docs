@@ -226,11 +226,7 @@ nav:
               - Prerequisites: get-started/base-installation/privaceracloud/prerequisites.md
               - Setup: get-started/base-installation/privaceracloud/setup.md
               - Troubleshooting: get-started/base-installation/privaceracloud/troubleshooting.md
-          - Data Plane:
-              - get-started/base-installation/data-plane/index.md
-              - Prerequisites: get-started/base-installation/data-plane/index.md
-              - Setup: get-started/base-installation/data-plane/setup.md
-              - Troubleshooting: get-started/base-installation/data-plane/troubleshooting.md
+          - Data Plane: get-started/base-installation/data-plane/index.md
           - Self Managed:
               - get-started/base-installation/self-managed/index.md
               - Setup:
@@ -254,16 +250,6 @@ nav:
                   - Prerequisites: get-started/base-installation/self-managed/self-managed-encryption/prerequisites.md
                   - Configuration: get-started/base-installation/self-managed/self-managed-encryption/configuration.md
                   - Troubleshooting: get-started/base-installation/self-managed/self-managed-encryption/troubleshooting.md
-              - Self Managed Dataserver:
-                  - get-started/base-installation/self-managed/self-managed-dataserver/index.md
-                  - Prerequisites: get-started/base-installation/self-managed/self-managed-dataserver/prerequisites.md
-                  - Configuration: get-started/base-installation/self-managed/self-managed-dataserver/configuration.md
-                  - Troubleshooting: get-started/base-installation/self-managed/self-managed-dataserver/troubleshooting.md
-              - Self Managed Usersync:
-                  - get-started/base-installation/self-managed/self-managed-usersync/index.md
-                  - Prerequisites: get-started/base-installation/self-managed/self-managed-usersync/prerequisites.md
-                  - Configuration: get-started/base-installation/self-managed/self-managed-usersync/configuration.md
-                  - Troubleshooting: get-started/base-installation/self-managed/self-managed-usersync/troubleshooting.md
               - PrivaceraCloud Data-plane:
                   - get-started/base-installation/self-managed/privaceracloud-data-plane/index.md
                   - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane/prerequisites.md
@@ -279,27 +265,27 @@ nav:
                   - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/prerequisites.md
                   - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/configuration.md
                   - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/troubleshooting.md
-              - PrivaceraCloud Data-plane Dataserver:
-                  - get-started/base-installation/self-managed/privaceracloud-data-plane-dataserver/index.md
-                  - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane-dataserver/prerequisites.md
-                  - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane-dataserver/configuration.md
-                  - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane-dataserver/troubleshooting.md
-              - PrivaceraCloud Data-plane Usersync:
-                  - get-started/base-installation/self-managed/privaceracloud-usersync/index.md
-                  - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane-usersync/prerequisites.md
-                  - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane-usersync/configuration.md
-                  - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane-usersync/troubleshooting.md
-              - Advanced Configuration:
-                  - get-started/base-installation/self-managed/advanced-configuration/index.md
-                  - Air-gap Setup: get-started/base-installation/self-managed/advanced-configuration/air-gap-installation.md
               - Using Privacera Manager: get-started/base-installation/self-managed/using-privacera-manager.md
               - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
       - User Management:
           - get-started/user-management/index.md
           - UserSync:
               - get-started/user-management/usersync/index.md
+              - Self Managed Usersync:
+                  - get-started/user-management/usersync/self-managed-usersync/index.md
+                  - Prerequisites: get-started/user-management/usersync/self-managed-usersync/prerequisites.md
+                  - Configuration: get-started/user-management/usersync/self-managed-usersync/configuration.md
+                  - Troubleshooting: get-started/user-management/usersync/self-managed-usersync/troubleshooting.md
+              - PrivaceraCloud Data-plane Usersync:
+                  - get-started/user-management/usersync/privaceracloud-data-plane-usersync/index.md
+                  - Prerequisites: get-started/user-management/usersync/privaceracloud-data-plane-usersync/prerequisites.md
+                  - Configuration: get-started/user-management/usersync/privaceracloud-data-plane-usersync/configuration.md
+                  - Troubleshooting: get-started/user-management/usersync/privaceracloud-data-plane-usersync/troubleshooting.md
           - SSO:
               - get-started/user-management/sso/index.md
+      - Advanced Configuration:
+          - get-started/advanced-configuration/index.md
+          - Air-gap Setup: get-started/advanced-configuration/air-gap-installation.md
   - Connectors:
       - connectors/index.md
       - AWS Lake Formation:

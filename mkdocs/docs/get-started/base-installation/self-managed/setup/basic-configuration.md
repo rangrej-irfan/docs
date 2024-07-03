@@ -2,7 +2,7 @@
 
 !!! note "Prerequisites"
     Before you begin, ensure that you have the installed Privacera Manager by following the steps in 
-    the [Setup](setup.md) section.
+    the [Setup](index.md) section.
 
 ## Overview
 
@@ -14,7 +14,7 @@ environment. In some cases, you will create new configuration YAML files and add
 documentation. The files under `config/custom-vars` are not overwritten during upgrades.
 
 After you have configured Privacera Manager, you can run the `privacera-manager.sh` script as 
-given in the [Using Privacera Manager](using-privacera-manager.md) section.
+given in the [Using Privacera Manager](../using-privacera-manager.md) section.
 
 ## Self-Managed and PrivaceraCloud Data-plane
 
@@ -250,7 +250,7 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
     entries for your service end-points.
 
     Privacera Manager setup, helm-install and post-install steps are explained in 
-    [Using Privacera Manager](using-privacera-manager.md) section.
+    [Using Privacera Manager](../using-privacera-manager.md) section.
 
 ### Configure Load Balancer (optional)
 ??? note "Configure Load Balancer (optional)"
@@ -266,21 +266,16 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
 
 Depending upon your deployment type and choice of Privacera modules , you can proceed to the next steps -
 
-| #   | Deployment type           | Module       | Next step                                                                                |
-|-----|---------------------------|--------------|------------------------------------------------------------------------------------------|
-| 1.  | Self-Managed              | Access       | [Self Managed Access](../self-managed-access.md)                                         |
-| 2.  | Self-Managed              | Discovery    | [Self Managed Discovery](../self-managed-discovery/index.md)                             |
-| 3.  | Self-Managed              | Encryption   | [Self Managed Encryption](../self-managed-encryption/index.md)                           |
-| 4.  | Self-Managed              | Dataserver   | [Self Managed Dataserver](../self-managed-dataserver/index.md)                           |
-| 5.  | Self-Managed              | Usersync     | [Self Managed Usersync](../self-managed-usersync/index.md)                               |
-| 6.  | PrivaceraCloud Data-plane | Access       | [PrivaceraCloud Data-plane Access](../privaceracloud-data-plane-access.md)               |
-| 7.  | PrivaceraCloud Data-plane | Discovery    | [PrivaceraCloud Data-plane Discovery](../privaceracloud-data-plane-discovery/index.md)   |
-| 8.  | PrivaceraCloud Data-plane | Encryption   | [PrivaceraCloud Data-plane Encryption](../privaceracloud-data-plane-encryption/index.md) |
-| 9.  | PrivaceraCloud Data-plane | Dataserver   | [PrivaceraCloud Data-plane Dataserver](../privaceracloud-data-plane-dataserver/index.md) |
-| 10. | PrivaceraCloud Data-plane | Usersync     | [PrivaceraCloud Data-plane Usersync](../privaceracloud-data-plane-usersync/index.md)     |
-
+| #  | Deployment type           | Module       | Next step                                                                                |
+|----|---------------------------|--------------|------------------------------------------------------------------------------------------|
+| 1. | Self-Managed              | Access       | [Self Managed Access](../self-managed-access.md)                                         |
+| 2. | Self-Managed              | Discovery    | [Self Managed Discovery](../self-managed-discovery/index.md)                             |
+| 3. | Self-Managed              | Encryption   | [Self Managed Encryption](../self-managed-encryption/index.md)                           |
+| 4. | PrivaceraCloud Data-plane | Access       | [PrivaceraCloud Data-plane Access](../privaceracloud-data-plane-access.md)               |
+| 5. | PrivaceraCloud Data-plane | Discovery    | [PrivaceraCloud Data-plane Discovery](../privaceracloud-data-plane-discovery/index.md)   |
+| 6. | PrivaceraCloud Data-plane | Encryption   | [PrivaceraCloud Data-plane Encryption](../privaceracloud-data-plane-encryption/index.md) |
 
 
 <div class="grid cards" markdown>
--  :material-page-previous: Prev [Setup](setup.md)
+-  :material-page-previous: Prev [Setup](index.md)
 </div>
