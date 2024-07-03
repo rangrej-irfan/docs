@@ -11,3 +11,4 @@
 **/output
 **/*dont_commit*
 **/venv
+**/__pycache__
