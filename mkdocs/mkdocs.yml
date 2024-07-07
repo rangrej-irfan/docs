@@ -393,7 +393,6 @@ nav:
       - FAQ: resources/faq/index.md
       - Installation:
           - resources/installation/index.md
-          - Third-party Software Versions: resources/installation/third-party-software.md
           - Self-managed compute sizing: resources/installation/self-managed-compute-sizing.md
       - Design and Concepts:
           - resources/design/index.md
@@ -416,4 +415,4 @@ nav:
       - Support:
           - resources/support/support_how_to.md
           - Support Policies: resources/support/support_policies.md
-      - Release Notes: resources/release-notes/index.md
+      - Release Notes: resources/releases/index.md
