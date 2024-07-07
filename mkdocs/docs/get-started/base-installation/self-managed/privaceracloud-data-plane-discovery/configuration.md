@@ -1,4 +1,4 @@
-# PrivaceraCloud Data Plane Discovery Configuration
+# Discovery Configuration - Self Managed and Data Plane
 
 ## Enable Discovery features 
 
@@ -17,8 +17,21 @@ in Self Managed and PrivaceraCloud Data Plane deployments.
     Add or edit the following variables:
     ```bash 
     # Add or edit the following variables in the file
+
+    # Discovery bucket name. Should be without s3:// prefix and can contain optional folder path
+    # Example 1: DISCOVERY_BUCKET_NAME: "my-discovery-bucket"
+    # Example 2: DISCOVERY_BUCKET_NAME: "my-discovery-bucket/my-path"
+    # This bucket will be created by Privacera Manager using terraform.
     DISCOVERY_BUCKET_NAME: “<Your_Discovery_Configuration_Bucket_Name>”
+
+    # If you do not want to create the bucket, set this to false
+    DISCOVERY_CREATE_BUCKET: "false"
+
+    # Privacera Manager will create the DynamoDB tables required for Discovery, if you 
+    # do not want to create the tables, set this to false
+    DISCOVERY_CREATE_NOSQL_TABLES: "false"
     
+    # IAM Role for Service Account used by Discovery Driver and Executor Pods
     DISCOVERY_USE_POD_IAM_ROLE: "true"
     DISCOVERY_IAM_ROLE_ARN: "<PLEASE_CHANGE>"
     
