@@ -1,0 +1,1 @@
+1. In PrivaceraCloud, go to **Settings** -> **Applications**.
