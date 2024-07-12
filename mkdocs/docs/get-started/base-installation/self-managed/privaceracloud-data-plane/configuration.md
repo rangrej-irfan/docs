@@ -23,6 +23,9 @@ You need the following information to configure PrivaceraCloud Data-plane:
 
 ## Configuration on PrivaceraCloud Portal
 
+Here are the different configurations you need to do on the PrivaceraCloud Portal, click on the
+links to get more details on each configuration step.
+
 | # | Required for      | Configuration Step                                                                                                           | Description                                                                                                                                                                                                                                                                                                                              | 
 |---|-------------------|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1 | Access, Discovery | [Create Access service user, Ranger Admin URL and API key](#create-ranger-service-user-admin-url-and-api-key)                | Create a an Access service user in your PrivaceraCloud account which will be used by the Privacera Access connectors in the Data-plane to connect to your PrivaceraCloud account.<br>Note these as RANGER_ADMIN_URL, RANGER_SERVICE_USERNAME, RANGER_SERVICE_PASSWORD and API_KEY which will be used in Privacera Manager configuration. |
@@ -30,92 +33,6 @@ You need the following information to configure PrivaceraCloud Data-plane:
 | 3 | Encryption        | [Enable Privacera Encryption module](#enable-privacera-encryption-module)           | Required for Privacera Encryption else skip.<br>Download the `vars.data-plane.config.yml` from PrivaceraCloud portal which is used in Privacera Manager configuration.                                                                                                                                                                   |
 | 4 | Discovery         | [Create Ranger Service user for Discovery Compliance policies](#create-ranger-service-user-for-discovery-compliance-policies) | Required for Privacera Discovery Compliance policies, else skip. Also, requires Privacera Encryption to be enabled.<br>Note the credentials which will be used in Privacera Manager configuration.                                                                                                                                       |
 
-## Configuration in Privacera Manager
-
-Make sure you have done the configuration on the PrivaceraCloud Portal as given above, 
-and have these handy,
-
-- RANGER_ADMIN_URL
-- RANGER_SERVICE_USERNAME
-- RANGER_SERVICE_PASSWORD
-- API_KEY
-- `vars.data-plane.config.yml`
-
-Run the following commands,
-```bash
-# Download the vars.data-plane.config.yml from PrivaceraCloud Portal 
-# in 'Configuration on PrivaceraCloud Portal - step 3' above
-
-# Upload the vars.data-plane.config.yml to Privacera Manager host and copy 
-# to `~/privacera-manager/config/custom-vars/vars.data-plane.config.yml`
-```
-```bash
-# Confirm it's presence by running `
-ls -l ~/privacera-manager/config/custom-vars/vars.data-plane.config.yml
-```
-```bash
-# Copy the sample vars.privacera-cloud.yml file from sample-vars folder
-cd ~/privacera/privacera-manager
-cp config/sample-vars/vars.privacera-cloud.yml config/custom-vars/
-```
-
-```bash
-# Edit the file
-cd ~/privacera/privacera-manager
-vi config/custom-vars/vars.privacera-cloud.yml
-```
-```bash
-# Edit the file as follows,
-
-# Obtain the Ranger Admin URL, API Key, Ranger service 
-# username, password from 
-# 'Configuration on PrivaceraCloud Portal -step #1' above. 
-# Set the base URL, that is the host name, to this variable as follows
-
-# Example - if the Ranger Admin URL is of this format - 
-# https://api.privaceracloud.com/api/XYZ then 
-# set the variable to https://api.privaceracloud.com
-PRIVACERA_CLOUD_BASE_URL: "<BASE_URL of RANGER_ADMIN_URL>"
-PRIVACERA_CLOUD_API_KEY: "<API_KEY>"
-
-CONNECTOR_RANGER_USER_NAME: "<RANGER_SERVICE_USERNAME>"
-CONNECTOR_RANGER_USER_PASSWORD: "<RANGER_SERVICE_PASSWORD>"
-
-PRIVACERA_USERSYNC_RANGER_USERNAME: "<RANGER_SERVICE_USERNAME>"
-PRIVACERA_USERSYNC_RANGER_PASSWORD: "<RANGER_SERVICE_PASSWORD>"
-
-# Set these variables, if not using Privacera Discovery on data-plane
-RANGER_ENABLE: "false"
-PORTAL_ENABLE: "false"
-PORTAL_INSTALL: "false"
-SOLR_ENABLE: "false"
-ZOOKEEPER_ENABLE: "false"
-AUDITSERVER_ENABLE: "false"
-MARIADB_ENABLE: "false"
-DB_INSTALL_MARIADB: "false"
-
-# Set these variables, if you plan to use Privacera Discovery on data-plane
-RANGER_ENABLE: "false"
-PORTAL_ENABLE: "true"    # Enable for Privacera Discovery on data-plane
-PORTAL_INSTALL: "true"   # Enable for Privacera Discovery on data-plane
-SOLR_ENABLE: "true"      # Enable for Privacera Discovery on data-plane
-ZOOKEEPER_ENABLE: "true" # Enable for Privacera Discovery on data-plane
-AUDITSERVER_ENABLE: "false"
-MARIADB_ENABLE: "false"
-DB_INSTALL_MARIADB: "false"
-```
-
-```bash
-# Edit the vars.ssl.yml file
-vi config/custom-vars/vars.ssl.yml
-``` 
-```bash
-# Add or edit the following variable
-RANGER_SSL_ENABLE: "false"
-```
-
-
-## Appendix
 ### Create Ranger service user, Admin URL and API key
 ??? note "Create Ranger service user, Admin URL and API key"
     Perform following steps in the PrivaceraCloud control plane portal:
@@ -271,6 +188,97 @@ RANGER_SSL_ENABLE: "false"
     8. Under **Allow Conditions** , add **privacera_service_discovery** user in the **Select User** field which has user permissions: _Protect, Unprotect, Get Scheme, Impersonate_
 
     9. Click **Save**.
+
+## Configuration in Privacera Manager
+
+Make sure you have done the configuration on the PrivaceraCloud Portal as given above, 
+and have these handy,
+
+- RANGER_ADMIN_URL
+- RANGER_SERVICE_USERNAME
+- RANGER_SERVICE_PASSWORD
+- API_KEY
+- `vars.data-plane.config.yml`
+
+### vars.data-plane.config.yml file
+
+Run the following commands,
+```bash
+# Download the vars.data-plane.config.yml from PrivaceraCloud Portal 
+# in 'Configuration on PrivaceraCloud Portal - step 3' above
+
+# Upload the vars.data-plane.config.yml to Privacera Manager host and copy 
+# to `~/privacera-manager/config/custom-vars/vars.data-plane.config.yml`
+```
+```bash
+# Confirm it's presence by running `
+ls -l ~/privacera-manager/config/custom-vars/vars.data-plane.config.yml
+```
+
+### vars.privacera-cloud.yml file
+
+```bash
+# Copy the sample vars.privacera-cloud.yml file from sample-vars folder
+cd ~/privacera/privacera-manager
+cp config/sample-vars/vars.privacera-cloud.yml config/custom-vars/
+```
+
+```bash
+# Edit the file
+cd ~/privacera/privacera-manager
+vi config/custom-vars/vars.privacera-cloud.yml
+```
+```bash
+# Edit the file as follows,
+
+# Obtain the Ranger Admin URL, API Key, Ranger service 
+# username, password from 
+# 'Configuration on PrivaceraCloud Portal -step #1' above. 
+# Set the base URL, that is the host name, to this variable as follows
+
+# Example - if the Ranger Admin URL is of this format - 
+# https://api.privaceracloud.com/api/XYZ then 
+# set the variable to https://api.privaceracloud.com
+PRIVACERA_CLOUD_BASE_URL: "<BASE_URL of RANGER_ADMIN_URL>"
+PRIVACERA_CLOUD_API_KEY: "<API_KEY>"
+
+CONNECTOR_RANGER_USER_NAME: "<RANGER_SERVICE_USERNAME>"
+CONNECTOR_RANGER_USER_PASSWORD: "<RANGER_SERVICE_PASSWORD>"
+
+PRIVACERA_USERSYNC_RANGER_USERNAME: "<RANGER_SERVICE_USERNAME>"
+PRIVACERA_USERSYNC_RANGER_PASSWORD: "<RANGER_SERVICE_PASSWORD>"
+
+# Set these variables, if not using Privacera Discovery on data-plane
+RANGER_ENABLE: "false"
+PORTAL_ENABLE: "false"
+PORTAL_INSTALL: "false"
+SOLR_ENABLE: "false"
+ZOOKEEPER_ENABLE: "false"
+AUDITSERVER_ENABLE: "false"
+MARIADB_ENABLE: "false"
+DB_INSTALL_MARIADB: "false"
+
+# Set these variables, if you plan to use Privacera Discovery on data-plane
+RANGER_ENABLE: "false"
+PORTAL_ENABLE: "true"    # Enable for Privacera Discovery on data-plane
+PORTAL_INSTALL: "true"   # Enable for Privacera Discovery on data-plane
+SOLR_ENABLE: "true"      # Enable for Privacera Discovery on data-plane
+ZOOKEEPER_ENABLE: "true" # Enable for Privacera Discovery on data-plane
+AUDITSERVER_ENABLE: "false"
+MARIADB_ENABLE: "false"
+DB_INSTALL_MARIADB: "false"
+```
+
+### vars.ssl.yml file 
+
+```bash
+# Edit the vars.ssl.yml file
+vi config/custom-vars/vars.ssl.yml
+``` 
+```bash
+# Add or edit the following variable
+RANGER_SSL_ENABLE: "false"
+```
 
 
 ## Next steps

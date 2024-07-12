@@ -256,9 +256,33 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
     the load-balancers are of type classic loadbalancers or NLB with port level pass through
     and certificates are part of the individual services. To be confirmed
 
+## PrivaceraCloud Data-plane deployment 
+
+If you are installing PrivaceraClou Data Plane, then at this point you have done all the necessary 
+configuration steps. Now you can proceed to the 
+[PrivaceraCloud Data-plane](../privaceracloud-data-plane/configuration.md) section.
+
+## Self Managed deployment 
+
+If you are installing Self Managed, then you are all set. Now run the Privacera Manager commands
+as per [Using Privacera Manager](../using-privacera-manager.md) section.
+
+After you have successfully run all the steps of Privacera Manager, you can verify that the 
+following services came up successfully in your Kubernetes cluster.
+
+- Portal
+- Ranger
+- Solr
+- Zookeeper
+- Auditserver
+
+Once this has been verified, you should move on to deploying the 
+[Connectors](../../../../connectors/index.md) 
+and [User Management](../../../user-management/index.md).
+
 ## Next steps
 
-Depending upon your deployment type and choice of Privacera modules , you can proceed to the next steps -
+Depending upon your deployment type and choice of Privacera modules, you can proceed to the next steps -
 
 | #  | Deployment type           | Module     | Next step                                                                                |
 |----|---------------------------|------------|------------------------------------------------------------------------------------------|
