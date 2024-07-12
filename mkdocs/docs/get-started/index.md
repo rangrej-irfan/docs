@@ -16,7 +16,7 @@ enterprises maintain stringent data protection standards while optimizing operat
 This document serves as a comprehensive guide for effectively utilizing Privacera's data governance and security
 platform. It includes the following sections:
 
-- **Setup, Installation, and Configuration:** Step-by-step instructions to help you set up, install, and configure
+- **[Setup, Installation, and Configuration](deployment-options/index.md):** Step-by-step instructions to help you set up, install, and configure
   Privacera.
 - **[Connector Integration](../connectors/index.md):** Guidance on adding and configuring various connectors, including Access, Discovery, and
   Encryption Connectors.

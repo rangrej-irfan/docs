@@ -17,17 +17,17 @@ Privacera Manager. These steps are common for all cloud providers.
 
 These steps are common for Self-Managed and PrivaceraCloud Data-plane installations.
 
-| #  | Configuration Step                                                      | Description                                                                                                                                                                                                                                                                                  |
-|----|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1. | [Enable Vault in Privacera Manager](#enable-vault-in-privacera-manager) | Enable Vault in Privacera Manager to store credentials                                                                                        |
-| 2. | [Enable Keystores](#enable-use-of-keystores-for-secrets)                | Enable use of keystores at runtime for storing credentials                                                                                  |
-| 3. | [Configure Cloud Provider](#configure-your-cloud-provider)              | Configure your cloud provider whether it is AWS, Azure or Google Cloud                                                                         |
-| 4. | [Configure Kubernetes](#configure-kubernetes)                           | Configure Kubernetes and Helm                                                                                                                  |
-| 5. | [Configure AWS EFS](#configure-aws-efs-optional)                        | Configure AWS EFS (optional - only if you are in AWS and planning to use AWS EFS as Kubernetes volumes)                                        |
-| 6. | [Configure External RDBMS](#configure-external-rdbms)                   | Configure External RDBMS to be used for Privacera policy store                                                                                |
-| 7. | [Configure TLS](#configure-tls)                                         | Configure TLS                                                                                                                                  |
-| 8. | [Configure AWS ALB Controller](#configure-aws-alb-controller-optional)  | Configure AWS ALB Controller (optional - only if you are in AWS and using AWS ALB Controller)                                                  |
-| 9. | [Configure Load Balancer](#configure-load-balancer-optional)            | Configure Load Balancer (optional - only if you are in AWS and do not plan to use AWS ALB Controller, and if you are in Azure or Google Cloud) |
+| #  | Configuration Step                                                      | Description                                                                                                                                                        |
+|----|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1. | [Enable Vault in Privacera Manager](#enable-vault-in-privacera-manager) | Enable Vault in Privacera Manager to store credentials. This ensures that credentials are not saved in clear text in the server where Privacera Manager is running |
+| 2. | [Enable Keystores](#enable-use-of-keystores-for-secrets)                | Enable use of keystores at runtime for storing credentials                                                                                                         |
+| 3. | [Configure Cloud Provider](#configure-your-cloud-provider)              | Configure your cloud provider whether it is AWS, Azure or Google Cloud                                                                                             |
+| 4. | [Configure Kubernetes](#configure-kubernetes)                           | Configure Kubernetes and Helm                                                                                                                                      |
+| 5. | [Configure AWS EFS](#configure-aws-efs-optional)                        | Configure AWS EFS (optional - only if you are in AWS and planning to use AWS EFS as Kubernetes volumes)                                                            |
+| 6. | [Configure External RDBMS](#configure-external-rdbms)                   | Configure External RDBMS to be used for Privacera policy store                                                                                                     |
+| 7. | [Configure TLS](#configure-tls)                                         | Configure TLS                                                                                                                                                      |
+| 8. | [Configure AWS ALB Controller](#configure-aws-alb-controller-optional)  | Configure AWS ALB Controller (optional - only if you are in AWS and using AWS ALB Controller)                                                                      |
+| 9. | [Configure Load Balancer](#configure-load-balancer-optional)            | Configure Load Balancer (optional - only if you are in AWS and do not plan to use AWS ALB Controller, and if you are in Azure or Google Cloud)                     |
 
 
 ## Appendix - Self-Managed and PrivaceraCloud Data-plane
@@ -61,7 +61,7 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
         cp sample-vars/vars.gcp.yml custom-vars/
         vi custom-vars/vars.gcp.yml
         # Set the Project ID of your Google Cloud project, this value can be found in the Google Console.
-        PROJECT_ID: "<your Google Cloud Project ID>"
+        PROJECT_ID: "<Your Google Cloud Project ID>"
         ```
 
 ### Configure Kubernetes
@@ -256,29 +256,30 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
     the load-balancers are of type classic loadbalancers or NLB with port level pass through
     and certificates are part of the individual services. To be confirmed
 
-## PrivaceraCloud Data-plane deployment 
 
-If you are installing PrivaceraClou Data Plane, then at this point you have done all the necessary 
-configuration steps. Now you can proceed to the 
-[PrivaceraCloud Data-plane](../privaceracloud-data-plane/configuration.md) section.
+=== "Self Managed deployment" 
 
-## Self Managed deployment 
+    If you are installing Self Managed, then you are all set. Now run the Privacera Manager commands
+    as per [Using Privacera Manager](../using-privacera-manager.md) section.
 
-If you are installing Self Managed, then you are all set. Now run the Privacera Manager commands
-as per [Using Privacera Manager](../using-privacera-manager.md) section.
+    After you have successfully run all the steps of Privacera Manager, you can verify that the 
+    following services came up successfully in your Kubernetes cluster.
 
-After you have successfully run all the steps of Privacera Manager, you can verify that the 
-following services came up successfully in your Kubernetes cluster.
+    - Portal
+    - Ranger
+    - Solr
+    - Zookeeper
+    - Auditserver
 
-- Portal
-- Ranger
-- Solr
-- Zookeeper
-- Auditserver
+    Once this has been verified, you should move on to deploying the [Connectors](../../../../connectors/index.md) 
+    and [User Management](../../../user-management/index.md).
 
-Once this has been verified, you should move on to deploying the 
-[Connectors](../../../../connectors/index.md) 
-and [User Management](../../../user-management/index.md).
+=== "PrivaceraCloud Data-plane deployment"
+
+    If you are installing PrivaceraCloud Data Plane, then at this point you have done all the necessary
+    configuration steps. Now you can proceed to the
+    [PrivaceraCloud Data-plane](../privaceracloud-data-plane/configuration.md) section.
+
 
 ## Next steps
 
