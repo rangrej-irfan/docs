@@ -18,13 +18,13 @@ platform. It includes the following sections:
 
 - **Setup, Installation, and Configuration:** Step-by-step instructions to help you set up, install, and configure
   Privacera.
-- **Connector Integration:** Guidance on adding and configuring various connectors, including Access, Discovery, and
+- **[Connector Integration](../connectors/index.md):** Guidance on adding and configuring various connectors, including Access, Discovery, and
   Encryption Connectors.
-- **User Guide:** Detailed information on using Privacera’s features and functionalities to manage data governance and
+- **[User Guide](../user-guide/index.md):** Detailed information on using Privacera’s features and functionalities to manage data governance and
   security.
-- **API Reference:** Comprehensive documentation on the available APIs for integrating and extending Privacera’s
-  capabilities.
-- **Release Notes:** Information on the latest updates, features, and bug fixes in each release of Privacera.
+- **[Resources](../resources/index.md):** Additional resources, such as FAQs, troubleshooting tips, and best practices for optimizing
+  Privacera’s performance. It also contains Design Concepts and API References.
+- **[Release Notes](../resources/releases/index.md):** Information on the latest updates, features, and bug fixes in each release of Privacera.
 
 <div class="grid cards" markdown>
 -   :material-page-next: __Go To__
