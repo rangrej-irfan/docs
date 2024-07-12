@@ -8,11 +8,11 @@ Here are the steps to configure JWT token integration :
 
 === "Self Managed and Data Plane"
 
-    1. asdad
+    1. TODO
 
 === "PrivaceraCloud"
 
-    1. asdad 
+    1. TODO 
 
 
 
