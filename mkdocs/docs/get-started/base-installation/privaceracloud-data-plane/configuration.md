@@ -285,8 +285,8 @@ RANGER_SSL_ENABLE: "false"
 
 Depending upon your deployment type and choice of Privacera modules , you can proceed to the next steps -
 
-| #  | Deployment type           | Module     | Next step                                                                                |
-|----|---------------------------|------------|------------------------------------------------------------------------------------------|
-| 1. | PrivaceraCloud Data-plane | Access     | [Connectors](../../../../connectors/index.md)                                            |
-| 2. | PrivaceraCloud Data-plane | Discovery  | [PrivaceraCloud Data-plane Discovery](../privaceracloud-data-plane-discovery/index.md)   |
-| 3. | PrivaceraCloud Data-plane | Encryption | [PrivaceraCloud Data-plane Encryption](../privaceracloud-data-plane-encryption/index.md) |
+| #  | Deployment type           | Module     | Next step                                     |
+|----|---------------------------|------------|-----------------------------------------------|
+| 1. | PrivaceraCloud Data-plane | Access     | [Connectors](../../../../connectors/index.md)                             |
+| 2. | PrivaceraCloud Data-plane | Discovery  | [Discovery](../../discovery/index.md)         |
+| 3. | PrivaceraCloud Data-plane | Encryption | [PrivaceraCloud Data-plane Encryption](../privaceracloud-data-plane-encryption/index.md)   |

@@ -258,9 +258,9 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
 
 ## PrivaceraCloud Data-plane deployment 
 
-If you are installing PrivaceraClou Data Plane, then at this point you have done all the necessary 
+If you are installing PrivaceraCloud Data Plane, then at this point you have done all the necessary 
 configuration steps. Now you can proceed to the 
-[PrivaceraCloud Data-plane](../privaceracloud-data-plane/configuration.md) section.
+[PrivaceraCloud Data-plane](../../privaceracloud-data-plane/configuration.md) section.
 
 ## Self Managed deployment 
 
@@ -284,12 +284,12 @@ and [User Management](../../../user-management/index.md).
 
 Depending upon your deployment type and choice of Privacera modules, you can proceed to the next steps -
 
-| #  | Deployment type           | Module     | Next step                                                                                |
-|----|---------------------------|------------|------------------------------------------------------------------------------------------|
-| 1. | Self-Managed              | Access     | [Self Managed Access](../self-managed-access.md)                                         |
-| 2. | Self-Managed              | Discovery  | [Self Managed Discovery](../self-managed-discovery/index.md)                             |
-| 3. | Self-Managed              | Encryption | [Self Managed Encryption](../self-managed-encryption/index.md)                           |
-| 4. | PrivaceraCloud Data-plane |            | [PrivaceraCloud Data-plane Setup](../privaceracloud-data-plane/configuration.md)         |
+| #  | Deployment type           | Module     | Next step                                                                           |
+|----|---------------------------|------------|-------------------------------------------------------------------------------------|
+| 1. | Self-Managed              | Access     | [Self Managed Access](../self-managed-access.md)                                    |
+| 2. | Self-Managed              | Discovery  | [Self Managed Discovery](../self-managed-discovery/index.md)                        |
+| 3. | Self-Managed              | Encryption | [Self Managed Encryption](../self-managed-encryption/index.md)                      |
+| 4. | PrivaceraCloud Data-plane |            | [PrivaceraCloud Data-plane Setup](../../privaceracloud-data-plane/configuration.md) |
 
 
 <div class="grid cards" markdown>

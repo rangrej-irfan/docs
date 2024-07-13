@@ -25,6 +25,6 @@ the deployment options for PrivaceraCloud Data-plane in the [Deployment Options]
     
     [Deployment Options](../../deployment-options/index.md)
 
-    [PrivacaraCloud Data-plane](../self-managed/privaceracloud-data-plane/index.md)
+    [PrivacaraCloud Data-plane](../privaceracloud-data-plane/index.md)
     
 </div>

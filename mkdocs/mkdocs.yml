@@ -229,63 +229,66 @@ nav:
           - Self Managed:
               - get-started/base-installation/self-managed/index.md
               - Prerequisites:
-                - get-started/base-installation/self-managed/setup/prerequisites/index.md
-                - AWS Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/aws-cloud-resources.md
-                - Azure Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/azure-cloud-resources.md
-                - Google Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/google-cloud-resources.md
+                  - get-started/base-installation/self-managed/setup/prerequisites/index.md
+                  - AWS Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/aws-cloud-resources.md
+                  - Azure Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/azure-cloud-resources.md
+                  - Google Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/google-cloud-resources.md
               - Setup: get-started/base-installation/self-managed/setup/privacera-manager-setup.md
               - Configuration: get-started/base-installation/self-managed/setup/basic-configuration.md
               - Troubleshooting: get-started/base-installation/self-managed/setup/troubleshooting.md
-          - Data Plane:
-#              - get-started/base-installation/data-plane/index.md
-              - Prerequisites: get-started/base-installation/data-plane/prerequisites.md
-#              - Setup: get-started/base-installation/data-plane/setup.md
-              - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane/configuration.md
-#              - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane/troubleshooting.md
-#              - Setup:
-#                  - get-started/base-installation/self-managed/setup/index.md
-#                  - Prerequisites:
-#                    - get-started/base-installation/self-managed/setup/prerequisites/index.md
-#                    - AWS Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/aws-cloud-resources.md
-#                    - Azure Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/azure-cloud-resources.md
-#                    - Google Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/google-cloud-resources.md
-#                  - Privacera Manager Setup: get-started/base-installation/self-managed/setup/privacera-manager-setup.md
-#                  - Basic Configuration: get-started/base-installation/self-managed/setup/basic-configuration.md
-#                  - Troubleshooting: get-started/base-installation/self-managed/setup/troubleshooting.md
-#              - Self Managed Access: get-started/base-installation/self-managed/self-managed-access.md
-#              - Self Managed Discovery:
-#                  - get-started/base-installation/self-managed/self-managed-discovery/index.md
-#                  - Prerequisites: get-started/base-installation/self-managed/self-managed-discovery/prerequisites.md
-#                  - Configuration: get-started/base-installation/self-managed/self-managed-discovery/configuration.md
-#                  - Troubleshooting: get-started/base-installation/self-managed/self-managed-discovery/troubleshooting.md
-#              - Self Managed Encryption:
-#                  - get-started/base-installation/self-managed/self-managed-encryption/index.md
-#                  - Prerequisites: get-started/base-installation/self-managed/self-managed-encryption/prerequisites.md
-#                  - Configuration: get-started/base-installation/self-managed/self-managed-encryption/configuration.md
-#                  - Troubleshooting: get-started/base-installation/self-managed/self-managed-encryption/troubleshooting.md
-#              - PrivaceraCloud Data-plane:
-#                  - get-started/base-installation/self-managed/privaceracloud-data-plane/index.md
-#                  - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane/prerequisites.md
-#                  - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane/configuration.md
-#                  - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane/troubleshooting.md
-#              - PrivaceraCloud Data-plane Privacera Discovery:
+          - PrivaceraCloud Data Plane:
+              #              - get-started/base-installation/data-plane/index.md
+              - Prerequisites: get-started/base-installation/privaceracloud-data-plane/prerequisites.md
+              #              - Setup: get-started/base-installation/data-plane/setup.md
+              - Configuration: get-started/base-installation/privaceracloud-data-plane/configuration.md
+      #              - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane/troubleshooting.md
+      #              - Setup:
+      #                  - get-started/base-installation/self-managed/setup/index.md
+      #                  - Prerequisites:
+      #                    - get-started/base-installation/self-managed/setup/prerequisites/index.md
+      #                    - AWS Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/aws-cloud-resources.md
+      #                    - Azure Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/azure-cloud-resources.md
+      #                    - Google Cloud Resources: get-started/base-installation/self-managed/setup/prerequisites/google-cloud-resources.md
+      #                  - Privacera Manager Setup: get-started/base-installation/self-managed/setup/privacera-manager-setup.md
+      #                  - Basic Configuration: get-started/base-installation/self-managed/setup/basic-configuration.md
+      #                  - Troubleshooting: get-started/base-installation/self-managed/setup/troubleshooting.md
+      #              - Self Managed Access: get-started/base-installation/self-managed/self-managed-access.md
+      #              - Self Managed Discovery:
+      #                  - get-started/base-installation/self-managed/self-managed-discovery/index.md
+      #                  - Prerequisites: get-started/base-installation/self-managed/self-managed-discovery/prerequisites.md
+      #                  - Configuration: get-started/base-installation/self-managed/self-managed-discovery/configuration.md
+      #                  - Troubleshooting: get-started/base-installation/self-managed/self-managed-discovery/troubleshooting.md
+      #              - Self Managed Encryption:
+      #                  - get-started/base-installation/self-managed/self-managed-encryption/index.md
+      #                  - Prerequisites: get-started/base-installation/self-managed/self-managed-encryption/prerequisites.md
+      #                  - Configuration: get-started/base-installation/self-managed/self-managed-encryption/configuration.md
+      #                  - Troubleshooting: get-started/base-installation/self-managed/self-managed-encryption/troubleshooting.md
+      #              - PrivaceraCloud Data-plane:
+      #                  - get-started/base-installation/self-managed/privaceracloud-data-plane/index.md
+      #                  - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane/prerequisites.md
+      #                  - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane/configuration.md
+      #                  - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane/troubleshooting.md
+      #              - PrivaceraCloud Data-plane Privacera Discovery:
       - Privacera Discovery:
-#          - get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/index.md
+          #          - get-started/discovery/index.md
           - Prerequisites:
-              - AWS: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/discovery-prerequisites-aws-self-managed-data-plane.md
-#              - PrivaceraCloud:
-#                - AWS: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/discovery-prerequisites-aws-privaceracloud.md
-#          - AWS Prerequisites - Self Managed and Data Plane: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/discovery-prerequisites-aws-self-managed-data-plane.md
-#          - AWS Prerequisites - PrivaceraCloud: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/discovery-prerequisites-aws-privaceracloud.md
-          - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/configuration.md
-          - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/troubleshooting.md
-#              - PrivaceraCloud Data-plane Privacera Encryption:
-#                  - get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/index.md
-#                  - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/prerequisites.md
-#                  - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/configuration.md
-#                  - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/troubleshooting.md
+              - get-started/discovery/prerequisites.md
+              - AWS: get-started/discovery/prerequisites-aws.md
+              - Azure: get-started/discovery/prerequisites-azure.md
+              - Google Cloud: get-started/discovery/prerequisites-google-cloud.md
+          #              - PrivaceraCloud:
+          #                - AWS: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/discovery-prerequisites-aws-privaceracloud.md
+          #          - AWS Prerequisites - Self Managed and Data Plane: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/discovery-prerequisites-aws-self-managed-data-plane.md
+          #          - AWS Prerequisites - PrivaceraCloud: get-started/base-installation/self-managed/privaceracloud-data-plane-discovery/discovery-prerequisites-aws-privaceracloud.md
+          - Configuration: get-started/discovery/configuration.md
+          - Troubleshooting: get-started/discovery/troubleshooting.md
+      #              - PrivaceraCloud Data-plane Privacera Encryption:
+      #                  - get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/index.md
+      #                  - Prerequisites: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/prerequisites.md
+      #                  - Configuration: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/configuration.md
+      #                  - Troubleshooting: get-started/base-installation/self-managed/privaceracloud-data-plane-encryption/troubleshooting.md
       - Using Privacera Manager: get-started/base-installation/self-managed/using-privacera-manager.md
-#              - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
+      #              - Troubleshooting: get-started/base-installation/self-managed/troubleshooting.md
       - User Management:
           - get-started/user-management/index.md
           - UserSync:
