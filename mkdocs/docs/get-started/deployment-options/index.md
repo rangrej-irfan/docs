@@ -113,8 +113,12 @@ between PrivaceraCloud and Self-Managed deployments:
 By considering these differences, you can select the deployment option that best aligns with your organization's
 operational preferences, control requirements, and resource capabilities.
 
-!!! note "Privacera Discovery Deployment"
-    Privacera Discovery scales well when deployed as Data Plane on customer VPC. 
+## Recommendation
+
+Privacera recommendation is to use Privacera Cloud with Data Plane deployed in customer VPC. This provides the best of
+both worlds, where Privacera manages the data governance and security policies, and audit-store, and some components
+that access your data-sources are deployed in your cloud provider VPC, thereby ensuring that your data never leaves your
+cloud provider VPC.
 
 <div class="grid cards" markdown>
 -   :material-page-previous: Next: [Base Installation](../base-installation/index.md)
