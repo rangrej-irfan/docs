@@ -9,3 +9,8 @@ You need the following prerequisites to deploy PrivaceraCloud Data Plane in your
 
 1. Follow the [Self Managed](../self-managed/index.md) PrivaceraCloud Data-plane installation track 
 to deploy the components that access your data sources in your cloud provider VPC.
+
+<div class="grid cards" markdown>
+-   :material-page-previous: Prev [Base Installation](../index.md)
+-   :material-page-next: Next [Configuration](configuration.md)
+</div>

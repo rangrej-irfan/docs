@@ -2,11 +2,11 @@
 
 !!! note
     You should follow the instructions on this page if you are installing PrivaceraCloud Data-plane.
-    You should have successfully done the [Basic Configuration](../basic-configuration/index.md) before proceeding with 
+    You should have successfully done the [Self Managed](../self-managed/index.md) before proceeding with 
     the instructions on this page.
 
 As part of setting up PrivaceraCloud Data-plane, after you have done the 
-[Basic Configuration](../basic-configuration/index.md), continue with the instructions on this page.
+[Self Managed](../self-managed/index.md), continue with the instructions on this page.
 At a high level this involves configuring the PrivaceraCloud Portal and the Privacera Manager as follows,
 
 1. Configuration on PrivaceraCloud Portal and download an artifact.
@@ -84,7 +84,7 @@ links to get more details on each configuration step.
 
     1. Go to **Settings** > **Applications**.
 
-        1. In the Applications section, select the application you wish to connect. If you don’t see the application you wish to connect, contact [Privacera Support](../../../../resources/support/support_how_to.md). For example, If you are planning to use Vertica application, then select Vertica.
+        1. In the Applications section, select the application you wish to connect. If you don’t see the application you wish to connect, contact [Privacera Support](../../../resources/support/support_how_to.md). For example, If you are planning to use Vertica application, then select Vertica.
 
         2. Enter the application name and description in the **Name** and **Description** fields respectively.
 
@@ -283,10 +283,12 @@ RANGER_SSL_ENABLE: "false"
 
 ## Next steps
 
-Depending upon your deployment type and choice of Privacera modules , you can proceed to the next steps -
+Depending upon your deployment type and choice of Privacera modules , you can proceed to the next steps.
 
-| #  | Deployment type           | Module     | Next step                                     |
-|----|---------------------------|------------|-----------------------------------------------|
-| 1. | PrivaceraCloud Data-plane | Access     | [Connectors](../../../../connectors/index.md)                             |
-| 2. | PrivaceraCloud Data-plane | Discovery  | [Discovery](../../discovery/index.md)         |
-| 3. | PrivaceraCloud Data-plane | Encryption | [PrivaceraCloud Data-plane Encryption](../privaceracloud-data-plane-encryption/index.md)   |
+<div class="grid cards" markdown>
+-   :material-page-previous: Prev [Prerequisites](index.md)
+-   :material-page-next: Next 
+    - [Connectors](../../../connectors/index.md)
+    - [Privacera Discovery](../../discovery/prerequisites.md)
+    - [Privacera Encryption](../../encryption/index.md)
+</div>

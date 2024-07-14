@@ -3,8 +3,8 @@
 !!! note "Prerequisites"
     You will be using Privacera Manager after you have met the prerequisites and done the basic
     configuration of vars YAML files. If you have not done so,
-    please refer to the [Prerequisites](setup/prerequisites/index.md) section and carry out the steps for your
-    cloud provider. Also do the [Basic Configuration](setup/basic-configuration.md) of vars YAML files. 
+    please refer to the [Prerequisites](../base-installation/self-managed/prerequisites/index.md) section and carry out the steps for your
+    cloud provider. Also do the [Basic Configuration](../base-installation/self-managed/configuration.md) of vars YAML files. 
 
 ## QuickStart
 You will be using the following three commands after you have done the 

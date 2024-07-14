@@ -26,5 +26,5 @@ are interested in to get the installation instructions.
 -   :material-page-next: Next
     - [PrivaceraCloud](privaceracloud/index.md)
     - [Self-Managed](self-managed/index.md)
-    - [Data-plane](data-plane/index.md)
+    - [Data-plane](privaceracloud-data-plane/index.md)
 </div>

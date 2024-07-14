@@ -68,5 +68,5 @@ and host them in your docker registry.
 
 <div class="grid cards" markdown>
 -   :material-page-previous: Prev [Base Installation](../index.md)
--   :material-page-next: Next [Setup](setup/index.md)
+-   :material-page-next: Next [Setup](setup.md)
 </div>

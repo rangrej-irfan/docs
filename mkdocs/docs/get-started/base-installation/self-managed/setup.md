@@ -26,7 +26,7 @@ Typically, you will be installing Privacera Manager on a compute host that has a
 the Internet to be able to download the Privacera Manager software and docker images. 
 
 If you are installing in an air gap (without internet access) network, 
-[follow these steps](../../../advanced-configuration/air-gap-installation.md) first and then continue with 
+[follow these steps](../../advanced-configuration/air-gap-installation.md) first and then continue with 
 the installation.
 
 === "With Internet Access"
@@ -37,7 +37,7 @@ the installation.
 === "Air Gap (Without Internet Access)"
 
     You will need the following information to install Privacera Manager in an air gap (no Internet access) network.
-    Obtain these from [Air-gap Installation](../../../advanced-configuration/air-gap-installation.md#air-gap-installation-information):
+    Obtain these from [Air-gap Installation](../../advanced-configuration/air-gap-installation.md#air-gap-installation-information):
     
     --8<-- "docs/get-started/base-installation/self-managed/snippets/air-gap-installation-information.ext"
 
@@ -228,5 +228,5 @@ ls -l ~/privacera/privacera-manager/logs
 
 <div class="grid cards" markdown>
 -  :material-page-previous: Prev [Prerequisites](prerequisites/index.md)
--  :material-page-next: Next [Privacera Manager Configuration](basic-configuration.md)
+-  :material-page-next: Next [Configuration](configuration.md)
 </div>

@@ -137,7 +137,7 @@ Following AWS cloud resources need to be created before installing the Privacera
 
     AWS EKS cluster with the following specifications:
 
-    - Kubernetes version - For supported version check [Privacera release notes](../../../../../resources/releases/index.md)
+    - Kubernetes version - For supported version check [Privacera release notes](../../../../resources/releases/index.md)
     - Node type - r5.2xlarge or similar
     - Auto-scaling node group - min 3 to max 10 nodes
     - EFS is recommended for multi-availability zone setup, [follow these instructions](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html){:target="_blank"}
@@ -167,6 +167,6 @@ Following AWS cloud resources need to be created before installing the Privacera
 
 <div class="grid cards" markdown>
 -  :material-page-previous: Prev [Prerequisites](index.md)
--  :material-page-next: Next [Privacera Manager Setup](../privacera-manager-setup.md)
+-  :material-page-next: Next [Setup](../setup.md)
 </div>
 

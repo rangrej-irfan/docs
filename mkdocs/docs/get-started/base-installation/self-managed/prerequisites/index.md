@@ -4,7 +4,7 @@ Data-plane deployment:
 
 1. **Cloud Provider** - Privacera supports the following cloud providers: AWS, Azure and Google Cloud
 1. **Kubernetes Cluster** - Privacera supports the following managed Kubernetes distributions: AWS EKS, Azure AKS, 
-  Google Cloud GKE. The versions for the supported Kubernetes distributions are in the release document of each [Privacera release](../../../../../resources/releases/index.md).
+  Google Cloud GKE. The versions for the supported Kubernetes distributions are in the release document of each [Privacera release](../../../../resources/releases/index.md).
 1. **Cloud resources** - Various cloud resources are required for Privacera deployment. These include:
     - Managed RDBMS - to store policies and metadata
     - Managed NoSQL - to store Privacera Discovery metadata (only if you are using Privacera Discovery module
@@ -19,7 +19,7 @@ Data-plane deployment:
        - Credentials for Privacera docker registry
        - Download URL of Privacera Manager software
 1. **Air gap network (optional)** - If you are in an air gap (no Internet access) network, you will need to host the docker
-   images in your own docker registry. Refer to [Air-gap Installation](../../../../advanced-configuration/air-gap-installation.md)
+   images in your own docker registry. Refer to [Air-gap Installation](../../../advanced-configuration/air-gap-installation.md)
 
 For the installation, there are two parallel tracks - Creating Cloud Resources and Installing Privacera using 
 Privacera Manager. In most organizations, these two are done by different teams or same person with
@@ -37,6 +37,6 @@ The prerequisites for each cloud provider are detailed in the following sections
     -   [AWS Cloud Resources](aws-cloud-resources.md)
     -   [Azure Cloud Resources](azure-cloud-resources.md)
     -   [Google Cloud Resources](google-cloud-resources.md)
-    -   [Air gap network](../../../../advanced-configuration/air-gap-installation.md)
-    -   [Privacera Manager Setup](../privacera-manager-setup.md)
+    -   [Air gap network](../../../advanced-configuration/air-gap-installation.md)
+    -   [Setup](../setup.md)
 </div>

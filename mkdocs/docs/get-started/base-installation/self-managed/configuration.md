@@ -8,7 +8,7 @@ environment. In some cases, you will create new configuration YAML files and add
 documentation. The files under `config/custom-vars` are not overwritten during upgrades.
 
 After you have configured Privacera Manager, you can run the `privacera-manager.sh` script as 
-given in the [Using Privacera Manager](../using-privacera-manager.md) section.
+given in the [Using Privacera Manager](../../privacera-manager/index.md) section.
 
 ## Self-Managed and PrivaceraCloud Data-plane
 
@@ -244,7 +244,7 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
     entries for your service end-points.
 
     Privacera Manager setup, helm-install and post-install steps are explained in 
-    [Using Privacera Manager](../using-privacera-manager.md) section.
+    [Using Privacera Manager](../../privacera-manager/index.md) section.
 
 ### Configure Load Balancer (optional)
 ??? note "Configure Load Balancer (optional)"
@@ -259,7 +259,7 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
 === "Self Managed deployment" 
 
     If you are installing Self Managed, then you are all set. Now run the Privacera Manager commands
-    as per [Using Privacera Manager](../using-privacera-manager.md) section.
+    as per [Using Privacera Manager](../../privacera-manager/index.md) section.
 
     After you have successfully run all the steps of Privacera Manager, you can verify that the 
     following services came up successfully in your Kubernetes cluster.
@@ -270,8 +270,8 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
     - Zookeeper
     - Auditserver
 
-    Once this has been verified, you should move on to deploying the [Connectors](../../../../connectors/index.md) 
-    and [User Management](../../../user-management/index.md).
+    Once this has been verified, you should move on to deploying the [Connectors](../../../connectors/index.md) 
+    and [User Management](../../user-management/index.md).
 
 === "PrivaceraCloud Data-plane deployment"
 
@@ -282,19 +282,13 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
 
 ## Next steps
 
-Depending upon your deployment type and choice of Privacera modules, you can proceed to the next steps -
-
-| #  | Deployment type           | Module     | Next step                                                                           |
-|----|---------------------------|------------|-------------------------------------------------------------------------------------|
-| 1. | Self-Managed              | Access     | [Self Managed Access](../self-managed-access.md)                                    |
-| 2. | Self-Managed              | Discovery  | [Self Managed Discovery](../self-managed-discovery/index.md)                        |
-| 3. | Self-Managed              | Encryption | [Self Managed Encryption](../self-managed-encryption/index.md)                      |
-| 4. | PrivaceraCloud Data-plane |            | [PrivaceraCloud Data-plane Setup](../../privaceracloud-data-plane/configuration.md) |
-
+Depending upon your deployment type and choice of Privacera modules, you can proceed to the next steps.
 
 <div class="grid cards" markdown>
--  :material-page-previous: Prev [Privacera Manager Setup](privacera-manager-setup.md)
+-  :material-page-previous: Prev [Setup](setup.md)
 -  :material-page-next: - Next 
-    - [Connectors](../../../../connectors/index.md)
-    - [User Management](../../../user-management/index.md)
+    - [Connectors](../../../connectors/index.md)
+    - [PrivaceraCloud Data Plane](../privaceracloud-data-plane/prerequisites.md)
+    - [Privacera Discovery](../../discovery/prerequisites.md)
+    - [Privacera Encryption](../../encryption/index.md)
 </div>
