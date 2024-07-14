@@ -5,36 +5,44 @@ Following AWS cloud resources need to be created before installing the Privacera
 
 | Prerequisite | Description                                                                                                                                                                                                                                                                         |
 | --- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [AWS EC2 instance](#aws-ec2-instance) | EC2 instance to run the Privacera Manager software. Refer [here](#aws-ec2-instance) for more details<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.    |
-| [AWS EKS cluster](#aws-eks-cluster) | EKS cluster to run the Privacera software. Refer [here](#aws-eks-cluster) for more details<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.              |
+| [AWS EC2 instance](#aws-ec2-instance-for-running-privacera-manager) | EC2 instance to run the Privacera Manager software. Refer [here](#aws-ec2-instance) for more details<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.    |
+| [AWS EKS cluster](#aws-eks-cluster-for-running-privacera-software) | EKS cluster to run the Privacera software. Refer [here](#aws-eks-cluster) for more details<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.              |
 | [AWS RDS AuroraDB](#aws-rds-auroradb) | RDS AuroraDB instance for the Privacera database. Refer [here](#aws-rds-auroradb) for more details<br>:green_circle: Self-managed: Required<br>:no_entry_sign: PrivaceraCloud Data-plane: Not Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required. |
 | [AWS ACM certificate](#aws-acm-certificate) | ACM certificate for the domain name used for the Privacera service endpoints. Refer [here](#aws-acm-certificate) for more details<br>:green_circle: Self-managed: Required<br>:green_circle: PrivaceraCloud Data-plane: Required<br>:green_circle: PrivaceraCloud Data-plane + Privacera Discovery: Required.                          |
 
 
 ## Appendix
-### AWS EC2 instance
+### AWS EC2 instance for running Privacera Manager
 ??? note "EC2 instance"
 
-    An AWS EC2 instance needs to be provisioned to run the Privacera Manager software. The instance should have the
-    following specifications:  
+    Privacera Manager is ran from an EC2 instance which has access to Kubernetes and other cloud resources that 
+    are needed for installating and managing Privacera. For that, from the this EC2 instance it should be able to 
+    connect and managed EKS cluster. And it should have an instance role as per this section.    
+
+    !!! note 
+        The Privacera Manager installation on this EC2 instance will contain self-signed certificates and 
+        terraform state. These are needed for subsequent upgrades. So it is recommended that this EC2 is not 
+        deleted and protected for termination. It is also strongly recommended to backup the contents of the 
+        Privacera Manager folder on regular basis.
     
-    - AWS Linux 2 AMI
-    - Minimum 1 vCPUs
-    - Minimum 4 GB RAM
-    - Minimum 50 GB disk space  
-    - SELinux should be disabled
+        You don't need to run this instance 24x7. You can stop the instance when not in use.
 
-    Only an AWS EC2 instance with the above configuration is supported for running the Privacera Manager software.   
+    ??? note "EC2 configuration"
+        An AWS EC2 instance needs to be provisioned to run the Privacera Manager software. At the minimum, the instance 
+        should have the following specifications:  
+        
+        - AWS Linux 2 AMI
+        - Minimum 1 vCPUs
+        - Minimum 4 GB RAM
+        - Minimum 50 GB disk space  
+        - SELinux should be disabled
 
-    It should be associated with your EKS cluster so that you can run kubectl command.
-
-    It should have an instance role with following IAM permissions:    
     
     ??? note "Permissions to access the EKS cluster for running kubectl commands"
         In addition to the following IAM policy, you would need to do additional 
         steps to authorize your EC2 instance to access the EKS cluster.
 
-        ```json
+        ```{.json title="privacera-manager-eks-policy"}
         {
          "Version": "2012-10-17",
          "Statement": [
@@ -48,9 +56,10 @@ Following AWS cloud resources need to be created before installing the Privacera
          ]
         }
         ```
-    ??? note "Permissions to write to the S3 bucket"
-        You will need a S3 bucket policy if you are going to configure Privacera Discovery module.
-        ```json
+    ??? note "Permissions to write to the S3 bucket (optional)"
+        You will need a S3 bucket policy if you are going to configure Privacera Discovery module. You need to 
+        update the ==bucket-name== and ==path== in the policy below.
+        ```{.json title="privacera-manager-s3-policy"}
         {
          "Version": "2012-10-17",
          "Statement": [
@@ -69,12 +78,11 @@ Following AWS cloud resources need to be created before installing the Privacera
            }
          ]
         }
-        ```json
         ```
     ??? note "Permissions to update the Route53 DNS entries (optional)"
-        For this policy you need the AWS hosted zone ID. You can find the hosted zone ID in the Route53 console.
-        This policy is optional if you want do not want Privacera Manager to update the Route53 DNS entry .
-        ```json
+        Privacera Manager can optionally add the DNS records using Route53 for the Privacera service endpoints.
+        Update the ==hosted-zone-id== in the policy below. You can find the hosted zone ID in the Route53 console.
+        ```{ .json title="privacera-manager-route53-policy"}
         {
          "Version": "2012-10-17",
          "Statement": [
@@ -123,18 +131,13 @@ Following AWS cloud resources need to be created before installing the Privacera
         ./get_helm.sh
         ```
 
-    !!! note 
-        The Privacera Manager installation on this EC2 instance will contain self-signed certificates and 
-        terraform state. As such, the contents of the Privacera Manager folder should be backed up regularly.
-    
-        You don't need to run this instance 24x7. You can stop the instance when not in use.
 
-### AWS EKS cluster
+### AWS EKS cluster for running Privacera Software
 ??? note "AWS EKS"
 
     AWS EKS cluster with the following specifications:
 
-    - Kubernetes version (look this TBD-link)
+    - Kubernetes version - For supported version check [Privacera release notes](../../../../../resources/releases/index.md)
     - Node type - r5.2xlarge or similar
     - Auto-scaling node group - min 3 to max 10 nodes
     - EFS is recommended for multi-availability zone setup, [follow these instructions](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html){:target="_blank"}
@@ -146,9 +149,9 @@ Following AWS cloud resources need to be created before installing the Privacera
     AWS RDS AuroraDB instance with the following specifications:
     
     - RDS AuroraDB (MySQL 5.7) 2.11.2  (MySQL 8 is also fine)
-    - db.r6g.2xlarge = 8 cpu, 64 gb
-    - only password authentication
-    - default charset to latin1, collation latin1_swedish_ci
+    - Minimum db.r6g.2xlarge = 8 cpu, 64 gb
+    - Only password authentication is supported
+    - Set default charset to latin1, collation latin1_swedish_ci
     - create privacera_db as the database by following these commands
         ```sql
         create database privacera_db character set latin1 collate latin1_swedish_ci;
@@ -156,8 +159,11 @@ Following AWS cloud resources need to be created before installing the Privacera
 ### AWS ACM certificate
 ??? note "AWS ACM certificate"
     AWS ACM certificate for the domain name that you will use for the Privacera service endpoints.
-    This should either be a wild-card certificate or a certificate with specific host names generated by 
-    Privacera Manager or a certificate with specific host names generated by you for the service endpoints.
+    This should one of these:
+
+    - Wild-card certificate
+    - Certificate with specific host names generated by Privacera Manager
+    - Certificate with specific host names generated by you for the service endpoints.
 
 <div class="grid cards" markdown>
 -  :material-page-previous: Prev [Prerequisites](index.md)

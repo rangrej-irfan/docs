@@ -25,27 +25,28 @@ Prerequisites.
 Typically, you will be installing Privacera Manager on a compute host that has access to 
 the Internet to be able to download the Privacera Manager software and docker images. 
 
-If you are installing in an air gap (no Internet access) network, 
+If you are installing in an air gap (without internet access) network, 
 [follow these steps](../../../advanced-configuration/air-gap-installation.md) first and then continue with 
 the installation.
 
-=== "Internet Access"
+=== "With Internet Access"
     You will need the following information to install Privacera Manager, obtain these from Privacera Sales Representative:
     
     --8<-- "docs/get-started/base-installation/self-managed/snippets/installation-information.ext"
 
-=== "Air gap (no Internet access)"
+=== "Air Gap (Without Internet Access)"
 
     You will need the following information to install Privacera Manager in an air gap (no Internet access) network.
     Obtain these from [Air-gap Installation](../../../advanced-configuration/air-gap-installation.md#air-gap-installation-information):
     
     --8<-- "docs/get-started/base-installation/self-managed/snippets/air-gap-installation-information.ext"
 
-## Download and Extract
+## Download the packages
 On the compute instance where you want to install Privacera Manager, perform the following steps:
 
-=== "Internet Access"
+=== "With Internet Access"
     ```bash
+
     # log into Privacera docker hub and enter the Privacera hub password
     docker login <PRIVACERA_HUB_HOSTNAME> -u <PRIVACERA_HUB_USER> # (1)
     # Enter your PRIVACERA_HUB_PASSWORD when prompted
@@ -56,29 +57,17 @@ On the compute instance where you want to install Privacera Manager, perform the
     # Create folders for downloading tarball and download the tarball
     mkdir -p ~/privacera/downloads # (3)
     wget <PRIV_MGR_PACKAGE> -O privacera-manager.tar.gz # (4)
-    
-    # extract the tarball
-    cd ~/privacera
-    tar -zxf ~/privacera/downloads/privacera-manager.tar.gz # (5)
-    
-    # create a shell script that is used internally
-    cd ~/privacera/privacera-manager/config 
-    echo '#!/bin/bash' > pm-env.sh # (6)
-    echo "export PRIV_MGR_PACKAGE=<PRIV_MGR_PACKAGE>" >> pm-env.sh 
-    echo "export PRIV_MGR_IMAGE=<PRIV_MGR_IMAGE>" >> pm-env.sh
     ```
 
-    1. Login into Privacera docker hub using the credentials provided to you
-    2. Pull the Privacera Manager docker image from Privacera docker hub
+    1. Update the PRIVACERA_HUB_HOSTNAME and PRIVACERA_HUB_USER. This will login into Privacera docker hub using the credentials provided to you
+    2. Update the PRIV_MGR_IMAGE. This will pull the Privacera Manager docker image from Privacera docker hub
     3. Create a folder for Privacera. Preferably keep the folder name as given above so that it is easy to follow the 
        guide. Under this folder we have the download folder where the tar ball is downloaded
     4. Download the privacera-manager tar ball and save it in the downloads folder
-    5. Extract the tarball in the Privacera folder. From now on you will run all command from 
-       `~/privacera/privacera-manager` folder
-    6. Create a script called pm-env.sh that has the download URL and Privacera Manager docker image name in it.
 
-=== "Air gap (no Internet access)"
+=== "Air Gap (Without Internet Access)"
     ```bash
+
     # log into your docker hub and enter the hub password
     docker login <AIRGAP_HUB_HOSTNAME> -u <AIRGAP_HUB_USER> # (1)
     # Enter your AIRGAP_HUB_PASSWORD when prompted
@@ -89,27 +78,54 @@ On the compute instance where you want to install Privacera Manager, perform the
     # Create folders for downloading tarball and download the tarball
     mkdir -p ~/privacera/downloads # (3)
     wget <AIRGAP_PRIV_MGR_PACKAGE> -O privacera-manager.tar.gz # (4)
-    
-    # extract the tarball
-    cd ~/privacera
-    tar -zxf ~/privacera/downloads/privacera-manager.tar.gz # (5)
-    
-    # create a shell script that is used internally
-    cd ~/privacera/privacera-manager/config 
-    echo '#!/bin/bash' > pm-env.sh # (6)
-    echo "export PRIV_MGR_PACKAGE=<AIRGAP_PRIV_MGR_PACKAGE>" >> pm-env.sh 
-    echo "export PRIV_MGR_IMAGE=<AIRGAP_PRIV_MGR_IMAGE>" >> pm-env.sh
     ```
 
-    1.  Login into your docker hub using the credentials provided to you
-    2.  Pull the Privacera Manager docker image from your docker hub
+    1.  Update AIRGAP_HUB_HOSTNAME and AIRGAP_HUB_USER. This will login into your docker hub using the credentials provided to you
+    2.  Update AIRGAP_PRIV_MGR_IMAGE. This will pull the Privacera Manager docker image from your docker hub
     3.  Create a folder for Privacera. Preferably keep the folder name as given above so that it is easy to follow the 
         guide. Under this folder we have the download folder where the tar ball is downloaded.
     4.  Download the privacera-manager tar ball from your object store and save it in the downloads folder
-    5.  Extract the tarball in the Privacera folder. From now on you will run all command from 
-        `~/privacera/privacera-manager` folder
-    6.  Create a script called pm-env.sh that has the download URL and Privacera Manager docker image name in it.
- 
+
+
+## Extract the package
+Once the packages are downloaded to the EC2 instance, then follow the steps below:
+
+=== "With Internet Access"
+    ```bash
+    
+    # extract the tarball
+    cd ~/privacera
+    tar -zxf ~/privacera/downloads/privacera-manager.tar.gz # (1)
+    
+    # create a shell script that is used internally
+    cd ~/privacera/privacera-manager/config 
+    echo '#!/bin/bash' > pm-env.sh # (2)
+    echo "export PRIV_MGR_PACKAGE=<PRIV_MGR_PACKAGE>" >> pm-env.sh 
+    echo "export PRIV_MGR_IMAGE=<PRIV_MGR_IMAGE>" >> pm-env.sh
+    ```
+
+    1. Extract the tarball in the Privacera folder. From now on you will run all command from 
+       `~/privacera/privacera-manager` folder
+    2. Create a script called pm-env.sh that has the download URL and Privacera Manager docker image name in it.
+
+=== "Air Gap (Without Internet Access)"
+    ```bash
+
+    # extract the tarball
+    cd ~/privacera
+    tar -zxf ~/privacera/downloads/privacera-manager.tar.gz # (1)
+    
+    # create a shell script that is used internally
+    cd ~/privacera/privacera-manager/config 
+    echo '#!/bin/bash' > pm-env.sh # (2)
+    echo "export PRIV_MGR_PACKAGE=<PRIV_MGR_PACKAGE>" >> pm-env.sh 
+    echo "export PRIV_MGR_IMAGE=<PRIV_MGR_IMAGE>" >> pm-env.sh
+    ```
+
+    1. Extract the tarball in the Privacera folder. From now on you will run all command from 
+       `~/privacera/privacera-manager` folder
+    2. Create a script called pm-env.sh that has the download URL and Privacera Manager docker image name in it.
+
 
 ## Name your deployment
 
@@ -121,13 +137,15 @@ It should be a short user-friendly name that follows these rules:
 
 - contain at most 63 characters
 - contain only lowercase alphanumeric characters or '-'
-- start with an alphanumeric character
+- start with an alpha character
 - end with an alphanumeric character
+
+Some examples are `privacera-dev`, `privacera-prod`, `privacera-qa`, etc.
 
 Run the following commands, where you can name your deployment environment as you like along with 
 the Privacera Manager image tag and download URL base-path.
 
-=== "Internet Access"
+=== "With Internet Access"
     ```bash
     cd ~/privacera/privacera-manager
     cp config/sample.vars.privacera.yml config/vars.privacera.yml 
@@ -140,7 +158,8 @@ the Privacera Manager image tag and download URL base-path.
     # - start with an alphanumeric character
     # - end with an alphanumeric character
     # It will be visible in Privacera Portal and will be used as a namespace in Kubernetes.
-    DEPLOYMENT_ENV_NAME: "privacera-dev"
+    # Examples are `privacera-dev`, `privacera-prod`, `privacera-qa`, etc.
+    DEPLOYMENT_ENV_NAME: "<DEPLOYMENT_NAME>"
     
     privacera_hub_user: "<PRIVACERA_HUB_USER>"
     privacera_hub_password: "<PRIVACERA_HUB_PASSWORD>"
@@ -152,7 +171,7 @@ the Privacera Manager image tag and download URL base-path.
     PRIVACERA_BASE_DOWNLOAD_URL: "<PRIV_MGR_BASE_URL>"
     ```
 
-=== "Air gap (no Internet access)"
+=== "Air Gap (Without Internet Access)"
     ```bash
     cd ~/privacera/privacera-manager
     cp config/sample.vars.privacera.yml config/vars.privacera.yml 
@@ -165,7 +184,8 @@ the Privacera Manager image tag and download URL base-path.
     # - start with an alphanumeric character
     # - end with an alphanumeric character
     # It will be visible in Privacera Portal and will be used as a namespace in Kubernetes.
-    DEPLOYMENT_ENV_NAME: "privacera-dev"
+    # Examples are `privacera-dev`, `privacera-prod`, `privacera-qa`, etc.
+    DEPLOYMENT_ENV_NAME: "<DEPLOYMENT_NAME>"
     
     privacera_hub_url: "<AIRGAP_HUB_HOST>"
     privacera_hub_user: "<AIRGAP_HUB_USER>"

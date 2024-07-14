@@ -4,14 +4,14 @@ Data-plane deployment:
 
 1. **Cloud Provider** - Privacera supports the following cloud providers: AWS, Azure and Google Cloud
 1. **Kubernetes Cluster** - Privacera supports the following managed Kubernetes distributions: AWS EKS, Azure AKS, 
-  Google Cloud GKE. The versions for the supported Kubernetes distributions are provided TBD-versions-link.
+  Google Cloud GKE. The versions for the supported Kubernetes distributions are in the release document of each [Privacera release](../../../../../resources/releases/index.md).
 1. **Cloud resources** - Various cloud resources are required for Privacera deployment. These include:
     - Managed RDBMS - to store policies and metadata
     - Managed NoSQL - to store Privacera Discovery metadata (only if you are using Privacera Discovery module
     - Object store bucket - to store configuration and audit logs
-    - Kubernetes cluster 
-    - Cloud compute to run Privacera Manager software
-    - IAM policies and roles 
+    - Managed Kubernetes cluster - to run Privacera software 
+    - Cloud compute (virtual server) -  to run Privacera Manager software
+    - IAM policies and roles - to allow Privacera software to access cloud resources
     - Network Setup - VPC, subnets, security groups, VPC peering or transit gateways. As Privacera will be 
       connecting to your data-sources you will need to think about the network connectivity.
     - Load balancer, DNS entries, TLS certificates - for securing the service endpoints
@@ -23,7 +23,13 @@ Data-plane deployment:
 
 For the installation, there are two parallel tracks - Creating Cloud Resources and Installing Privacera using 
 Privacera Manager. In most organizations, these two are done by different teams or same person with
-different privileges. Most cloud resources need to be created before Privacera installation ca   
+different privileges. Most cloud resources need to be created before Privacera installation can start.   
+
+The prerequisites for each cloud provider are detailed in the following sections:
+
+-   [AWS Cloud Resources](aws-cloud-resources.md)
+-   [Azure Cloud Resources](azure-cloud-resources.md)
+-   [Google Cloud Resources](google-cloud-resources.md)
 
 <div class="grid cards" markdown>
 -  :material-page-previous: Prev [Self Managed](../index.md)
