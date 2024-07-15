@@ -20,6 +20,8 @@ For this Databricks cluster type, Privacera supports:
 | Feature                          | Supported |
 |----------------------------------|-----------|
 | :green_circle: Access Management | Yes       |
+| :no_entry_sign: Discovery         | No        |
+| :no_entry_sign: Encryption        | No        |
 
 
 <div class="grid cards" markdown>
