@@ -70,6 +70,27 @@ Here are the steps to create databricks cluster with Privacera plugin (FGAC):
   7. Click on the **Add** button.
   8. Click **Create Compute** to create the cluster.
 
+
+# Validation
+To confirm the successful association of an access management policy to data in your Databricks installation, follow these steps:
+
+  1. Prerequisites:
+  	- Running Databricks cluster secured in the above steps.
+  	- At least one resource policy associated with your data that grants a user access to the database.
+  	- This resource policy must not be for Databrick's default database. Configure the policy for any database other than the default.
+  2. Steps to Validate Policy:
+  	1. Login to Databricks as a user who is defined in the resource policy.
+  	2. Create or open an existing notebook. Associate the Notebook with the running Databricks cluster.
+  	3. Select the database to which you have associated the policy.
+  	4. In the notebook, run the following SQL command to create a table:
+  	   ```sql
+  	   CREATE TABLE employees(Emp_Id INT, First_name STRING, Last_name String); 
+  	   ```
+  	5. On PrivaceraCloud, go to **Access Management** -> **Audits** 
+  	6. Check for the success or failure of the resource policy. A successful access is indicated as **Allowed** and failure is indicated as **Denied**.
+
+
+
 <div class="grid cards" markdown>
 -   :material-page-previous: Prev topic: [Prerequistes](prerequisites.md)
 -   :material-page-next: Next topic: [Advanced Configuration](advanced-configuration.md)
