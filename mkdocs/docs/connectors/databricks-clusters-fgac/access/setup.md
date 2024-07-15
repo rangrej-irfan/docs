@@ -17,7 +17,7 @@ title: Setup for Access Management for Databricks all-purpose compute clusters w
 
 
 # Create Databricks cluster policy 
-+We recommend to use [Databricks cluster policy](https://docs.databricks.com/en/admin/clusters/policies.html){:target="_blank"} to control cluster configuration. Here are the steps to create cluster policy: 
+We recommend to use [Databricks cluster policy](https://docs.databricks.com/en/admin/clusters/policies.html){:target="_blank"} to control cluster configuration. Here are the steps to create cluster policy: 
 
   - Log in to **Databricks Web UI** 
   - Click on the **Compute** icon on the sidebar
@@ -53,7 +53,7 @@ title: Setup for Access Management for Databricks all-purpose compute clusters w
 
 
 # Create Databricks cluster  
-+Here are the steps to create databricks cluster with Privacera plugin (FGAC): 
+Here are the steps to create databricks cluster with Privacera plugin (FGAC): 
 
   1. Log in to **Databricks Web UI** 
   2. Click on the **Compute** icon on the sidebar

@@ -10,7 +10,7 @@ title: Troubleshooting for Access Management for Databricks all-purpose compute 
 Here are the steps to get Installation logs and Privacera plugin version files from DBFS: 
 
 
-- Privacera init script generate two files in dbfs at location dbfs:/privacera/cluster-logs/<CLUSTER_NAME>/
+- Privacera init script generate two files in dbfs at location dbfs:/privacera/cluster-logs/&lt;CLUSTER_NAME&gt;/
 - Commands to list files from dbfs location 
 ```shell
 dbfs ls dbfs:/privacera/cluster-logs/<CLUSTER_NAME>/
