@@ -366,6 +366,74 @@ nav:
       - GDS:
           - user-guide/gds/index.md
           - Concepts: user-guide/gds/gds-concepts.md
+      - Discovery:
+          - user-guide/discovery/index.md
+          - Introduction:
+              - user-guide/discovery/intro/index.md
+              - Overview of Privacera Discovery: user-guide/discovery/intro/overview.md
+              - Key Features and Benefits: user-guide/discovery/intro/features.md
+          - Get Started:
+              - user-guide/discovery/start/index.md
+              - Planning for Discovery: user-guide/discovery/start/planning.md
+              - Quick Start: user-guide/discovery/start/quick-start.md
+          - Data Sources:
+              - user-guide/discovery/sources/index.md
+          - Scanning and Classification:
+              - user-guide/discovery/scanning/index.md
+              - Setting Up Scans:
+                  - Defining Scans: user-guide/discovery/scanning/setup/defining-scans.md
+                  - Scheduling Scans: user-guide/discovery/scanning/setup/scheduling-scans.md
+              - Different ways for Scanning:
+                  - user-guide/discovery/scanning/ways/index.md
+                  - Offline Scanning: user-guide/discovery/scanning/ways/offline-scanning.md
+                  - Realtime Scanning: user-guide/discovery/scanning/ways/realtime-scanning.md
+              - Classification Techniques:
+                  - Tags: user-guide/discovery/scanning/classification/tags.md
+                  - Using Dictionaries: user-guide/discovery/scanning/classification/dictionaries.md
+                  - Heuristic Analysis: user-guide/discovery/scanning/classification/models.md
+                  - Applying Rules: user-guide/discovery/scanning/classification/rules.md
+          - Data Zones:
+              - Overview of Data Zones: user-guide/discovery/zones/overview.md
+              - Creating and Managing Data Zones: user-guide/discovery/zones/creating.md
+          - Review and Refinement:
+              - Reviewing Classifications:
+                  - Accepting and Rejecting Classifications: user-guide/discovery/review/reviewing.md
+              - Refining Scan Results:
+                  - Using Dictionaries: user-guide/discovery/review/refining/dictionaries.md
+                  - Adjusting Patterns and Rules: user-guide/discovery/review/refining/patterns-rules.md
+                  - Model Refinement: user-guide/discovery/review/refining/models.md
+          - Policy Implementation:
+              - Creating and Applying Policies:
+                  - Masking and Encryption Policies: user-guide/discovery/policies/masking.md
+                  - Access Control Policies: user-guide/discovery/policies/access.md
+              - Monitoring and Compliance:
+                  - Alerts and Notifications: user-guide/discovery/policies/compliance/alerts.md
+                  - Compliance Workflow: user-guide/discovery/policies/compliance/workflow.md
+          - Reporting and Analysis:
+              - Generating Reports:
+                  - Summary Reports: user-guide/discovery/reports/generating/summary.md
+                  - Detailed Drill-Down Reports: user-guide/discovery/reports/generating/drill-down.md
+              - Analyzing Scan Results:
+                  - Metrics and Insights: user-guide/discovery/reports/analyzing/metrics.md
+                  - Dashboard Overview: user-guide/discovery/reports/analyzing/dashboard.md
+          - Advanced Features:
+              - Customizing Scan Techniques: user-guide/discovery/advanced/customizing-scans.md
+              - Integration with Other Tools: user-guide/discovery/advanced/integration.md
+          - Troubleshooting:
+              - user-guide/discovery/troubleshooting/index.md
+#
+#      - Discovery:
+#          - user-guide/discovery/index.md
+#          - Get Started: user-guide/discovery/get-started.md
+#
+#          - Scan Resources: user-guide/discovery/scan-resources.md
+#          - Configure Scans: user-guide/discovery/configure-scans.md
+#          - Data Zones: user-guide/discovery/data-zones.md
+#          - Compliance Policies: user-guide/discovery/compliance-policies.md
+#          - View Scanned Resources: user-guide/discovery/view-scanned-resources.md
+#          - Reports: user-guide/discovery/reports.md
+#          - Troubleshooting: user-guide/discovery/troubleshooting.md
+#          - Concepts: user-guide/discovery/discovery-concepts.md
   - Resources:
       - resources/index.md
       - FAQ: resources/faq/index.md
