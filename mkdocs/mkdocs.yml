@@ -341,6 +341,14 @@ nav:
               - Setup: connectors/databricks-unity-catalog/discovery/setup.md
               - Advanced Configuration: connectors/databricks-unity-catalog/discovery/advanced-configuration.md
               - Troubleshooting: connectors/databricks-unity-catalog/discovery/troubleshooting.md
+      - AWS EMR:
+          - connectors/aws-emr/index.md
+          - Access Management:
+              - connectors/aws-emr/access/index.md
+              - Prerequisites: connectors/aws-emr/access/prerequisites.md
+              - Setup: connectors/aws-emr/access/setup.md
+              - Advanced Configuration: connectors/aws-emr/access/advanced-configuration.md
+              - Troubleshooting: connectors/aws-emr/access/troubleshooting.md
       - Vertica:
           - connectors/vertica/index.md
           - Access Management:
