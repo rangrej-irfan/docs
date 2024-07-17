@@ -79,8 +79,7 @@ plugins:
   # https://github.com/chrieke/mkdocs-exclude-search
   - exclude-search:
       exclude:
-        - faq/administration/*
-        - attic/*
+        - "**/attic/*"
         - "**/snippets/"
   - meta:
       enabled: true
@@ -368,10 +367,6 @@ nav:
           - Concepts: user-guide/gds/gds-concepts.md
       - Discovery:
           - user-guide/discovery/index.md
-          - Introduction:
-              - user-guide/discovery/intro/index.md
-              - Overview of Privacera Discovery: user-guide/discovery/intro/overview.md
-              - Key Features and Benefits: user-guide/discovery/intro/features.md
           - Get Started:
               - user-guide/discovery/start/index.md
               - Planning for Discovery: user-guide/discovery/start/planning.md
@@ -453,6 +448,8 @@ nav:
               - Access Tools: resources/design/access-management/access_tools.md
               - About Secure Views: resources/design/access-management/about_secure_views.md
               - About JWT Tokens: resources/design/access-management/about_jwt_tokens.md
+          - Discovery:
+              - resources/design/discovery/index.md
       - API Reference:
           - resources/api-reference/index.md
           - PEG API - Self Managed: resources/api-reference/peg-rest-api-on-privacera-self-managed.md
