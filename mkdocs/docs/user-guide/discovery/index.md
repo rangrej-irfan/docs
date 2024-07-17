@@ -1,6 +1,8 @@
-# Privacera Discovery User Guide
+---
+title: Privacera Discovery User Guide
+---
 
-## Introduction
+# Privacera Discovery User Guide
 
 Privacera Discovery is designed to search for, identify, and manage sensitive information within your data assets. This
 guide provides a comprehensive overview of its functionalities, features, and usage instructions to help you maximize
