@@ -10,12 +10,12 @@ identity reliably to Privacera.
 The following connectors support the use of JWT tokens to carry user identity information:
 
 - OLAC connectors
-      - AWS EMR (on EC2) Spark OLAC connector without Kerberos
-      - AWS EMR-Serverless Spark OLAC connector without Lake Formation
-      - Databricks Standard Cluster OLAC connector
-      - Apache Spark on EKS OLAC connector
+      - AWS EMR (on EC2) Spark OLAC connector without Kerberos - JWT token user identity is the only supported way to enforce access control in a non-Kerberos EMR (on EC2) cluster.
+      - AWS EMR-Serverless Spark OLAC connector without Lake Formation - JWT token user identity allows you to use Privacera for access control in a non-Lake Formation EMR-Serverless cluster without using IAM roles for user identity.
+      - Databricks Standard Cluster OLAC connector - JWT token user identity is an additional way to pass user identity to Privacera for access control if you don't want to use the logged-in user identity.
+      - Apache Spark on EKS OLAC connector - JWT token user identity is the only supported way to enforce access control  Apache Spark on EKS cluster.
 -  FGAC connectors
-      - Databricks High Concurrency Cluster FGAC connector
+      - Databricks High Concurrency Cluster FGAC connector - JWT token user identity is an additional way to pass user identity to Privacera for access control if you don't want to use the logged-in user identity.
 
 ### Supported Deployments 
 - PrivaceraCloud
@@ -126,6 +126,10 @@ The fields in the payload are as follows:
 
 All other fields in the payload will be ignored by Privacera.
 
+!!! note "Token Duration"
+    For OLAC jobs, the token duration can be short as it is used only during the startup of the job to pass the identity to 
+    the Privacera Dataserver. For FGAC jobs, the token duration should be long enough to cover the duration of the job.
+
 ### JWT Signature Verification
 
 JWT Signature verification is done using the public key of the IdP. The public key can be configured statically in Privacera or dynamically fetched from the IdP's JWKS endpoint.
@@ -149,7 +153,7 @@ To use this feature you need to do the following:
 ### For OLAC supported connectors
 
 User will pass the JWT token string in a Spark configuration variable to the Spark job. Here is an example - 
-```json
+```bash
 spark-sql \
 --conf "spark.hadoop.privacera.jwt.token.str=<JWT_TOKEN>" \
 --conf "spark.hadoop.privacera.jwt.oauth.enable=true"
@@ -162,12 +166,12 @@ The difference is the methodology is because FGAC clusters support SparkSQL and 
 pass JWT in Spark configuration variable. 
 
 !!! warning "Global User"
-    When this feature is used FGAC cluster, then the logged in user identity is not considered and everyone will be 
-    treated as the user n the JWT token. This is only recommended for job clusters where you want to enforce FGAC"
+    When this feature is used FGAC cluster, then the logged-in user identity is not considered and everyone will be 
+    treated as the user in the JWT token. This is only recommended for job clusters where you want to enforce FGAC.
 
 Here is an example - 
 
-```json
+```properties
 spark.hadoop.privacera.jwt.oauth.enable true
 spark.hadoop.privacera.jwt.token /tmp/jwttoken.dat
 spark.hadoop.privacera.jwt.0.token.parserType PING_IDENTITY
@@ -184,8 +188,6 @@ file1 = open(file_path,"w")
 file1.write(token)
 file1.close()
 ```
-[TODO: Add steps on how to copy the JWT token file to all nodes of a Databricks cluster]
-[TODO: Add steps on how to copy the JWT token file to all nodes of a EMR cluster]
 
 ## Configuring Privacera
 
@@ -195,8 +197,240 @@ You need to configure the Privacera Dataserver to use JWT tokens for OLAC. The c
 the issuer value to a set of configurations that are used to validate the JWT token. As such multiple
 issuer configurations can be added to Privacera Dataserver.
 
+#### Setup for JWT public key configuration
 
+=== "Self Managed and Data Plane"
+    On the host where Privacera Manager is installed, do the following steps:
+    ```bash
+    cd ~/privacera/privacera-manager
+    cp config/sample-vars/vars.jwt-auth.yaml config/custom-vars
+    vi config/custom-vars/vars.jwt-auth.yaml
+    ```
+    Edit the file and modify the `JWT_CONFIGURATION_LIST` as given in next section.
+
+    If you are doing static public key configuration, then you need the public key in PEM format in a file. All the 
+    such public key files should be copied to the `privacera/privacera-manager/config/custom-vars` directory. 
+
+    After all the changes are done, run the Privacera Manager by [following these steps](../../../get-started/privacera-manager/index.md).
+
+=== "PrivaceraCloud"
+    To enable JWT token for User Identity in PrivaceraCloud, you need to add below properties in s3 application.
+
+    Navigate to `Goto Settings` >> `Applications` >> `s3` >> `Click on edit`
+   
+    Now click on `Access Management` from pop-up and navigate to `Advanced properties` section
+   
+    Add the properties given in the next section and click on save button.
+
+##### Static public key configuration
+
+=== "Self Managed and Data Plane"
+    ```yaml
+    JWT_CONFIGURATION_LIST:
+
+      - index: 0
+        issuer: "https://your-idp-domain.com/websec1"
+        #  subject: "<PLEASE_CHANGE>"
+        # secret: "<PLEASE_CHANGE>"
+        userKey: "client_id"
+        groupKey: "scope"
+        parserType: "PING_IDENTITY"
+        publickey: "jwttoken1.pub"
+
+      - index: 1
+        issuer: "https://your-idp-domain.com/websec2"
+        subject: "<PLEASE_CHANGE>"
+        secret: "<PLEASE_CHANGE>"
+        userKey: "client_id"
+        groupKey: "scope"
+        parserType: "KEYCLOAK"
+        publickey: "jwttoken2.pub"
+
+      - index: 2
+        issuer: "https://your-idp-domain.com/websec2"
+        subject: "<PLEASE_CHANGE>"
+        secret: "<PLEASE_CHANGE>"
+        userKey: "client_id"
+        parserType: "KEYCLOAK"
+        publickey: "jwttoken3.pub
+    ```
+=== "PrivaceraCloud"
+    ```properties
+    privacera.jwt.oauth.enable=true
+   
+    privacera.jwt.0.token.issuer=https://your-idp-domain.com/websec1
+    privacera.jwt.0.token.publickey=<public_key_in_string_format>
+    privacera.jwt.0.token.userKey=client_id
+    privacera.jwt.0.token.groupKey=scope
+    privacera.jwt.0.token.parserType=PING_IDENTITY
+   
+    privacera.jwt.1.token.issuer=https://your-idp-domain.com/websec2
+    privacera.jwt.1.token.publickey=<public_key_in_string_format>
+    privacera.jwt.1.token.userKey=client_id
+    privacera.jwt.1.token.groupKey=scope
+    privacera.jwt.1.token.parserType=KEYCLOAK
+    ```
+##### Dynamic public key configuration
+
+=== "Self Managed and Data Plane"
+    ```yaml
+    JWT_CONFIGURATION_LIST:
+      - index: 0
+        issuer: "https://example.com/issuer"
+        #  subject: "<PLEASE_CHANGE>"
+        # secret: "<PLEASE_CHANGE>"
+        userKey: "client_id"
+        groupKey: "scope"
+        parserType: "PING_IDENTITY"
+    
+        pubKeyProviderEndpoint: "https://<JWKS-provider>/get_public_key?kid="
+        pubKeyProviderAuthType: "BASIC"
+        pubKeyProviderAuthUserName: "<username>"
+        pubKeyProviderAuthTypePassword: "<password>"
+        pubKeyProviderJsonResponseKey: "x5c"
+        jwtTokenProviderKeyId: "kid"
+    ```
+
+=== "PrivaceraCloud"
+    ```properties
+    privacera.jwt.oauth.enable=true
+    
+    privacera.jwt.0.token.issuer=https://example.com/issuer
+    privacera.jwt.0.token.userKey=client_id
+    privacera.jwt.0.token.groupKey=scope
+    privacera.jwt.0.token.parserType=PING_IDENTITY
+    privacera.jwt.0.token.publickey.provider.url=https://<JWKS-provider>/get_public_key?kid=
+    privacera.jwt.0.token.publickey.provider.auth.type=BASIC
+    privacera.jwt.0.token.publickey.provider.auth.username=<username>
+    privacera.jwt.0.token.publickey.provider.auth.password=<password>
+    privacera.jwt.0.token.provider.response.key=x5c
+    privacera.jwt.0.token.provider.key.id=kid
+    ```
+
+##### Dynamic public key configuration (Without Basic Authentication)
+
+=== "Self Managed and Data Plane"
+    ```yaml
+    JWT_CONFIGURATION_LIST:
+    -   index: 0
+        issuer: "https://example.com/issuer"
+        subject: "jwt_test_2"
+        userKey: "client_id"
+        groupKey: "scope"
+        parserType: "PING_IDENTITY"
+        pubKeyProviderEndpoint: "https://my-sat-server/<api-to-get-public-key-by-kid>/"
+        pubKeyProviderJsonResponseKey: "x5c"
+        jwtTokenProviderKeyId: "kid
+    ```
+
+=== "PrivaceraCloud"
+    ```properties
+    privacera.jwt.oauth.enable=true
+    
+    privacera.jwt.0.token.issuer=https://example.com/issuer
+    privacera.jwt.0.token.userKey=client_id
+    privacera.jwt.0.token.groupKey=scope
+    privacera.jwt.0.token.parserType=PING_IDENTITY
+    privacera.jwt.0.token.publickey.provider.url=https://<JWKS-provider>/get_public_key?kid=
+    privacera.jwt.0.token.provider.response.key=x5c
+    privacera.jwt.0.token.provider.key.id=kid
+    ```
+
+##### Reference 
+
+??? note "Reference"
+
+    These properties need to be used for both static and dynamic public key configurations.
+    
+    1. **issuer**
+         - Description: Issuer of the JWT Payload
+         - Required: Yes
+    
+       2. **subject**
+            - Description: Subject of the JWT Payload (the user).
+            - Required: Optional
+    
+       3. **secret**
+            - Description: If the JWT token has been encrypted using secret. (in this case use Algorithm HS256)
+            - Required: Optional
+    
+       4. **publickey**
+            - Description: JWT file name that you copied in previous steps. (in this case use Algorithm RS256)
+            - Required: Required only for Static public Key
+    
+       5. **userKey**
+            - Description: JWT Payload key for username
+            - Required: Optional
+            - Default: `client_id`
+    
+       6. **groupKey**
+            - Description: JWT Payload key for group name
+            - Required: Optional
+            - Default: `scope`
+    
+       7. **parserType**
+            - Description: Assign one of the following values:
+                - `PING_IDENTITY`: When scope/group is array.
+                - `KEYCLOAK`: When scope/group is space separator.
+          - Required: Yes
+    
+    Additional Configuration for Dynamic Public Key
+    
+    1. **pubKeyProviderEndpoint**
+         - Description: API URL by which we will return public key. 
+             - Format: `https://my-sat-server/<api-to-get-public-key-by-kid>/`
+             - Privacera code will add `<kid>` at the end above URL and it will become like this `https://my-sat-server/<api-to-get-public-key-by-kid>/<kid>` and that API should return public key of specific KID mentioned in JWT.
+         - Required: Yes
+    
+       2. **pubKeyProviderAuthType**
+         - Description: Authorization type as per API URL (`BASIC`/`NONE`)
+         - Required: Optional
+         - Default: `NONE`
+    
+       3. **pubKeyProviderAuthUserName**
+         - Description: Username for JWKS Provider
+         - Required: Required When `pubKeyProviderAuthType=BASIC`
+    
+       4. **pubKeyProviderAuthTypePassword**
+         - Description: Password for JWKS Provider
+         - Required: Required When `pubKeyProviderAuthType=BASIC`
+    
+       5. **pubKeyProviderJsonResponseKey**
+         - Description: JWKS Response JSON Key to get Public Key
+         - Required: Yes
+    
+       6. **jwtTokenProviderKeyId**
+         - Description: JWT Headers Key to get public key id to retrieve from JWKS Provider
+         - Required: Yes
+
+#### Configuring AWS EMR (on EC2) and EMR-Serverless Spark OLAC connector
+
+Open the vars.emr.yml file:
+```bash 
+cd ~/privacera/privacera-manager
+vi config/custom-vars/vars.emr.yml
+```
+
+Add following property to enable JWT for EMR:
+
+```bash
+EMR_JWT_OAUTH_ENABLE: "true"
+```
+
+#### Configuring Databricks Standard Cluster OLAC connector
+
+[TODO: Add the PM steps for enabling JWT token for Databricks Standard Cluster OLAC connector]
+
+#### Configuring Apache Spark on EKS OLAC connector
+
+[TODO: Add the PM steps for enabling JWT token for Apache Spark on EKS OLAC connector]
 
 ### FGAC
+
+#### Configuring Databricks High Concurrency Cluster FGAC connector
+
+[TODO: Add the PM steps for enabling JWT token for Databricks Standard Cluster OLAC connector]
+
+
 
 
