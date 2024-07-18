@@ -41,7 +41,7 @@ Let’s assume you want to create a new service repo with prefix as “dev”. P
 
 ### Validation/Verification
 
-To confirm the successful association of Custom Service repo, follow these steps:
+To confirm the successful association of Custom S3 Service repo, perform following steps. Follow the same steps to validate other custom services like Hive, Files, Adls etc.:
 
   1. Prerequisites:
     - Running Databricks cluster secured in the above steps.
@@ -60,6 +60,7 @@ To confirm the successful association of Custom Service repo, follow these steps
       df.show(5)
       ```
     - On Privacera portal, go to **Access Management** -> **Audits**
+    - Check for the **Service Name** which you mentioned in **Creating a Service repo** E.g `dev_s3`..
     - Check for the success or failure of the resource policy. A successful access is indicated as **Allowed** and failure is indicated as **Denied**.
 
 
