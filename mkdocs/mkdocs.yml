@@ -452,7 +452,7 @@ nav:
               - User Identities: resources/design/access-management/user_identities.md
               - Access Tools: resources/design/access-management/access_tools.md
               - About Secure Views: resources/design/access-management/about_secure_views.md
-              - About JWT Tokens: resources/design/access-management/about_jwt_tokens.md
+#              - About JWT Tokens: resources/design/access-management/about_jwt_tokens.md
               - JWT Token User Identity: resources/design/access-management/jwt_token_user_identity.md
       - API Reference:
           - resources/api-reference/index.md

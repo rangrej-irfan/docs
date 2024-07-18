@@ -1,4 +1,4 @@
-# JWT Tokens for user identity
+# JWT Token User Identity
 
 ## Overview
 
@@ -42,15 +42,15 @@ sequenceDiagram
     participant PrivaceraDataServer
     participant CloudStorage
 
-    User->>IdentityProvider: Request JWT token
-    IdentityProvider-->>User: Provide JWT token
-    User->>ComputeEnv: Pass JWT token
-    ComputeEnv->>PrivaceraDataServer: Send JWT token
-    PrivaceraDataServer->>PrivaceraDataServer: Verify JWT token using static key or key from JWK endpoint
-    PrivaceraDataServer->>PrivaceraDataServer: Generate Signed URL/STS token
-    PrivaceraDataServer-->>ComputeEnv: Provide Signed URL/STS token
-    ComputeEnv->>CloudStorage: Access data using Signed URL/STS token
-    CloudStorage-->>ComputeEnv: Data retrieved
+    User->>IdentityProvider: 1. Request JWT token
+    IdentityProvider-->>User: 2. Provide JWT token
+    User->>ComputeEnv: 3. Pass JWT token
+    ComputeEnv->>PrivaceraDataServer: 4. Send JWT token
+    PrivaceraDataServer->>PrivaceraDataServer: 5. Validate JWT token using static key or key from JWK endpoint
+    PrivaceraDataServer->>PrivaceraDataServer: 6. Generate Signed URL/STS token
+    PrivaceraDataServer-->>ComputeEnv: 7. Provide Signed URL/STS token
+    ComputeEnv->>CloudStorage: 8. Access data using Signed URL/STS token
+    CloudStorage-->>ComputeEnv: 9. Data retrieved
 ```
 
 **Diagram Explanation**
@@ -59,7 +59,7 @@ sequenceDiagram
 2. **Provide JWT Token**: The IdP provides the JWT token to the user.
 3. **Pass JWT Token**: The user passes the JWT token to the compute environment.
 4. **Send JWT Token**: The compute environment sends the JWT token to Privacera DataServer.
-5. **Verify JWT Token**: Privacera DataServer verifies the JWT token signature by using either IdP public key that is
+5. **Validate JWT Token**: Privacera DataServer validates the JWT token signature by using either IdP public key that is
    statically configured or is obtained dynamically from IdP's JWKS endpoint.
 7. **Generate Signed URL/STS Token**: Privacera DataServer generates a Signed URL or STS token.
 8. **Provide Signed URL/STS Token**: Privacera DataServer provides the Signed URL or STS token to the compute
@@ -73,12 +73,16 @@ sequenceDiagram
 sequenceDiagram
     participant User
     participant IdentityProvider
-    participant ComputeEnv as Compute Env + Privacera OLAC Plugin 
+    participant ComputeEnv as Compute Env + Privacera FGAC Plugin 
+    participant CloudStorage
 
-    User->>IdentityProvider: Request JWT token
-    IdentityProvider-->>User: Provide JWT token
-    User->>ComputeEnv: Pass JWT token
-    ComputeEnv->>ComputeEnv: Verify JWT token using static key or key from JWK endpoint
+    User->>IdentityProvider: 1. Request JWT token
+    IdentityProvider-->>User: 2. Provide JWT token
+    User->>ComputeEnv: 3. Pass JWT token
+    ComputeEnv->>ComputeEnv: 4. Privacera FGAC plugin validates JWT token using static key or key from JWK endpoint
+    ComputeEnv->>ComputeEnv: 5. Privacera FGAC plugin uses identity to enforce access control
+    ComputeEnv->>CloudStorage: 6. Access data using Compute Env native permissions (IAM role)
+    CloudStorage-->>ComputeEnv: 7. Data retrieved
 ```
 
 **Diagram Explanation**
@@ -86,14 +90,11 @@ sequenceDiagram
 1. **Request JWT Token**: The user requests a JWT token from the Identity Provider (IdP).
 2. **Provide JWT Token**: The IdP provides the JWT token to the user.
 3. **Pass JWT Token**: The user passes the JWT token to the compute environment.
-4. **Send JWT Token**: The compute environment sends the JWT token to Privacera DataServer.
-5. **Verify JWT Token**: Privacera DataServer verifies the JWT token signature by using either IdP public key that is
+4. **Validate JWT Token**: Privacera FGAC plugin validates the JWT token signature by using either IdP public key that is
    statically configured or is obtained dynamically from IdP's JWKS endpoint.
-7. **Generate Signed URL/STS Token**: Privacera DataServer generates a Signed URL or STS token.
-8. **Provide Signed URL/STS Token**: Privacera DataServer provides the Signed URL or STS token to the compute
-   environment.
-9. **Access Data**: The compute environment accesses data from cloud storage using the Signed URL or STS token.
-10. **Data Retrieved**: The data is retrieved from the cloud storage and provided to the compute environment.
+5. **Enforce Access Control**: Privacera FGAC plugin uses the user identity to enforce access control.
+6. **Access Data**: The compute environment accesses data from cloud storage using the compute environments native permissions (IAM role).
+7. **Data Retrieved**: The data is retrieved from the cloud storage and provided to the compute environment.
 
 ## Concepts 
 
@@ -431,6 +432,13 @@ EMR_JWT_OAUTH_ENABLE: "true"
 
 [TODO: Add the PM steps for enabling JWT token for Databricks Standard Cluster OLAC connector]
 
+## End to end setup
 
+### Generating JWT token using Python script
 
+[TODO: Provide the Python script to generate a JWT token using locally generated keypair]
+
+### JWKS Python server 
+
+[TODO: Provide the Python script to serve the public key using JWKS endpoint]
 
