@@ -20,6 +20,7 @@ Signed URL or STS token for the user. The user can then use the Signed URL or ST
 storage.
 
 **Sample Flow**
+
 ```mermaid
 sequenceDiagram
     participant User
@@ -32,8 +33,7 @@ sequenceDiagram
     IdentityProvider-->>User: Provide JWT token
     User->>ComputeEnvironment: Pass JWT token
     ComputeEnvironment->>PrivaceraDataServer: Send JWT token
-    PrivaceraDataServer->>IdentityProvider: Validate JWT token
-    IdentityProvider-->>PrivaceraDataServer: Confirm JWT validity
+    PrivaceraDataServer->>PrivaceraDataServer: Verify JWT token using static key or JWK
     PrivaceraDataServer->>PrivaceraDataServer: Generate Signed URL/STS token
     PrivaceraDataServer-->>ComputeEnvironment: Provide Signed URL/STS token
     ComputeEnvironment->>CloudStorage: Access data using Signed URL/STS token
@@ -46,10 +46,12 @@ sequenceDiagram
 2. **Provide JWT Token**: The IdP provides the JWT token to the user.
 3. **Pass JWT Token**: The user passes the JWT token to the compute environment.
 4. **Send JWT Token**: The compute environment sends the JWT token to Privacera DataServer.
-5. **Validate JWT Token**: Privacera DataServer validates the JWT token with the IdP.
+5. **Verify JWT Token**: Privacera DataServer verifies the JWT token signature by using either IdP public key that is
+   statically configured or is obtained dynamically from IdP's JWKS endpoint.
 6. **Confirm JWT Validity**: The IdP confirms the JWT token's validity.
 7. **Generate Signed URL/STS Token**: Privacera DataServer generates a Signed URL or STS token.
-8. **Provide Signed URL/STS Token**: Privacera DataServer provides the Signed URL or STS token to the compute environment.
+8. **Provide Signed URL/STS Token**: Privacera DataServer provides the Signed URL or STS token to the compute
+   environment.
 9. **Access Data**: The compute environment accesses data from cloud storage using the Signed URL or STS token.
 10. **Data Retrieved**: The data is retrieved from the cloud storage and provided to the compute environment.
 
