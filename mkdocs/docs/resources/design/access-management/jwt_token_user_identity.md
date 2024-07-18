@@ -9,11 +9,13 @@ identity reliably to Privacera.
 ### Connectors
 The following connectors support the use of JWT tokens to carry user identity information:
 
-- AWS EMR (on EC2) Spark OLAC connector without Kerberos
-- AWS EMR-Serverless Spark OLAC connector without Lake Formation
-- Databricks Standard Cluster OLAC connector
-- Databricks High Concurrency Cluster FGAC connector
-- Apache Spark on EKS OLAC connector
+- OLAC connectors
+      - AWS EMR (on EC2) Spark OLAC connector without Kerberos
+      - AWS EMR-Serverless Spark OLAC connector without Lake Formation
+      - Databricks Standard Cluster OLAC connector
+      - Apache Spark on EKS OLAC connector
+-  FGAC connectors
+      - Databricks High Concurrency Cluster FGAC connector
 
 ### Supported Deployments 
 - PrivaceraCloud
@@ -128,23 +130,23 @@ All other fields in the payload will be ignored by Privacera.
 
 JWT Signature verification is done using the public key of the IdP. The public key can be configured statically in Privacera or dynamically fetched from the IdP's JWKS endpoint.
 
-Privacera supports only RSA256 and ECDSA256 algorithms for JWT token signature.
+!!! note "Privacera supports only RSA256 and ECDSA256 algorithms for JWT token signature."
 
 ## Using JWT Token Feature
 
 To use this feature you need to do the following:
 
-1. OLAC
+1. For OLAC supported connectors
       2. Configure Privacera Dataserver to use JWT tokens
       3. Configure EMR, Databricks or Apache Spark plugin to use JWT token
       4. At runtime, generate JWT token and pass it to the Spark job
-2. FGAC
+2. For FGAC supported connectors
       3. Configure the Databricks Spark plugin to use JWT token
       4. At runtime, generate JWT token and pass it to the Spark job 
 
 ## Using JWT Tokens
 
-### OLAC
+### For OLAC supported connectors
 
 User will pass the JWT token string in a Spark configuration variable to the Spark job. Here is an example - 
 ```json
@@ -153,9 +155,17 @@ spark-sql \
 --conf "spark.hadoop.privacera.jwt.oauth.enable=true"
 ```
 
-### FGAC
+### For FGAC supported connectors
 
-User will copy the JWT token string to a file and pass the file path in a Spark configuration variable to the Spark job. Here is an example - 
+User will copy the JWT token string to a file and pass the file path in a Spark configuration variable to the Spark job.
+The difference is the methodology is because FGAC clusters support SparkSQL and it is not possible to 
+pass JWT in Spark configuration variable. 
+
+!!! warning "Global User"
+    When this feature is used FGAC cluster, then the logged in user identity is not considered and everyone will be 
+    treated as the user n the JWT token. This is only recommended for job clusters where you want to enforce FGAC"
+
+Here is an example - 
 
 ```json
 spark.hadoop.privacera.jwt.oauth.enable true
