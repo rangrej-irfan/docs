@@ -15,9 +15,9 @@ Following AWS cloud resources need to be created before installing the Privacera
 ### AWS EC2 instance for running Privacera Manager
 ??? note "EC2 instance"
 
-    Privacera Manager is ran from an EC2 instance which has access to Kubernetes and other cloud resources that 
-    are needed for installating and managing Privacera. For that, from the this EC2 instance it should be able to 
-    connect and managed EKS cluster. And it should have an instance role as per this section.    
+    Privacera Manager will run from an EC2 instance which has access to Kubernetes and other cloud resources that 
+    are needed for installating and managing Privacera. For that, from the EC2 instance it should be able to 
+    connect & manage EKS cluster and it should have an instance role as per this section.    
 
     !!! note 
         The Privacera Manager installation on this EC2 instance will contain self-signed certificates and 
@@ -84,23 +84,29 @@ Following AWS cloud resources need to be created before installing the Privacera
         Update the ==hosted-zone-id== in the policy below. You can find the hosted zone ID in the Route53 console.
         ```{ .json title="privacera-manager-route53-policy"}
         {
-         "Version": "2012-10-17",
-         "Statement": [
-           {
-             "Sid": "AllowRoute53Update",
-             "Effect": "Allow",
-             "Action": [
-               "route53:ChangeResourceRecordSets",
-               "route53:ListResourceRecordSets",
-               "route53:GetHostedZone",
-               "route53:GetChange"
-             ],
-             "Resource": [
-               "arn:aws:route53:::hostedzone/<hosted-zone-id>",
-               "arn:aws:route53:::change/*"
-             ]
-           }
-         ]
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "route53:GetChange"
+              ],
+              "Resource": [
+                "arn:aws:route53:::change/*"
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "route53:ChangeResourceRecordSets",
+                "route53:ListResourceRecordSets",
+                "route53:GetHostedZone"
+              ],
+              "Resource": [
+              "arn:aws:route53:::hostedzone/<hosted_zone_id>"
+              ]
+            }
+          ]
         }
         ```
     ??? note "Permissions to run eksctl to create IAM role for Service Account (optional)"

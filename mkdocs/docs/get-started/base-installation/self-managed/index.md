@@ -31,7 +31,7 @@ If you are installing Self Managed, after doing the Basic Configuration  you wil
 | Self-Managed Deployment  | Self-Managed Dataserver configuration          | No        |
 | Self-Managed Deployment  | Self-Managed Usersync configuration            | Yes       |
 
-* You need to install either Privacera Access and/or Privacera Discovery.
+__*__ You need to install either Privacera Access and/or Privacera Discovery.
 
 ### PrivaceraCloud Data-plane Installation Track
 
@@ -68,5 +68,5 @@ and host them in your docker registry.
 
 <div class="grid cards" markdown>
 -   :material-page-previous: Prev [Base Installation](../index.md)
--   :material-page-next: Next [Setup](setup.md)
+-   :material-page-next: Next [Prerequisites](prerequisites/index.md)
 </div>

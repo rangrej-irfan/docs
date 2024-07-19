@@ -28,6 +28,7 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
 | 7. | [Configure TLS](#configure-tls)                                         | Configure TLS                                                                                                                                                      |
 | 8. | [Configure AWS ALB Controller](#configure-aws-alb-controller-optional)  | Configure AWS ALB Controller (optional - only if you are in AWS and using AWS ALB Controller)                                                                      |
 | 9. | [Configure Load Balancer](#configure-load-balancer-optional)            | Configure Load Balancer (optional - only if you are in AWS and do not plan to use AWS ALB Controller, and if you are in Azure or Google Cloud)                     |
+| 10. | [Privacera Monitoring](#privacera-monitoring)            | This is the part of default Privacera installation - only if you are in AWS and plan to use AWS ALB Controller (Monitoring stack is available for Azure or Google Cloud for now)                     |
 
 
 ## Appendix - Self-Managed and PrivaceraCloud Data-plane
@@ -189,7 +190,7 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
         cd ~/privacera/privacera-manager
         cp config/sample-vars/vars.aws.alb.ingress.yml config/custom-vars/
         vi vars.aws.alb.ingress.yml
-        # Edit the file and modify these values
+        # Edit the file and modify/add these values
         AWS_ALB_DEFAULT_ANNOTATIONS:
         - "kubernetes.io/ingress.class: 'alb'"
         - "alb.ingress.kubernetes.io/target-type: 'ip'"
@@ -230,7 +231,7 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
 
     After you have run Privacera Manager setup and helm install steps, and the ingress objects have been created, this will create
     an AWS ALB with the specified annotations. You will then have to copy the DNS name of the ALB and
-    update the following properties in the same file. You will need the AWS Route 53 Hosted Zone ID and
+    update the following properties in the "vars.aws.alb.ingress.yml" file. You will need the AWS Route 53 Hosted Zone ID and
     the domain name that you have configured in Route 53.
 
     ```bash
@@ -269,6 +270,7 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
     - Solr
     - Zookeeper
     - Auditserver
+    - Privacera Diagnostics
 
     Once this has been verified, you should move on to deploying the [Connectors](../../../connectors/index.md) 
     and [User Management](../../user-management/index.md).

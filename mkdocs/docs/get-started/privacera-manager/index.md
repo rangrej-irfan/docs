@@ -17,11 +17,15 @@ cd ~/privacera/privacera-manager
 # This step usually takes few minutes.
 ./privacera-manager.sh setup
 
-# step 2 - install or upgrade the Privacera Manager helm charts
+# step 2 -  Run this only if your using AWS cloud and AWS Load Balancer Controller (Ingress setup). 
+# Skip this if using Azure/GCP and Only Load Balancer Setup.
+# Run this only in case of fresh installation or if you there is any change or upgrade in monitoring stack.
+./pm_with_helm.sh install-monitoring
+
+# step 3 - install or upgrade the Privacera Manager helm charts
 ./pm_with_helm.sh [install|upgrade]
 
 # step 3 - post-installation steps which generates Plugin tar ball, 
 #   updates Route 53 DNS, etc.
 ./privacera-manager.sh post-install
 ```
-
