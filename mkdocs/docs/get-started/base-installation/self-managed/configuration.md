@@ -28,7 +28,7 @@ These steps are common for Self-Managed and PrivaceraCloud Data-plane installati
 | 7. | [Configure TLS](#configure-tls)                                         | Configure TLS                                                                                                                                                      |
 | 8. | [Configure AWS ALB Controller](#configure-aws-alb-controller-optional)  | Configure AWS ALB Controller (optional - only if you are in AWS and using AWS ALB Controller)                                                                      |
 | 9. | [Configure Load Balancer](#configure-load-balancer-optional)            | Configure Load Balancer (optional - only if you are in AWS and do not plan to use AWS ALB Controller, and if you are in Azure or Google Cloud)                     |
-| 10. | [Privacera Monitoring](#privacera-monitoring)            | This is the part of default Privacera installation - only if you are in AWS and plan to use AWS ALB Controller (Monitoring stack is available for Azure or Google Cloud for now)                     |
+| 10. | [Privacera Monitoring](#privacera-monitoring)            | This is the part of default Privacera installation - only if you are in AWS and plan to use AWS ALB Controller (Monitoring stack is not available for Azure or Google Cloud for now)                     |
 
 
 ## Appendix - Self-Managed and PrivaceraCloud Data-plane
